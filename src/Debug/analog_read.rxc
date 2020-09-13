@@ -1,0 +1,6 @@
+-cpu=rx200
+-lang=c
+-output=obj="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\analog_read.obj"
+-debug
+"C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\analog_read.c"
+-nologo

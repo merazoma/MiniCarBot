@@ -1,0 +1,3 @@
+-cpu=rx200
+-output="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\MiniCarBot\Debug\MiniCarBot.lib"
+-head=runtime,stdio,stdlib,string,new
