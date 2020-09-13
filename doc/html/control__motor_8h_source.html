@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MiniCarBot: C:/Users/Kobayashi/Dropbox/autorc/RX220/MiniCarBot/src/control_motor.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MiniCarBot
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('control__motor_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">control_motor.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="control__motor_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef __CONTROLMOTOR_H__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define __CONTROLMOTOR_H__</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="control__motor_8h.html#a5c38c3ab21e6511ac98e192c8980613f">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="control__motor_8h.html#a5c38c3ab21e6511ac98e192c8980613f">enm_motor_id</a>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="control__motor_8h.html#a5c38c3ab21e6511ac98e192c8980613fadb45120aafd37a973140edee24708065">   21</a></span>&#160;    <a class="code" href="control__motor_8h.html#a5c38c3ab21e6511ac98e192c8980613fadb45120aafd37a973140edee24708065">LEFT</a> = 0,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="control__motor_8h.html#a5c38c3ab21e6511ac98e192c8980613faec8379af7490bb9eaaf579cf17876f38">RIGHT</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="control__motor_8h.html#a5c38c3ab21e6511ac98e192c8980613faec8379af7490bb9eaaf579cf17876f38">   24</a></span>&#160;} <a class="code" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="control__motor_8h.html#acc2ad06ce2e0231b6226ab1a6f79d6bf">   30</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="control__motor_8h.html#acc2ad06ce2e0231b6226ab1a6f79d6bf">enm_motor_direction</a>{</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="control__motor_8h.html#acc2ad06ce2e0231b6226ab1a6f79d6bfaa26736999186daf8146f809e863712a1">   32</a></span>&#160;    <a class="code" href="control__motor_8h.html#acc2ad06ce2e0231b6226ab1a6f79d6bfaa26736999186daf8146f809e863712a1">FORWARD</a> = 0,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="control__motor_8h.html#acc2ad06ce2e0231b6226ab1a6f79d6bfafed2fca77e454294d6b8bda1bf2c9fd6">BACKWARD</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="control__motor_8h.html#a5dd57096360038f52373607dffaf68b2">   35</a></span>&#160;} <a class="code" href="control__motor_8h.html#a5dd57096360038f52373607dffaf68b2">motor_direction_t</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="control__motor_8h.html#a505223e724cfa362bf8b323360419d7e">init_motor</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="control__motor_8h.html#a39a7acf98ec303941d36729a94c44c03">control_motor</a>(<span class="keywordtype">float</span> lin_vel, <span class="keywordtype">float</span> ang_vel);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> <a class="code" href="control__motor_8h.html#a87245c37f9809b1fe351ec22c8fa01d8">control_motor_Nrpm</a>(<a class="code" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a> motor_id, <span class="keywordtype">int</span> Nrpm);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> <a class="code" href="control__motor_8h.html#a1a88438c88976ade0c8b5de00a96d5ed">drive_motor_duty</a>(<a class="code" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a> motor_id, <span class="keywordtype">float</span> duty, <a class="code" href="control__motor_8h.html#a5dd57096360038f52373607dffaf68b2">motor_direction_t</a> direction);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="control__motor_8h.html#a64bf5899e020012c464eda92c3959f8c">get_enc_count</a>(<a class="code" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a> motor_id);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="acontrol__motor_8h_html_a5c38c3ab21e6511ac98e192c8980613fadb45120aafd37a973140edee24708065"><div class="ttname"><a href="control__motor_8h.html#a5c38c3ab21e6511ac98e192c8980613fadb45120aafd37a973140edee24708065">LEFT</a></div><div class="ttdeci">@ LEFT</div><div class="ttdoc">左モータ</div><div class="ttdef"><b>Definition:</b> control_motor.h:21</div></div>
+<div class="ttc" id="ageneral__io_8h_html_ab16e88009b18cf2c58c488ffbfc024c6a6aa8756943c64075ed45ab7c74ecf8c3"><div class="ttname"><a href="general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6a6aa8756943c64075ed45ab7c74ecf8c3">M_STBY</a></div><div class="ttdeci">@ M_STBY</div><div class="ttdoc">モータ駆動開始指示(PC3)</div><div class="ttdef"><b>Definition:</b> general_io.h:38</div></div>
+<div class="ttc" id="acontrol__motor_8h_html_a5dd57096360038f52373607dffaf68b2"><div class="ttname"><a href="control__motor_8h.html#a5dd57096360038f52373607dffaf68b2">motor_direction_t</a></div><div class="ttdeci">enum enm_motor_direction motor_direction_t</div><div class="ttdoc">モータの正転・逆転選択用の型。drive_motor_dutyの引数で使用。</div></div>
+<div class="ttc" id="acontrol__motor_8h_html_a505223e724cfa362bf8b323360419d7e"><div class="ttname"><a href="control__motor_8h.html#a505223e724cfa362bf8b323360419d7e">init_motor</a></div><div class="ttdeci">void init_motor()</div><div class="ttdoc">モータICの初期化処理。メイン側の初期化処理中で一回コールすること。</div><div class="ttdef"><b>Definition:</b> control_motor.c:12</div></div>
+<div class="ttc" id="ageneral__io_8h_html_ab16e88009b18cf2c58c488ffbfc024c6a8a93006bf6397f3328937766c4c98948"><div class="ttname"><a href="general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6a8a93006bf6397f3328937766c4c98948">M_L_IN2</a></div><div class="ttdeci">@ M_L_IN2</div><div class="ttdoc">左車輪用モータの逆転指示方向(PC2)</div><div class="ttdef"><b>Definition:</b> general_io.h:36</div></div>
+<div class="ttc" id="acontrol__motor_8h_html_a64bf5899e020012c464eda92c3959f8c"><div class="ttname"><a href="control__motor_8h.html#a64bf5899e020012c464eda92c3959f8c">get_enc_count</a></div><div class="ttdeci">unsigned short get_enc_count(motor_id_t motor_id)</div><div class="ttdoc">モータのエンコーダカウントを取得</div><div class="ttdef"><b>Definition:</b> control_motor.c:71</div></div>
+<div class="ttc" id="ageneral__io_8h_html_affafd210fc89b88daa497441256c0e71a6a226f4143ca3b18999551694cdb72a8"><div class="ttname"><a href="general__io_8h.html#affafd210fc89b88daa497441256c0e71a6a226f4143ca3b18999551694cdb72a8">LOW</a></div><div class="ttdeci">@ LOW</div><div class="ttdoc">出力Low</div><div class="ttdef"><b>Definition:</b> general_io.h:47</div></div>
+<div class="ttc" id="acontrol__motor_8c_html_a64bf5899e020012c464eda92c3959f8c"><div class="ttname"><a href="control__motor_8c.html#a64bf5899e020012c464eda92c3959f8c">get_enc_count</a></div><div class="ttdeci">unsigned short get_enc_count(motor_id_t motor_id)</div><div class="ttdoc">モータのエンコーダカウントを取得</div><div class="ttdef"><b>Definition:</b> control_motor.c:71</div></div>
+<div class="ttc" id="acontrol__motor_8c_html_a87245c37f9809b1fe351ec22c8fa01d8"><div class="ttname"><a href="control__motor_8c.html#a87245c37f9809b1fe351ec22c8fa01d8">control_motor_Nrpm</a></div><div class="ttdeci">void control_motor_Nrpm(motor_id_t motor_id, int Nrpm)</div><div class="ttdoc">与えられた回転数で、左右輪の回転数を制御</div><div class="ttdef"><b>Definition:</b> control_motor.c:30</div></div>
+<div class="ttc" id="ageneral__io_8h_html_ab16e88009b18cf2c58c488ffbfc024c6abbc1e3782ff80edb2edac4226423abc8"><div class="ttname"><a href="general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6abbc1e3782ff80edb2edac4226423abc8">M_R_IN2</a></div><div class="ttdeci">@ M_R_IN2</div><div class="ttdoc">右車輪用モータの逆転指示方向(PB7)</div><div class="ttdef"><b>Definition:</b> general_io.h:34</div></div>
+<div class="ttc" id="acontrol__motor_8h_html_a87245c37f9809b1fe351ec22c8fa01d8"><div class="ttname"><a href="control__motor_8h.html#a87245c37f9809b1fe351ec22c8fa01d8">control_motor_Nrpm</a></div><div class="ttdeci">void control_motor_Nrpm(motor_id_t motor_id, int Nrpm)</div><div class="ttdoc">与えられた回転数で、左右輪の回転数を制御</div><div class="ttdef"><b>Definition:</b> control_motor.c:30</div></div>
+<div class="ttc" id="acontrol__motor_8c_html_a2e77f27a28c58c54f99225498ca6391d"><div class="ttname"><a href="control__motor_8c.html#a2e77f27a28c58c54f99225498ca6391d">VelocityConst</a></div><div class="ttdeci">const float VelocityConst</div><div class="ttdef"><b>Definition:</b> control_motor.c:8</div></div>
+<div class="ttc" id="acontrol__motor_8c_html_a78d0c170bdbe3ec3980fb229ca3b1c84"><div class="ttname"><a href="control__motor_8c.html#a78d0c170bdbe3ec3980fb229ca3b1c84">WheelSperation</a></div><div class="ttdeci">#define WheelSperation</div><div class="ttdef"><b>Definition:</b> control_motor.c:6</div></div>
+<div class="ttc" id="ageneral__io_8h_html"><div class="ttname"><a href="general__io_8h.html">general_io.h</a></div><div class="ttdoc">汎用ポートのON/OFF出力</div></div>
+<div class="ttc" id="acontrol__motor_8h_html_a39a7acf98ec303941d36729a94c44c03"><div class="ttname"><a href="control__motor_8h.html#a39a7acf98ec303941d36729a94c44c03">control_motor</a></div><div class="ttdeci">void control_motor(float lin_vel, float ang_vel)</div><div class="ttdoc">与えられた、並進速度(lin_vel)と回転速度(ang_vel)で、車体を制御</div><div class="ttdef"><b>Definition:</b> control_motor.c:16</div></div>
+<div class="ttc" id="acontrol__motor_8h_html_a9494adebe96093eb020eb276ec6d9618"><div class="ttname"><a href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a></div><div class="ttdeci">enum enm_motor_id motor_id_t</div><div class="ttdoc">左右モータ選択用の型。control_motor_Nrpmやdrive_motor_dutyの引数として使用。</div></div>
+<div class="ttc" id="apwm__drive_8h_html"><div class="ttname"><a href="pwm__drive_8h.html">pwm_drive.h</a></div><div class="ttdoc">左車輪モータと右車輪モータのPWM駆動</div></div>
+<div class="ttc" id="ageneral__io_8c_html_a3d87fb36438ea282f7efeb1858219f55"><div class="ttname"><a href="general__io_8c.html#a3d87fb36438ea282f7efeb1858219f55">digital_write</a></div><div class="ttdeci">void digital_write(port_t port, outlevel_t level)</div><div class="ttdoc">汎用出力ポートの出力切り替え指示</div><div class="ttdef"><b>Definition:</b> general_io.c:43</div></div>
+<div class="ttc" id="ageneral__io_8h_html_ab16e88009b18cf2c58c488ffbfc024c6a33a747d657661d988473c91e71dc5cff"><div class="ttname"><a href="general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6a33a747d657661d988473c91e71dc5cff">M_L_IN1</a></div><div class="ttdeci">@ M_L_IN1</div><div class="ttdoc">左車輪用モータの正転指示方向(PB6)</div><div class="ttdef"><b>Definition:</b> general_io.h:32</div></div>
+<div class="ttc" id="acontrol__motor_8c_html_a01b5e18d21920ba7b9e10444f27dd8dd"><div class="ttname"><a href="control__motor_8c.html#a01b5e18d21920ba7b9e10444f27dd8dd">WheelDiameter</a></div><div class="ttdeci">#define WheelDiameter</div><div class="ttdef"><b>Definition:</b> control_motor.c:7</div></div>
+<div class="ttc" id="apwm__drive_8h_html_a3eee2df383a4e1037f3af8fc340716f4a94370b7ecb8f0e84584c9c8b2cf88c28"><div class="ttname"><a href="pwm__drive_8h.html#a3eee2df383a4e1037f3af8fc340716f4a94370b7ecb8f0e84584c9c8b2cf88c28">M_R_PWM</a></div><div class="ttdeci">@ M_R_PWM</div><div class="ttdoc">左側車輪モータPWM駆動用ポート</div><div class="ttdef"><b>Definition:</b> pwm_drive.h:20</div></div>
+<div class="ttc" id="acontrol__motor_8h_html"><div class="ttname"><a href="control__motor_8h.html">control_motor.h</a></div><div class="ttdoc">モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。</div></div>
+<div class="ttc" id="acontrol__motor_8c_html_ae7fece8ea485705d9a0dcc4346579e9b"><div class="ttname"><a href="control__motor_8c.html#ae7fece8ea485705d9a0dcc4346579e9b">GearRatio</a></div><div class="ttdeci">const float GearRatio</div><div class="ttdef"><b>Definition:</b> control_motor.c:9</div></div>
+<div class="ttc" id="acontrol__motor_8h_html_a5c38c3ab21e6511ac98e192c8980613faec8379af7490bb9eaaf579cf17876f38"><div class="ttname"><a href="control__motor_8h.html#a5c38c3ab21e6511ac98e192c8980613faec8379af7490bb9eaaf579cf17876f38">RIGHT</a></div><div class="ttdeci">@ RIGHT</div><div class="ttdoc">右モータ</div><div class="ttdef"><b>Definition:</b> control_motor.h:23</div></div>
+<div class="ttc" id="aiodefine_8h_html"><div class="ttname"><a href="iodefine_8h.html">iodefine.h</a></div></div>
+<div class="ttc" id="acontrol__motor_8h_html_a1a88438c88976ade0c8b5de00a96d5ed"><div class="ttname"><a href="control__motor_8h.html#a1a88438c88976ade0c8b5de00a96d5ed">drive_motor_duty</a></div><div class="ttdeci">void drive_motor_duty(motor_id_t motor_id, float duty, motor_direction_t direction)</div><div class="ttdoc">指示されたDutyと回転の向きで、モータを駆動</div><div class="ttdef"><b>Definition:</b> control_motor.c:33</div></div>
+<div class="ttc" id="ageneral__io_8h_html_affafd210fc89b88daa497441256c0e71a0c3a1dacf94061154b3ee354359c5893"><div class="ttname"><a href="general__io_8h.html#affafd210fc89b88daa497441256c0e71a0c3a1dacf94061154b3ee354359c5893">HIGH</a></div><div class="ttdeci">@ HIGH</div><div class="ttdoc">出力High</div><div class="ttdef"><b>Definition:</b> general_io.h:49</div></div>
+<div class="ttc" id="acontrol__motor_8h_html_a5c38c3ab21e6511ac98e192c8980613f"><div class="ttname"><a href="control__motor_8h.html#a5c38c3ab21e6511ac98e192c8980613f">enm_motor_id</a></div><div class="ttdeci">enm_motor_id</div><div class="ttdoc">左右モータ選択用の型。control_motor_Nrpmやdrive_motor_dutyの引数として使用。</div><div class="ttdef"><b>Definition:</b> control_motor.h:19</div></div>
+<div class="ttc" id="acontrol__motor_8h_html_acc2ad06ce2e0231b6226ab1a6f79d6bf"><div class="ttname"><a href="control__motor_8h.html#acc2ad06ce2e0231b6226ab1a6f79d6bf">enm_motor_direction</a></div><div class="ttdeci">enm_motor_direction</div><div class="ttdoc">モータの正転・逆転選択用の型。drive_motor_dutyの引数で使用。</div><div class="ttdef"><b>Definition:</b> control_motor.h:30</div></div>
+<div class="ttc" id="apwm__drive_8c_html_a819463d53a9fc0a7cb3664d5876078ea"><div class="ttname"><a href="pwm__drive_8c.html#a819463d53a9fc0a7cb3664d5876078ea">drive_pwm</a></div><div class="ttdeci">void drive_pwm(pwm_port_t pwm_port, unsigned int duty)</div><div class="ttdoc">選択したPWM駆動用ポートで、Dutyを指定してPWM駆動を実施</div><div class="ttdef"><b>Definition:</b> pwm_drive.c:33</div></div>
+<div class="ttc" id="ageneral__io_8h_html_ab16e88009b18cf2c58c488ffbfc024c6a47167ab6e2bdae87297ac56094895e95"><div class="ttname"><a href="general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6a47167ab6e2bdae87297ac56094895e95">M_R_IN1</a></div><div class="ttdeci">@ M_R_IN1</div><div class="ttdoc">右車輪用モータの正転指示方向(PB5)</div><div class="ttdef"><b>Definition:</b> general_io.h:30</div></div>
+<div class="ttc" id="acontrol__motor_8h_html_acc2ad06ce2e0231b6226ab1a6f79d6bfaa26736999186daf8146f809e863712a1"><div class="ttname"><a href="control__motor_8h.html#acc2ad06ce2e0231b6226ab1a6f79d6bfaa26736999186daf8146f809e863712a1">FORWARD</a></div><div class="ttdeci">@ FORWARD</div><div class="ttdoc">モータ正転</div><div class="ttdef"><b>Definition:</b> control_motor.h:32</div></div>
+<div class="ttc" id="apwm__drive_8h_html_a3eee2df383a4e1037f3af8fc340716f4ae5330af880c76509267d6928b52d26ce"><div class="ttname"><a href="pwm__drive_8h.html#a3eee2df383a4e1037f3af8fc340716f4ae5330af880c76509267d6928b52d26ce">M_L_PWM</a></div><div class="ttdeci">@ M_L_PWM</div><div class="ttdoc">左側車輪モータPWM駆動用ポート</div><div class="ttdef"><b>Definition:</b> pwm_drive.h:18</div></div>
+<div class="ttc" id="acontrol__motor_8h_html_acc2ad06ce2e0231b6226ab1a6f79d6bfafed2fca77e454294d6b8bda1bf2c9fd6"><div class="ttname"><a href="control__motor_8h.html#acc2ad06ce2e0231b6226ab1a6f79d6bfafed2fca77e454294d6b8bda1bf2c9fd6">BACKWARD</a></div><div class="ttdeci">@ BACKWARD</div><div class="ttdoc">モータ逆転</div><div class="ttdef"><b>Definition:</b> control_motor.h:34</div></div>
+<div class="ttc" id="acontrol__motor_8c_html_a39a7acf98ec303941d36729a94c44c03"><div class="ttname"><a href="control__motor_8c.html#a39a7acf98ec303941d36729a94c44c03">control_motor</a></div><div class="ttdeci">void control_motor(float lin_vel, float ang_vel)</div><div class="ttdoc">与えられた、並進速度(lin_vel)と回転速度(ang_vel)で、車体を制御</div><div class="ttdef"><b>Definition:</b> control_motor.c:16</div></div>
+<div class="ttc" id="acontrol__motor_8c_html_a1a88438c88976ade0c8b5de00a96d5ed"><div class="ttname"><a href="control__motor_8c.html#a1a88438c88976ade0c8b5de00a96d5ed">drive_motor_duty</a></div><div class="ttdeci">void drive_motor_duty(motor_id_t motor_id, float duty, motor_direction_t direction)</div><div class="ttdoc">指示されたDutyと回転の向きで、モータを駆動</div><div class="ttdef"><b>Definition:</b> control_motor.c:33</div></div>
+<div class="ttc" id="acontrol__motor_8c_html_a505223e724cfa362bf8b323360419d7e"><div class="ttname"><a href="control__motor_8c.html#a505223e724cfa362bf8b323360419d7e">init_motor</a></div><div class="ttdeci">void init_motor()</div><div class="ttdoc">モータICの初期化処理。メイン側の初期化処理中で一回コールすること。</div><div class="ttdef"><b>Definition:</b> control_motor.c:12</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="control__motor_8h.html">control_motor.h</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

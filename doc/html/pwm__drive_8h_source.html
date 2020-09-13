@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MiniCarBot: C:/Users/Kobayashi/Dropbox/autorc/RX220/MiniCarBot/src/pwm_drive.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MiniCarBot
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('pwm__drive_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">pwm_drive.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="pwm__drive_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef __PWMDRIVE_H__</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define __PWMDRIVE_H__</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="pwm__drive_8h.html#a3eee2df383a4e1037f3af8fc340716f4">   16</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="pwm__drive_8h.html#a3eee2df383a4e1037f3af8fc340716f4">enm_pwm_port</a>{</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="pwm__drive_8h.html#a3eee2df383a4e1037f3af8fc340716f4ae5330af880c76509267d6928b52d26ce">   18</a></span>&#160;    <a class="code" href="pwm__drive_8h.html#a3eee2df383a4e1037f3af8fc340716f4ae5330af880c76509267d6928b52d26ce">M_L_PWM</a> = 0,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="pwm__drive_8h.html#a3eee2df383a4e1037f3af8fc340716f4a94370b7ecb8f0e84584c9c8b2cf88c28">M_R_PWM</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="pwm__drive_8h.html#a04bd5c5b5ec202f7d8f644cca1eca9ac">   21</a></span>&#160;} <a class="code" href="pwm__drive_8h.html#a04bd5c5b5ec202f7d8f644cca1eca9ac">pwm_port_t</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pwm__drive_8h.html#a84a7e259e3ab772c51dc5c7411bc9e94">init_pwm_drive</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pwm__drive_8h.html#a819463d53a9fc0a7cb3664d5876078ea">drive_pwm</a>(<a class="code" href="pwm__drive_8h.html#a04bd5c5b5ec202f7d8f644cca1eca9ac">pwm_port_t</a> pwm_port, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> duty);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aiodefine_8h_html_a0ff29830fde482fdf175988774b78edb"><div class="ttname"><a href="iodefine_8h.html#a0ff29830fde482fdf175988774b78edb">MTU</a></div><div class="ttdeci">#define MTU</div><div class="ttdef"><b>Definition:</b> iodefine.h:6572</div></div>
+<div class="ttc" id="aiodefine_8h_html_a5c7d626657797b7a342317228806c2d5"><div class="ttname"><a href="iodefine_8h.html#a5c7d626657797b7a342317228806c2d5">MSTP_MTU0</a></div><div class="ttdeci">#define MSTP_MTU0</div><div class="ttdef"><b>Definition:</b> iodefine.h:6495</div></div>
+<div class="ttc" id="aiodefine_8h_html_a26e079136415ff57657e59ec9bf9b119"><div class="ttname"><a href="iodefine_8h.html#a26e079136415ff57657e59ec9bf9b119">MPC</a></div><div class="ttdeci">#define MPC</div><div class="ttdef"><b>Definition:</b> iodefine.h:6571</div></div>
+<div class="ttc" id="apwm__drive_8h_html_a3eee2df383a4e1037f3af8fc340716f4"><div class="ttname"><a href="pwm__drive_8h.html#a3eee2df383a4e1037f3af8fc340716f4">enm_pwm_port</a></div><div class="ttdeci">enm_pwm_port</div><div class="ttdoc">PWM駆動ポート選択用の型。drive_pwmの引数として使用。</div><div class="ttdef"><b>Definition:</b> pwm_drive.h:16</div></div>
+<div class="ttc" id="apwm__drive_8h_html"><div class="ttname"><a href="pwm__drive_8h.html">pwm_drive.h</a></div><div class="ttdoc">左車輪モータと右車輪モータのPWM駆動</div></div>
+<div class="ttc" id="apwm__drive_8h_html_a84a7e259e3ab772c51dc5c7411bc9e94"><div class="ttname"><a href="pwm__drive_8h.html#a84a7e259e3ab772c51dc5c7411bc9e94">init_pwm_drive</a></div><div class="ttdeci">void init_pwm_drive()</div><div class="ttdoc">PWM駆動用の初期化処理</div><div class="ttdef"><b>Definition:</b> pwm_drive.c:8</div></div>
+<div class="ttc" id="apwm__drive_8c_html_a029405a7d2a1c8d1bcd243723502c67c"><div class="ttname"><a href="pwm__drive_8c.html#a029405a7d2a1c8d1bcd243723502c67c">TGR1kHz</a></div><div class="ttdeci">#define TGR1kHz</div><div class="ttdef"><b>Definition:</b> pwm_drive.c:4</div></div>
+<div class="ttc" id="apwm__drive_8h_html_a3eee2df383a4e1037f3af8fc340716f4a94370b7ecb8f0e84584c9c8b2cf88c28"><div class="ttname"><a href="pwm__drive_8h.html#a3eee2df383a4e1037f3af8fc340716f4a94370b7ecb8f0e84584c9c8b2cf88c28">M_R_PWM</a></div><div class="ttdeci">@ M_R_PWM</div><div class="ttdoc">左側車輪モータPWM駆動用ポート</div><div class="ttdef"><b>Definition:</b> pwm_drive.h:20</div></div>
+<div class="ttc" id="apwm__drive_8c_html_a84a7e259e3ab772c51dc5c7411bc9e94"><div class="ttname"><a href="pwm__drive_8c.html#a84a7e259e3ab772c51dc5c7411bc9e94">init_pwm_drive</a></div><div class="ttdeci">void init_pwm_drive()</div><div class="ttdoc">PWM駆動用の初期化処理</div><div class="ttdef"><b>Definition:</b> pwm_drive.c:8</div></div>
+<div class="ttc" id="aiodefine_8h_html"><div class="ttname"><a href="iodefine_8h.html">iodefine.h</a></div></div>
+<div class="ttc" id="apwm__drive_8h_html_a819463d53a9fc0a7cb3664d5876078ea"><div class="ttname"><a href="pwm__drive_8h.html#a819463d53a9fc0a7cb3664d5876078ea">drive_pwm</a></div><div class="ttdeci">void drive_pwm(pwm_port_t pwm_port, unsigned int duty)</div><div class="ttdoc">選択したPWM駆動用ポートで、Dutyを指定してPWM駆動を実施</div><div class="ttdef"><b>Definition:</b> pwm_drive.c:33</div></div>
+<div class="ttc" id="apwm__drive_8c_html_a819463d53a9fc0a7cb3664d5876078ea"><div class="ttname"><a href="pwm__drive_8c.html#a819463d53a9fc0a7cb3664d5876078ea">drive_pwm</a></div><div class="ttdeci">void drive_pwm(pwm_port_t pwm_port, unsigned int duty)</div><div class="ttdoc">選択したPWM駆動用ポートで、Dutyを指定してPWM駆動を実施</div><div class="ttdef"><b>Definition:</b> pwm_drive.c:33</div></div>
+<div class="ttc" id="aiodefine_8h_html_abdff78d5a0054325a3f880b2ac7c7070"><div class="ttname"><a href="iodefine_8h.html#abdff78d5a0054325a3f880b2ac7c7070">MTU0</a></div><div class="ttdeci">#define MTU0</div><div class="ttdef"><b>Definition:</b> iodefine.h:6573</div></div>
+<div class="ttc" id="apwm__drive_8h_html_a3eee2df383a4e1037f3af8fc340716f4ae5330af880c76509267d6928b52d26ce"><div class="ttname"><a href="pwm__drive_8h.html#a3eee2df383a4e1037f3af8fc340716f4ae5330af880c76509267d6928b52d26ce">M_L_PWM</a></div><div class="ttdeci">@ M_L_PWM</div><div class="ttdoc">左側車輪モータPWM駆動用ポート</div><div class="ttdef"><b>Definition:</b> pwm_drive.h:18</div></div>
+<div class="ttc" id="apwm__drive_8h_html_a04bd5c5b5ec202f7d8f644cca1eca9ac"><div class="ttname"><a href="pwm__drive_8h.html#a04bd5c5b5ec202f7d8f644cca1eca9ac">pwm_port_t</a></div><div class="ttdeci">enum enm_pwm_port pwm_port_t</div><div class="ttdoc">PWM駆動ポート選択用の型。drive_pwmの引数として使用。</div></div>
+<div class="ttc" id="aiodefine_8h_html_a09a0c85cd3da09d9cdf63a5ac4c39f77"><div class="ttname"><a href="iodefine_8h.html#a09a0c85cd3da09d9cdf63a5ac4c39f77">PORTB</a></div><div class="ttdeci">#define PORTB</div><div class="ttdef"><b>Definition:</b> iodefine.h:6587</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="pwm__drive_8h.html">pwm_drive.h</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

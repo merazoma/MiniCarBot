@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MiniCarBot: 自動運転ミニカーロボット(Flounder)</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MiniCarBot
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">自動運転ミニカーロボット(Flounder) </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>自動運転ミニカーロボット(Flounder)の主に、プログラムについてのドキュメントです。</p>
+<p>本ドキュメントは、Doxygenで作成されたもので、 関数等の解説はCソースのコメント等から、Doxygenで自動生成されます。</p>
+<hr  />
+<h1><a class="anchor" id="Flounderの概要"></a>
+Flounderの概要</h1>
+<h1><a class="anchor" id="マイコンのポート配置"></a>
+マイコンのポート配置</h1>
+<p>マイコンはRX220の秋月ボード。</p>
+<p>ボードのピン名は、秋月のRX220マイコンボードのマニュアルから。</p>
+<p>ポート名と周辺モジュール名はRX220のユーザーズマニュアルから抜粋。</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">ボードのピン  </th><th class="markdownTableHeadNone">ポート  </th><th class="markdownTableHeadNone">周辺モジュール  </th><th class="markdownTableHeadNone">入出力  </th><th class="markdownTableHeadNone">用途  </th><th class="markdownTableHeadNone">ソフト   </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN1-1  </td><td class="markdownTableBodyNone">AN000  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">左前フォトリフレクタ電圧値の取得  </td><td class="markdownTableBodyNone"><a class="el" href="analog__read_8h.html" title="フォトトランジスタとバッテリ電圧をAD取得">analog_read.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN1-2  </td><td class="markdownTableBodyNone">AN001  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">左フォトリフレクタ電圧値の取得  </td><td class="markdownTableBodyNone"><a class="el" href="analog__read_8h.html" title="フォトトランジスタとバッテリ電圧をAD取得">analog_read.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN1-3  </td><td class="markdownTableBodyNone">AN002  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">右前フォトリフレクタ電圧値の取得  </td><td class="markdownTableBodyNone"><a class="el" href="analog__read_8h.html" title="フォトトランジスタとバッテリ電圧をAD取得">analog_read.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN1-4  </td><td class="markdownTableBodyNone">AN003  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">右フォトリフレクタ電圧値の取得  </td><td class="markdownTableBodyNone"><a class="el" href="analog__read_8h.html" title="フォトトランジスタとバッテリ電圧をAD取得">analog_read.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN1-5  </td><td class="markdownTableBodyNone">AN004  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">バッテリ監視用の電圧値の取得  </td><td class="markdownTableBodyNone"><a class="el" href="analog__read_8h.html" title="フォトトランジスタとバッテリ電圧をAD取得">analog_read.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN1-8  </td><td class="markdownTableBodyNone">PE1  </td><td class="markdownTableBodyNone">MTIOC4C  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">左前と右のLED点灯用のパルス出力  </td><td class="markdownTableBodyNone"><a class="el" href="photo__reflector_8h.html">photo_reflector.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN1-9  </td><td class="markdownTableBodyNone">PE2  </td><td class="markdownTableBodyNone">MTIOC4A  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">左と右前のLED点灯用のパルス出力  </td><td class="markdownTableBodyNone"><a class="el" href="photo__reflector_8h.html">photo_reflector.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN1-12  </td><td class="markdownTableBodyNone">PE5  </td><td class="markdownTableBodyNone">IRQ5  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">左側超音波センサエコー割込み入力  </td><td class="markdownTableBodyNone"><a class="el" href="sonar_8h.html" title="超音波センサ(HC-SR04)による距離計測">sonar.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN1-14  </td><td class="markdownTableBodyNone">PA1  </td><td class="markdownTableBodyNone">MTCLKC  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">左車輪用モータのエンコーダパルス（A相）  </td><td class="markdownTableBodyNone"><a class="el" href="control__motor_8h.html" title="モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。">control_motor.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN1-15  </td><td class="markdownTableBodyNone">PA3  </td><td class="markdownTableBodyNone">MTCLKD  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">左車輪用モータのエンコーダパルス（B相）  </td><td class="markdownTableBodyNone"><a class="el" href="control__motor_8h.html" title="モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。">control_motor.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN1-16  </td><td class="markdownTableBodyNone">PA4  </td><td class="markdownTableBodyNone">MTCLKA  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">右車輪用モータのエンコーダパルス（A相）  </td><td class="markdownTableBodyNone"><a class="el" href="control__motor_8h.html" title="モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。">control_motor.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN1-17  </td><td class="markdownTableBodyNone">PA6  </td><td class="markdownTableBodyNone">MTCLKB  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">右車輪用モータのエンコーダパルス（B相）  </td><td class="markdownTableBodyNone"><a class="el" href="control__motor_8h.html" title="モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。">control_motor.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN1-24  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">RS232_RXD  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">RS232入力（プログラム書き込み用）  </td><td class="markdownTableBodyNone">-   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN1-25  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">RS232_TXD  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">RS232出力（デバッグ用）  </td><td class="markdownTableBodyNone"><a class="el" href="sci_8h.html" title="RS232によるシリアル通信。RX220からの出力のみ実装">sci.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN2-2  </td><td class="markdownTableBodyNone">PB1  </td><td class="markdownTableBodyNone">MTIOC0C  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">左車輪用モータ駆動用のPWM出力  </td><td class="markdownTableBodyNone"><a class="el" href="control__motor_8h.html" title="モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。">control_motor.h</a>, <a class="el" href="pwm__drive_8h.html" title="左車輪モータと右車輪モータのPWM駆動">pwm_drive.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN2-3  </td><td class="markdownTableBodyNone">PB3  </td><td class="markdownTableBodyNone">MTIOC0A  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">右車輪用モータ駆動用のPWM出力  </td><td class="markdownTableBodyNone"><a class="el" href="control__motor_8h.html" title="モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。">control_motor.h</a>, <a class="el" href="pwm__drive_8h.html" title="左車輪モータと右車輪モータのPWM駆動">pwm_drive.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN2-4  </td><td class="markdownTableBodyNone">PB5  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">右車輪用モータの正転方向指示  </td><td class="markdownTableBodyNone"><a class="el" href="control__motor_8h.html" title="モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。">control_motor.h</a>, <a class="el" href="general__io_8h.html" title="汎用ポートのON/OFF出力">general_io.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN2-5  </td><td class="markdownTableBodyNone">PB6  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">左車輪用モータの正転方向指示  </td><td class="markdownTableBodyNone"><a class="el" href="control__motor_8h.html" title="モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。">control_motor.h</a>, <a class="el" href="general__io_8h.html" title="汎用ポートのON/OFF出力">general_io.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN2-6  </td><td class="markdownTableBodyNone">PB7  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">左車輪用モータの逆転方向指示  </td><td class="markdownTableBodyNone"><a class="el" href="control__motor_8h.html" title="モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。">control_motor.h</a>, <a class="el" href="general__io_8h.html" title="汎用ポートのON/OFF出力">general_io.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN2-7  </td><td class="markdownTableBodyNone">PC2  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">左車輪用モータの逆転方向指示  </td><td class="markdownTableBodyNone"><a class="el" href="control__motor_8h.html" title="モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。">control_motor.h</a>, <a class="el" href="general__io_8h.html" title="汎用ポートのON/OFF出力">general_io.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN2-8  </td><td class="markdownTableBodyNone">PC3  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">モータ駆動開始指示  </td><td class="markdownTableBodyNone"><a class="el" href="control__motor_8h.html" title="モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。">control_motor.h</a>, <a class="el" href="general__io_8h.html" title="汎用ポートのON/OFF出力">general_io.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN2-9  </td><td class="markdownTableBodyNone">PC4  </td><td class="markdownTableBodyNone">SSLA0  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">シリアル通信のスレーブ指示（IMUとの通信用）  </td><td class="markdownTableBodyNone">imu_serial.h   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN2-10  </td><td class="markdownTableBodyNone">PC5  </td><td class="markdownTableBodyNone">SSLA0  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">シリアル通信用クロック（IMUとの通信用）  </td><td class="markdownTableBodyNone">imu_serial.h   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN2-11  </td><td class="markdownTableBodyNone">PC6  </td><td class="markdownTableBodyNone">MOSIA  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">シリアル通信出力（IMUとの通信用）  </td><td class="markdownTableBodyNone">imu_serial.h   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN2-12  </td><td class="markdownTableBodyNone">PC7  </td><td class="markdownTableBodyNone">MISOA  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">シリアル通信入力（IMUとの通信用）  </td><td class="markdownTableBodyNone">imu_serial.h   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN2-13  </td><td class="markdownTableBodyNone">P54  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">デバッグ用LED0の点灯  </td><td class="markdownTableBodyNone"><a class="el" href="general__io_8h.html" title="汎用ポートのON/OFF出力">general_io.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN2-14  </td><td class="markdownTableBodyNone">P55  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">デバッグ用LED1の点灯  </td><td class="markdownTableBodyNone"><a class="el" href="general__io_8h.html" title="汎用ポートのON/OFF出力">general_io.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN2-15  </td><td class="markdownTableBodyNone">PH0  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">デバッグ用LED2の点灯  </td><td class="markdownTableBodyNone"><a class="el" href="general__io_8h.html" title="汎用ポートのON/OFF出力">general_io.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN2-16  </td><td class="markdownTableBodyNone">PH1  </td><td class="markdownTableBodyNone">IRQ0  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">前側超音波センサエコー割込み入力  </td><td class="markdownTableBodyNone"><a class="el" href="sonar_8h.html" title="超音波センサ(HC-SR04)による距離計測">sonar.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN2-17  </td><td class="markdownTableBodyNone">PH2  </td><td class="markdownTableBodyNone">IRQ1  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">右側超音波センサエコー割込み入力  </td><td class="markdownTableBodyNone"><a class="el" href="sonar_8h.html" title="超音波センサ(HC-SR04)による距離計測">sonar.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN2-19  </td><td class="markdownTableBodyNone">PH3  </td><td class="markdownTableBodyNone">IRQ4  </td><td class="markdownTableBodyNone">入力  </td><td class="markdownTableBodyNone">モード切り替えスイッチ用割込み入力  </td><td class="markdownTableBodyNone">switch.h   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN2-20  </td><td class="markdownTableBodyNone">P15  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">モード表示用LED0の点灯  </td><td class="markdownTableBodyNone"><a class="el" href="general__io_8h.html" title="汎用ポートのON/OFF出力">general_io.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN2-21  </td><td class="markdownTableBodyNone">P16  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">モード表示用LED1の点灯  </td><td class="markdownTableBodyNone"><a class="el" href="general__io_8h.html" title="汎用ポートのON/OFF出力">general_io.h</a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">CN2-22  </td><td class="markdownTableBodyNone">P17  </td><td class="markdownTableBodyNone">MTIOC3A  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">超音波センサトリガ出力（前、左、右同時駆動）  </td><td class="markdownTableBodyNone"><a class="el" href="sonar_8h.html" title="超音波センサ(HC-SR04)による距離計測">sonar.h</a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">CN2-27  </td><td class="markdownTableBodyNone">P32  </td><td class="markdownTableBodyNone">TMO3  </td><td class="markdownTableBodyNone">出力  </td><td class="markdownTableBodyNone">ブザー駆動用出力  </td><td class="markdownTableBodyNone"><a class="el" href="sound__buzzer_8h.html" title="ブザーを駆動するための周波数可変の矩形波出力">sound_buzzer.h</a>   </td></tr>
+</table>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

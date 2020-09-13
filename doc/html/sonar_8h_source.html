@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MiniCarBot: C:/Users/Kobayashi/Dropbox/autorc/RX220/MiniCarBot/src/sonar.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MiniCarBot
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('sonar_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">sonar.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="sonar_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef __SONAR_H__</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define __SONAR_H__</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="sonar_8h.html#adf0f1be8a7c1092c680299d3460c12cd">   27</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="sonar_8h.html#adf0f1be8a7c1092c680299d3460c12cd">enm_sonar_port</a>{</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="sonar_8h.html#adf0f1be8a7c1092c680299d3460c12cda417a264f9c8ac7431420c42f1f69b05b">   29</a></span>&#160;    <a class="code" href="sonar_8h.html#adf0f1be8a7c1092c680299d3460c12cda417a264f9c8ac7431420c42f1f69b05b">SONAR_LEFT</a> = 0,</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="sonar_8h.html#adf0f1be8a7c1092c680299d3460c12cda6fdbc076d9da87fb4cab4534f1a08d6d">   31</a></span>&#160;    <a class="code" href="sonar_8h.html#adf0f1be8a7c1092c680299d3460c12cda6fdbc076d9da87fb4cab4534f1a08d6d">SONAR_FRONT</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="sonar_8h.html#adf0f1be8a7c1092c680299d3460c12cda2b96d46391b25b78b7a3dc5f33dbc033">SONAR_RIGHT</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="sonar_8h.html#adf0f1be8a7c1092c680299d3460c12cda2b96d46391b25b78b7a3dc5f33dbc033">   34</a></span>&#160;} <a class="code" href="sonar_8h.html#a85c0bf1479c2b5f0aa8c77f321896022">sonar_port_t</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="sonar_8h.html#a4536c29acdd706cb369a5b5f32ce57a1">init_sonar</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">int</span> <a class="code" href="sonar_8h.html#a79d59d143a65fbc3f3a3a1ebf7690919">get_sonar_distance</a>(<a class="code" href="sonar_8h.html#a85c0bf1479c2b5f0aa8c77f321896022">sonar_port_t</a> port);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">void</span> <a class="code" href="sonar_8h.html#a43b1fa74babb7d10aabd9af8c3cc74cb">excep_sonar_echo_left</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span> <a class="code" href="sonar_8h.html#ac5a971b223b5ecde38b56f58dcd89ae2">excep_sonar_echo_front</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">void</span> <a class="code" href="sonar_8h.html#a301ef00f2ede5be85f3ef19065938298">excep_sonar_echo_right</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aiodefine_8h_html_a7e2386d3b1084b5b875ae3696f550ba9"><div class="ttname"><a href="iodefine_8h.html#a7e2386d3b1084b5b875ae3696f550ba9">PORTE</a></div><div class="ttdeci">#define PORTE</div><div class="ttdef"><b>Definition:</b> iodefine.h:6590</div></div>
+<div class="ttc" id="aiodefine_8h_html_a0ff29830fde482fdf175988774b78edb"><div class="ttname"><a href="iodefine_8h.html#a0ff29830fde482fdf175988774b78edb">MTU</a></div><div class="ttdeci">#define MTU</div><div class="ttdef"><b>Definition:</b> iodefine.h:6572</div></div>
+<div class="ttc" id="asonar_8h_html_adf0f1be8a7c1092c680299d3460c12cda417a264f9c8ac7431420c42f1f69b05b"><div class="ttname"><a href="sonar_8h.html#adf0f1be8a7c1092c680299d3460c12cda417a264f9c8ac7431420c42f1f69b05b">SONAR_LEFT</a></div><div class="ttdeci">@ SONAR_LEFT</div><div class="ttdoc">左側超音波センサ</div><div class="ttdef"><b>Definition:</b> sonar.h:29</div></div>
+<div class="ttc" id="asonar_8c_html_a79d59d143a65fbc3f3a3a1ebf7690919"><div class="ttname"><a href="sonar_8c.html#a79d59d143a65fbc3f3a3a1ebf7690919">get_sonar_distance</a></div><div class="ttdeci">int get_sonar_distance(sonar_port_t port)</div><div class="ttdoc">超音波センサを指定して、その超音波センサで測定した距離を取得</div><div class="ttdef"><b>Definition:</b> sonar.c:24</div></div>
+<div class="ttc" id="asonar_8h_html_a85c0bf1479c2b5f0aa8c77f321896022"><div class="ttname"><a href="sonar_8h.html#a85c0bf1479c2b5f0aa8c77f321896022">sonar_port_t</a></div><div class="ttdeci">enum enm_sonar_port sonar_port_t</div><div class="ttdoc">超音波センサ選択用の型。get_sonar_distanceの引数として使用。</div></div>
+<div class="ttc" id="asonar_8h_html_adf0f1be8a7c1092c680299d3460c12cda2b96d46391b25b78b7a3dc5f33dbc033"><div class="ttname"><a href="sonar_8h.html#adf0f1be8a7c1092c680299d3460c12cda2b96d46391b25b78b7a3dc5f33dbc033">SONAR_RIGHT</a></div><div class="ttdeci">@ SONAR_RIGHT</div><div class="ttdoc">右側超音波センサ</div><div class="ttdef"><b>Definition:</b> sonar.h:33</div></div>
+<div class="ttc" id="asonar_8h_html_a4536c29acdd706cb369a5b5f32ce57a1"><div class="ttname"><a href="sonar_8h.html#a4536c29acdd706cb369a5b5f32ce57a1">init_sonar</a></div><div class="ttdeci">void init_sonar()</div><div class="ttdoc">超音波センサ初期化処理</div><div class="ttdef"><b>Definition:</b> sonar.c:19</div></div>
+<div class="ttc" id="asonar_8h_html_ac5a971b223b5ecde38b56f58dcd89ae2"><div class="ttname"><a href="sonar_8h.html#ac5a971b223b5ecde38b56f58dcd89ae2">excep_sonar_echo_front</a></div><div class="ttdeci">void excep_sonar_echo_front()</div><div class="ttdoc">前側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる</div><div class="ttdef"><b>Definition:</b> sonar.c:47</div></div>
+<div class="ttc" id="aiodefine_8h_html_a3c51d67670ebb5eedca9cf996e826b8c"><div class="ttname"><a href="iodefine_8h.html#a3c51d67670ebb5eedca9cf996e826b8c">ICU</a></div><div class="ttdeci">#define ICU</div><div class="ttdef"><b>Definition:</b> iodefine.h:6569</div></div>
+<div class="ttc" id="aiodefine_8h_html_ae937eb62296b29af24cb26fd0e6d6c14"><div class="ttname"><a href="iodefine_8h.html#ae937eb62296b29af24cb26fd0e6d6c14">MSTP_MTU</a></div><div class="ttdeci">#define MSTP_MTU</div><div class="ttdef"><b>Definition:</b> iodefine.h:6494</div></div>
+<div class="ttc" id="asonar_8c_html_a89b0cc05719139518f4b2a19075e5853"><div class="ttname"><a href="sonar_8c.html#a89b0cc05719139518f4b2a19075e5853">excep_sonar_echo_front</a></div><div class="ttdeci">void excep_sonar_echo_front(void)</div><div class="ttdoc">前側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる</div><div class="ttdef"><b>Definition:</b> sonar.c:47</div></div>
+<div class="ttc" id="aiodefine_8h_html_a05fc0dac6b27775ce1d371db674938da"><div class="ttname"><a href="iodefine_8h.html#a05fc0dac6b27775ce1d371db674938da">PORTH</a></div><div class="ttdeci">#define PORTH</div><div class="ttdef"><b>Definition:</b> iodefine.h:6591</div></div>
+<div class="ttc" id="asonar_8h_html"><div class="ttname"><a href="sonar_8h.html">sonar.h</a></div><div class="ttdoc">超音波センサ(HC-SR04)による距離計測</div></div>
+<div class="ttc" id="asci_8h_html"><div class="ttname"><a href="sci_8h.html">sci.h</a></div><div class="ttdoc">RS232によるシリアル通信。RX220からの出力のみ実装</div></div>
+<div class="ttc" id="aiodefine_8h_html_a26e079136415ff57657e59ec9bf9b119"><div class="ttname"><a href="iodefine_8h.html#a26e079136415ff57657e59ec9bf9b119">MPC</a></div><div class="ttdeci">#define MPC</div><div class="ttdef"><b>Definition:</b> iodefine.h:6571</div></div>
+<div class="ttc" id="asonar_8h_html_a301ef00f2ede5be85f3ef19065938298"><div class="ttname"><a href="sonar_8h.html#a301ef00f2ede5be85f3ef19065938298">excep_sonar_echo_right</a></div><div class="ttdeci">void excep_sonar_echo_right()</div><div class="ttdoc">右側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる</div><div class="ttdef"><b>Definition:</b> sonar.c:51</div></div>
+<div class="ttc" id="aiodefine_8h_html_aa58333329c7f82899161807f3b64bc8c"><div class="ttname"><a href="iodefine_8h.html#aa58333329c7f82899161807f3b64bc8c">MSTP_MTU3</a></div><div class="ttdeci">#define MSTP_MTU3</div><div class="ttdef"><b>Definition:</b> iodefine.h:6498</div></div>
+<div class="ttc" id="aiodefine_8h_html_a83b698b796fa8d1625536439f28ea575"><div class="ttname"><a href="iodefine_8h.html#a83b698b796fa8d1625536439f28ea575">PORT1</a></div><div class="ttdeci">#define PORT1</div><div class="ttdef"><b>Definition:</b> iodefine.h:6581</div></div>
+<div class="ttc" id="asonar_8h_html_a79d59d143a65fbc3f3a3a1ebf7690919"><div class="ttname"><a href="sonar_8h.html#a79d59d143a65fbc3f3a3a1ebf7690919">get_sonar_distance</a></div><div class="ttdeci">int get_sonar_distance(sonar_port_t port)</div><div class="ttdoc">超音波センサを指定して、その超音波センサで測定した距離を取得</div><div class="ttdef"><b>Definition:</b> sonar.c:24</div></div>
+<div class="ttc" id="aiodefine_8h_html"><div class="ttname"><a href="iodefine_8h.html">iodefine.h</a></div></div>
+<div class="ttc" id="asonar_8c_html_a4536c29acdd706cb369a5b5f32ce57a1"><div class="ttname"><a href="sonar_8c.html#a4536c29acdd706cb369a5b5f32ce57a1">init_sonar</a></div><div class="ttdeci">void init_sonar()</div><div class="ttdoc">超音波センサ初期化処理</div><div class="ttdef"><b>Definition:</b> sonar.c:19</div></div>
+<div class="ttc" id="aiodefine_8h_html_a4399fbf184089958d1ffe9c7c53cda4d"><div class="ttname"><a href="iodefine_8h.html#a4399fbf184089958d1ffe9c7c53cda4d">MTU3</a></div><div class="ttdeci">#define MTU3</div><div class="ttdef"><b>Definition:</b> iodefine.h:6576</div></div>
+<div class="ttc" id="aiodefine_8h_html_adec85bca8eae7e6a32e76b3d56881701"><div class="ttname"><a href="iodefine_8h.html#adec85bca8eae7e6a32e76b3d56881701">IR</a></div><div class="ttdeci">#define IR(x, y)</div><div class="ttdef"><b>Definition:</b> iodefine.h:6533</div></div>
+<div class="ttc" id="asonar_8c_html_a5eaf374beaf73028c5689eb124766cde"><div class="ttname"><a href="sonar_8c.html#a5eaf374beaf73028c5689eb124766cde">excep_sonar_echo_left</a></div><div class="ttdeci">void excep_sonar_echo_left(void)</div><div class="ttdoc">左側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる</div><div class="ttdef"><b>Definition:</b> sonar.c:43</div></div>
+<div class="ttc" id="asonar_8c_html_a942c57221a73a9ed3de4d16739f62914"><div class="ttname"><a href="sonar_8c.html#a942c57221a73a9ed3de4d16739f62914">CntToDistance</a></div><div class="ttdeci">#define CntToDistance</div><div class="ttdoc">タイマカウントから距離への変換用定数 340 m/s * 2 us/cnt / 2 = 340 um/cnt</div><div class="ttdef"><b>Definition:</b> sonar.c:7</div></div>
+<div class="ttc" id="asonar_8h_html_adf0f1be8a7c1092c680299d3460c12cda6fdbc076d9da87fb4cab4534f1a08d6d"><div class="ttname"><a href="sonar_8h.html#adf0f1be8a7c1092c680299d3460c12cda6fdbc076d9da87fb4cab4534f1a08d6d">SONAR_FRONT</a></div><div class="ttdeci">@ SONAR_FRONT</div><div class="ttdoc">前側超音波センサ</div><div class="ttdef"><b>Definition:</b> sonar.h:31</div></div>
+<div class="ttc" id="asonar_8h_html_adf0f1be8a7c1092c680299d3460c12cd"><div class="ttname"><a href="sonar_8h.html#adf0f1be8a7c1092c680299d3460c12cd">enm_sonar_port</a></div><div class="ttdeci">enm_sonar_port</div><div class="ttdoc">超音波センサ選択用の型。get_sonar_distanceの引数として使用。</div><div class="ttdef"><b>Definition:</b> sonar.h:27</div></div>
+<div class="ttc" id="aiodefine_8h_html_af54a81ab6aaf000c8db0350d68e6ba74"><div class="ttname"><a href="iodefine_8h.html#af54a81ab6aaf000c8db0350d68e6ba74">IEN</a></div><div class="ttdeci">#define IEN(x, y)</div><div class="ttdef"><b>Definition:</b> iodefine.h:6539</div></div>
+<div class="ttc" id="asonar_8c_html_aa17182916c96c805231857174f33d903"><div class="ttname"><a href="sonar_8c.html#aa17182916c96c805231857174f33d903">excep_sonar_echo_right</a></div><div class="ttdeci">void excep_sonar_echo_right(void)</div><div class="ttdoc">右側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる</div><div class="ttdef"><b>Definition:</b> sonar.c:51</div></div>
+<div class="ttc" id="aiodefine_8h_html_addd53f535e8b5f424408374e380fbd11"><div class="ttname"><a href="iodefine_8h.html#addd53f535e8b5f424408374e380fbd11">IPR</a></div><div class="ttdeci">#define IPR(x, y)</div><div class="ttdef"><b>Definition:</b> iodefine.h:6542</div></div>
+<div class="ttc" id="asonar_8h_html_a43b1fa74babb7d10aabd9af8c3cc74cb"><div class="ttname"><a href="sonar_8h.html#a43b1fa74babb7d10aabd9af8c3cc74cb">excep_sonar_echo_left</a></div><div class="ttdeci">void excep_sonar_echo_left()</div><div class="ttdoc">左側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる</div><div class="ttdef"><b>Definition:</b> sonar.c:43</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="sonar_8h.html">sonar.h</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

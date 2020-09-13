@@ -1,0 +1,64 @@
+﻿/**
+
+\mainpage 自動運転ミニカーロボット(Flounder)
+
+自動運転ミニカーロボット(Flounder)の主に、プログラムについてのドキュメントです。
+
+本ドキュメントは、Doxygenで作成されたもので、
+関数等の解説はCソースのコメント等から、Doxygenで自動生成されます。
+
+<HR>
+
+\section Flounderの概要
+
+
+\section マイコンのポート配置
+マイコンはRX220の秋月ボード。
+
+ボードのピン名は、秋月のRX220マイコンボードのマニュアルから。
+
+ポート名と周辺モジュール名はRX220のユーザーズマニュアルから抜粋。
+
+
+|ボードのピン  | ポート        | 周辺モジュール | 入出力 | 用途 | ソフト |
+|------------- | ------------- |-------------|-------------|-------------|-------------|
+|CN1-1          | AN000 | - | 入力 | 左前フォトリフレクタ電圧値の取得 |analog_read.h|
+|CN1-2          | AN001 | - | 入力 | 左フォトリフレクタ電圧値の取得 |analog_read.h|
+|CN1-3          | AN002 | - | 入力 | 右前フォトリフレクタ電圧値の取得 |analog_read.h|
+|CN1-4          | AN003 | - | 入力 | 右フォトリフレクタ電圧値の取得 |analog_read.h|
+|CN1-5          | AN004 | - | 入力 | バッテリ監視用の電圧値の取得 |analog_read.h|
+|CN1-8          | PE1 | MTIOC4C | 出力 | 左前と右のLED点灯用のパルス出力 |photo_reflector.h|
+|CN1-9          | PE2 | MTIOC4A | 出力 | 左と右前のLED点灯用のパルス出力 |photo_reflector.h|
+|CN1-12          | PE5 | IRQ5 | 入力 | 左側超音波センサエコー割込み入力 |sonar.h|
+|CN1-14          | PA1 | MTCLKC | 入力 | 左車輪用モータのエンコーダパルス（A相） |control_motor.h|
+|CN1-15          | PA3 | MTCLKD | 入力 | 左車輪用モータのエンコーダパルス（B相） |control_motor.h|
+|CN1-16          | PA4 | MTCLKA | 入力 | 右車輪用モータのエンコーダパルス（A相）|control_motor.h|
+|CN1-17          | PA6 | MTCLKB | 入力 | 右車輪用モータのエンコーダパルス（B相） |control_motor.h|
+|CN1-24          | - | RS232_RXD | 入力 | RS232入力（プログラム書き込み用） |-|
+|CN1-25          | - | RS232_TXD | 出力 | RS232出力（デバッグ用） |sci.h|
+|CN2-2          | PB1 | MTIOC0C | 出力 | 左車輪用モータ駆動用のPWM出力 |control_motor.h, pwm_drive.h|
+|CN2-3          | PB3 | MTIOC0A | 出力 | 右車輪用モータ駆動用のPWM出力 |control_motor.h, pwm_drive.h|
+|CN2-4          | PB5 | - | 出力 | 右車輪用モータの正転方向指示 |control_motor.h, general_io.h|
+|CN2-5          | PB6 | - | 出力 | 左車輪用モータの正転方向指示 |control_motor.h, general_io.h|
+|CN2-6          | PB7 | - | 出力 | 左車輪用モータの逆転方向指示 |control_motor.h, general_io.h|
+|CN2-7          | PC2 | - | 出力 | 左車輪用モータの逆転方向指示 |control_motor.h, general_io.h|
+|CN2-8          | PC3 | - | 出力 | モータ駆動開始指示 |control_motor.h, general_io.h|
+|CN2-9          | PC4 | SSLA0 | 出力 | シリアル通信のスレーブ指示（IMUとの通信用）|imu_serial.h|
+|CN2-10          | PC5 | SSLA0 | 出力 | シリアル通信用クロック（IMUとの通信用）|imu_serial.h|
+|CN2-11          | PC6 | MOSIA | 出力 | シリアル通信出力（IMUとの通信用）|imu_serial.h|
+|CN2-12          | PC7 | MISOA | 入力 | シリアル通信入力（IMUとの通信用）|imu_serial.h|
+|CN2-13          | P54 | - | 出力 | デバッグ用LED0の点灯 |general_io.h|
+|CN2-14          | P55 | - | 出力 | デバッグ用LED1の点灯 |general_io.h|
+|CN2-15          | PH0 | - | 出力 | デバッグ用LED2の点灯 |general_io.h|
+|CN2-16          | PH1 | IRQ0 | 入力 | 前側超音波センサエコー割込み入力 |sonar.h|
+|CN2-17          | PH2 | IRQ1 | 入力 | 右側超音波センサエコー割込み入力 |sonar.h|
+|CN2-19          | PH3 | IRQ4 | 入力 | モード切り替えスイッチ用割込み入力 |switch.h|
+|CN2-20          | P15 | - | 出力 | モード表示用LED0の点灯 |general_io.h|
+|CN2-21          | P16 | - | 出力 | モード表示用LED1の点灯 |general_io.h|
+|CN2-22          | P17 | MTIOC3A | 出力 | 超音波センサトリガ出力（前、左、右同時駆動） |sonar.h|
+|CN2-27          | P32 | TMO3 | 出力 | ブザー駆動用出力 |sound_buzzer.h|
+
+
+
+
+**/

@@ -1,0 +1,14 @@
+digraph "sound_buzzer"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="sound_buzzer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="ブザー駆動用の周波数可変の矩形波出力指示"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="test_sound_buzzer_150",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#a3addf62be1d2a471e45112e27b4fdea2",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="test_sound_buzzer_note",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#a92509728359db413b38511d0305a594d",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="test_sound_buzzer_update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#ad48ed198b3c55ed6a845c401cdcd3477",tooltip=" "];
+}
