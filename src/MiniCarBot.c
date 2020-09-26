@@ -34,7 +34,7 @@ void main(void)
 	// test_analog_read();
 	// test_sonar();
 	test_drive_motor();
-	test_sound_buzzer_note();
+	// test_sound_buzzer_note();
 	// test_photo_reflector();
 	// test_general_io();
 	// test_drive_pwm_0_100();
@@ -42,7 +42,7 @@ void main(void)
 	// test_sound_buzzer();
 	// test_sound_buzzer_update();
 	// test_sound_buzzer_note();
-	// test_sonar();
+	test_sonar();
 	while(1) {
 		
 	}

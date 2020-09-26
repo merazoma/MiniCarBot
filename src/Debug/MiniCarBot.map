@@ -1,32 +1,32 @@
-Optimizing Linkage Editor (V.10.02.00.000)        11-Sep-2020 02:04:49
+Optimizing Linkage Editor (V.10.02.00.000)        26-Sep-2020 23:13:33
 
 *** Options ***
 
--subcommand=C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\MiniCarBot.hlk
+-subcommand=C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\MiniCarBot.hlk
 -noprelink
 -rom=D=R,D_1=R_1,D_2=R_2
 -nomessage
--list="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\MiniCarBot.map"
+-list="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\MiniCarBot.map"
 -nooptimize
 -start=B_1,R_1,B_2,R_2,B,R,SU,SI/01000,PResetPRG/0FFFF8000,C_1,C_2,C,C$*,D_1,D_2,D,P,PIntPRG,W*,L/0FFFF8100,FIXEDVECT/0FFFFFFD0
 -nologo
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\analog_read.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\control_motor.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\dbsct.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\general_io.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\init_rx220.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\intprg.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\MiniCarBot.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\pwm_drive.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\resetprg.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\sbrk.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\sci.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\sonar.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\sound_buzzer.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\test_function.obj"
--input="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\vecttbl.obj"
--library="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\MiniCarBot.lib"
--output="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\MiniCarBot.abs"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\analog_read.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\control_motor.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\dbsct.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\general_io.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\init_rx220.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\intprg.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\MiniCarBot.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\pwm_drive.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\resetprg.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\sbrk.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\sci.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\sonar.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\sound_buzzer.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\test_function.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\vecttbl.obj"
+-library="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\MiniCarBot.lib"
+-output="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\MiniCarBot.abs"
 -end
 
 *** Error information ***
@@ -72,17 +72,17 @@ D_2
 D
                                   ffff8580  ffff8583         4   4
 P
-                                  ffff8584  ffff9628      10a5   1
+                                  ffff8584  ffff9580       ffd   1
 PIntPRG
-                                  ffff9629  ffff9742       11a   1
+                                  ffff9581  ffff969a       11a   1
 W_1
-                                  ffff9743  ffff974c         a   1
+                                  ffff969b  ffff96a4         a   1
 W_2
-                                  ffff974e  ffff974e         0   2
+                                  ffff96a6  ffff96a6         0   2
 W
-                                  ffff9750  ffff9750         0   4
+                                  ffff96a8  ffff96a8         0   4
 L
-                                  ffff9750  ffff9789        3a   4
+                                  ffff96a8  ffff9719        72   4
 $ADDR_C_FFFFFF80
                                   ffffff80  ffffff83         4   1
 FIXEDVECT

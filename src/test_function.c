@@ -158,25 +158,24 @@ void test_sonar() {
 	{
 		d = get_sonar_distance(SONAR_LEFT);
 		sci_printf("Left Sonar distance = %u\r\n", d);
-		// d = get_sonar_distance(SONAR_FRONT);
-		// sci_printf("Front Sonar distance = %u\r\n", d);
-		// d = get_sonar_distance(SONAR_RIGHT);
-		// sci_printf("Right Sonar distance = %u\r\n", d);
+		d = get_sonar_distance(SONAR_FRONT);
+		sci_printf("Front Sonar distance = %u\r\n", d);
+		d = get_sonar_distance(SONAR_RIGHT);
+		sci_printf("Right Sonar distance = %u\r\n", d);
 		for (i=0; i<2000000;i++);
 	}
 }
 
-void test_photo_reflector() {
-	int photo_ad;
-	int i;
-	while (1)
-	{
-		photo_ad = get_photo_reflecor_distance(PHOTO_SENS_LF);
-		sci_printf("Left Front Photo AD value = %d\r\n", photo_ad);
-		for (i=0; i<2000000;i++);
-	}
-
-}
+// void test_photo_reflector() {
+// 	int photo_ad;
+// 	int i;
+// 	while (1)
+// 	{
+// 		photo_ad = get_photo_reflecor_distance(PHOTO_SENS_LF);
+// 		sci_printf("Left Front Photo AD value = %d\r\n", photo_ad);
+// 		for (i=0; i<2000000;i++);
+// 	}
+// }
 
 void test_drive_motor() {
 	// drive_motor_duty(LEFT, 40, FORWARD);

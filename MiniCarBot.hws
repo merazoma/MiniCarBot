@@ -3,12 +3,12 @@
 [DATABASE_VERSION]
 "11.0" 
 [WORKSPACE_DETAILS]
-"MiniCarBot" "C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot" "C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\MiniCarBot.hws" "RX" "Renesas RX Standard" 
+"MiniCarBot" "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot" "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\MiniCarBot.hws" "RX" "Renesas RX Standard" 
 [SHARED_WORKSPACE_CONTROL_STATUS]
 "" "" "" 
 "" "" "" 
 [PROJECTS]
-"MiniCarBot" "C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src" "C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\MiniCarBot.hwp" 0 
+"MiniCarBot" "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src" "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\MiniCarBot.hwp" 0 
 [INFORMATION]
 "ワークスペース情報がありません" 
 [SCRAP]

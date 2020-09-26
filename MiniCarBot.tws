@@ -7,11 +7,9 @@
 [GENERAL_DATA]
 [BREAKPOINTS]
 [OPEN_WORKSPACE_FILES]
-"C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\MiniCarBot.c" 
-"C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\sonar.c" 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\test_function.c" 
 [WORKSPACE_FILE_STATES]
-"C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\MiniCarBot.c" 26 26 1385 479 0 1 
-"C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\sonar.c" -8 -31 1083 556 1 0 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\test_function.c" -8 -31 1635 752 1 0 
 [LOADED_PROJECTS]
 "MiniCarBot" 
 [END]

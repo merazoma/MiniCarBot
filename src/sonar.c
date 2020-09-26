@@ -127,7 +127,7 @@ static void init_mtu3() {
     MTU3.TMDR.BIT.MD    = 0x2;          //PWMモード1
     MTU.TOER.BIT.OE3B   = 0;            //MTIOC3B出力禁止
     MTU.TOER.BIT.OE3D   = 0;            //MTIOC3D出力禁止
-    MTU3.TIORH.BYTE     = 0x25;         //MTIOC3A初期出力High, コンペアマッチでLow
+    MTU3.TIORH.BYTE     = 0x12;         //初期出力Low, コンペアマッチでHigh（ハイサイド駆動で反転するため）
     MTU3.TGRB           = 32000 - 1;    //周期 64 ms
     MTU3.TGRA           = 5 - 1;        //10 us のHighトリガ
     // MTU3.TIER.BIT.TGIEB = 0x1;          //割込み要求（TGIB）を許可
