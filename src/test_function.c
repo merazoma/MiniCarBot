@@ -5,18 +5,13 @@
 #include "sound_buzzer.h"
 #include "sonar.h"
 #include "iodefine.h"
+#include "control_motor.h"
+#include "photo_reflector.h"
 
 
 void test_general_io(void) {
-	digital_write(DBG_LED2, HIGH);
-
-	// int i = 0;
-	// while(1) {
-	// 	for (i=0; i<2000000;i++);
-	// 	digital_write(DBG_LED2, HIGH);
-	// 	for (i=0; i<2000000;i++);
-	// 	digital_write(DBG_LED2, LOW);
-	// }
+	digital_write(M_R_IN1, HIGH);
+	digital_write(M_R_IN2, HIGH);
 }
 
 void test_sci_printf() {
@@ -89,6 +84,10 @@ void test_sound_buzzer_update() {
 
 }
 
+/**
+ * @brief shooting star song!!!
+ * 
+ */
 void test_sound_buzzer_note(){
 	int j;
 	while (1)
@@ -113,8 +112,12 @@ void test_sound_buzzer_note(){
 		for (j=0; j<4000000;j++);
 		stop_buzzer();
 		for (j=0; j<4000000;j++);
-		sound_buzzer(NOTE_G4);
+		sound_buzzer(NOTE_A4);
 		for (j=0; j<4000000;j++);
+		stop_buzzer();
+		for (j=0; j<4000000;j++);
+		sound_buzzer(NOTE_G4);
+		for (j=0; j<8000000;j++);
 		stop_buzzer();
 		for (j=0; j<4000000;j++);
 		sound_buzzer(NOTE_F4);
@@ -137,7 +140,13 @@ void test_sound_buzzer_note(){
 		for (j=0; j<4000000;j++);
 		stop_buzzer();
 		for (j=0; j<4000000;j++);
+		sound_buzzer(NOTE_D4);
+		for (j=0; j<4000000;j++);
+		stop_buzzer();
+		for (j=0; j<4000000;j++);
 		sound_buzzer(NOTE_C4);
+		for (j=0; j<4000000;j++);
+		stop_buzzer();
 		for (j=0; j<4000000;j++);
 	}
 }
@@ -157,18 +166,23 @@ void test_sonar() {
 	}
 }
 
+void test_photo_reflector() {
+	int photo_ad;
+	int i;
+	while (1)
+	{
+		photo_ad = get_photo_reflecor_distance(PHOTO_SENS_LF);
+		sci_printf("Left Front Photo AD value = %d\r\n", photo_ad);
+		for (i=0; i<2000000;i++);
+	}
 
-// void test_sonar() {
-// 	unsigned short d;
-// 	int i;
-// 	while (1)
-// 	{
-// 		d = get_sonar_distance(SONAR_LEFT);
-// 		sci_printf("Left Sonar distance = %u\r\n", d);
-// 		// d = get_sonar_distance(SONAR_FRONT);
-// 		// sci_printf("Front Sonar distance = %u\r\n", d);
-// 		// d = get_sonar_distance(SONAR_RIGHT);
-// 		// sci_printf("Right Sonar distance = %u\r\n", d);
-// 		for (i=0; i<2000000;i++);
-// 	}
-// }
+}
+
+void test_drive_motor() {
+	// drive_motor_duty(LEFT, 40, FORWARD);
+	// drive_motor_duty(LEFT, 40, FORWARD);
+	// drive_motor_duty(RIGHT, 40, FORWARD);
+	drive_motor_duty(LEFT, 40, BACKWARD);
+	drive_motor_duty(RIGHT, 90, BACKWARD);
+
+}

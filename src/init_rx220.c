@@ -7,6 +7,7 @@
 #include "control_motor.h"
 #include "sound_buzzer.h"
 #include "sonar.h"
+#include "photo_reflector.h"
 #include "iodefine.h"
 
 
@@ -27,8 +28,9 @@ void init_rx220(void) {
 	init_sci();
 	init_sonar();
 	init_general_io();
-	// init_adc();
+	init_adc();
+	init_photo_reflector();
 	init_pwm_drive();
-	// init_motor();
-	// init_buzzer();
+	init_motor();
+	init_buzzer();
 }
