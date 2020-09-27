@@ -30,7 +30,7 @@ static void init_mtu0() {
     MTU.TSTR.BIT.CST0   = 0x1;          //MTU0タイマ起動
 };
 
-void drive_pwm(pwm_port_t pwm_port, unsigned int duty) {
+void drive_pwm(pwm_port_t pwm_port, float duty) {
     unsigned short tgr;
     if (duty < 100) {
         tgr = (unsigned short)((1-duty/100) * TGR1kHz - 1);

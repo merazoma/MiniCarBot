@@ -28,13 +28,13 @@ int get_sonar_distance(sonar_port_t port) {
     switch (port)
     {
     case SONAR_LEFT:
-        distance = (tcnt_echo_on_l - OffsetPulse) / 1000 * CntToDistance;
+        distance = (tcnt_echo_on_l - OffsetPulse) * CntToDistance / 1000;
         break;
     case SONAR_FRONT:
-        distance = (tcnt_echo_on_f - OffsetPulse) / 1000 * CntToDistance;
+        distance = (tcnt_echo_on_f - OffsetPulse) * CntToDistance / 1000;
         break;
     case SONAR_RIGHT:
-        distance = (tcnt_echo_on_r - OffsetPulse) / 1000 * CntToDistance;
+        distance = (tcnt_echo_on_r - OffsetPulse) * CntToDistance / 1000 ;
         break;    
     default:
         break;

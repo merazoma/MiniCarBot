@@ -178,10 +178,48 @@ void test_sonar() {
 // }
 
 void test_drive_motor() {
+	drive_motor_duty(LEFT, 40, FORWARD);
 	// drive_motor_duty(LEFT, 40, FORWARD);
-	// drive_motor_duty(LEFT, 40, FORWARD);
-	// drive_motor_duty(RIGHT, 40, FORWARD);
-	drive_motor_duty(LEFT, 40, BACKWARD);
-	drive_motor_duty(RIGHT, 90, BACKWARD);
+	drive_motor_duty(RIGHT, 40, FORWARD);
+	// drive_motor_duty(LEFT, 40, BACKWARD);
+	// drive_motor_duty(RIGHT, 90, BACKWARD);
+
+}
+
+void test_motor_sonar_buzzer(){
+	int d_f, d_r, d_l;
+	while(1) {
+		d_f = get_sonar_distance(SONAR_FRONT);
+		d_r = get_sonar_distance(SONAR_RIGHT);
+		d_l = get_sonar_distance(SONAR_LEFT);
+		if (d_f > 1000) {
+			sound_buzzer(1000);
+		} else {
+			sound_buzzer(d_f);		
+		}
+		if (d_r > 1000) {
+			drive_motor_duty(RIGHT, 100, FORWARD);
+		} else {
+			drive_motor_duty(RIGHT, d_r/10, FORWARD);
+		}
+		if (d_l > 1000) {
+			drive_motor_duty(LEFT, 100, FORWARD);
+		} else {
+			drive_motor_duty(LEFT, d_l/10, FORWARD);
+		}
+	}
+}
+
+void test_enc() {
+	unsigned short enc_l, enc_r;
+	int j;
+	while (1)
+	{
+		enc_l = get_enc_count(LEFT);
+		enc_r = get_enc_count(RIGHT);
+		sci_printf("Left Enc Count = %u\r\n", enc_l);
+		sci_printf("Right Enc Count = %u\r\n", enc_r);
+		for (j=0; j<2000000;j++);
+	}	
 
 }

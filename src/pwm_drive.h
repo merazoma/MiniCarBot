@@ -29,9 +29,9 @@ void init_pwm_drive();
 /**
  * @brief 選択したPWM駆動用ポートで、Dutyを指定してPWM駆動を実施
  * @param pwm_port PWM駆動ポートの選択
- * @param duty unsigned int Duty比（範囲: 0 ~ 100, LSB: 1 %） 
+ * @param float unsigned int Duty比（範囲: 0 ~ 100, LSB: 1 %） 
  */
-void drive_pwm(pwm_port_t pwm_port, unsigned int duty);
+void drive_pwm(pwm_port_t pwm_port, float duty);
 
 
 #endif

@@ -33,7 +33,8 @@ void main(void)
 	// test_sound_buzzer_150();
 	// test_analog_read();
 	// test_sonar();
-	test_drive_motor();
+	// test_drive_motor();
+	test_motor_sonar_buzzer();
 	// test_sound_buzzer_note();
 	// test_photo_reflector();
 	// test_general_io();
@@ -42,7 +43,7 @@ void main(void)
 	// test_sound_buzzer();
 	// test_sound_buzzer_update();
 	// test_sound_buzzer_note();
-	test_sonar();
+	// test_sonar();
 	while(1) {
 		
 	}

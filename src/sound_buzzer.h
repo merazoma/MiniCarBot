@@ -38,8 +38,7 @@ void init_buzzer();
 
 /**
  * @brief ブザー駆動用の周波数可変の矩形波出力指示
- * 
- * @param freq 周波数
+ * @param freq 周波数[Hz](レンジ: 122 Hz～15.6kHz)
  */
 void sound_buzzer(unsigned short freq);
 
