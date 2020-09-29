@@ -1,0 +1,18 @@
+digraph "test_motor_sonar_buzzer"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="test_motor_sonar_buzzer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="drive_motor_duty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$control__motor_8c.html#a1a88438c88976ade0c8b5de00a96d5ed",tooltip="指示されたDutyと回転の向きで、モータを駆動"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="digital_write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$general__io_8c.html#a3d87fb36438ea282f7efeb1858219f55",tooltip="汎用出力ポートの出力切り替え指示"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="drive_pwm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pwm__drive_8c.html#a1c5f9db09542295dcf94e347229b9441",tooltip="選択したPWM駆動用ポートで、Dutyを指定してPWM駆動を実施"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="get_sonar_distance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sonar_8c.html#a79d59d143a65fbc3f3a3a1ebf7690919",tooltip="超音波センサを指定して、その超音波センサで測定した距離を取得"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="sound_buzzer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sound__buzzer_8c.html#ad9d755f2ff8a252d328639d4656ad768",tooltip="ブザー駆動用の周波数可変の矩形波出力指示"];
+}

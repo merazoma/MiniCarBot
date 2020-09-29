@@ -26,15 +26,15 @@ void abort(void);
 void main(void)
 {
 	init_rx220();
-	
-	// test_sci_printf();
+
+	test_enc();
 	//test_analog_read();
 	// test_drive_pwm();
 	// test_sound_buzzer_150();
 	// test_analog_read();
 	// test_sonar();
 	// test_drive_motor();
-	test_motor_sonar_buzzer();
+	// test_motor_sonar_buzzer();
 	// test_sound_buzzer_note();
 	// test_photo_reflector();
 	// test_general_io();

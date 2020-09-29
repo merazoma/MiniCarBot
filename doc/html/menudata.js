@@ -124,6 +124,7 @@ var menudata={children:[
 {text:"列挙値",url:"globals_eval.html",children:[
 {text:"b",url:"globals_eval.html#index_b"},
 {text:"d",url:"globals_eval_d.html#index_d"},
+{text:"e",url:"globals_eval_e.html#index_e"},
 {text:"f",url:"globals_eval_f.html#index_f"},
 {text:"h",url:"globals_eval_h.html#index_h"},
 {text:"i",url:"globals_eval_i.html#index_i"},
@@ -142,6 +143,7 @@ var menudata={children:[
 {text:"h",url:"globals_defs_h.html#index_h"},
 {text:"i",url:"globals_defs_i.html#index_i"},
 {text:"m",url:"globals_defs_m.html#index_m"},
+{text:"o",url:"globals_defs_o.html#index_o"},
 {text:"p",url:"globals_defs_p.html#index_p"},
 {text:"r",url:"globals_defs_r.html#index_r"},
 {text:"s",url:"globals_defs_s.html#index_s"},

@@ -14,7 +14,7 @@ void init_pwm_drive() {
 	MPC.PB1PFS.BYTE		= 0x1; 		//MPC設定 PB1 MTIOC0C
 	MPC.PB3PFS.BYTE		= 0x1; 		//MPC設定 PB3 MTIOC0A
     init_mtu0();
-};
+}
 
 static void init_mtu0() {
     MSTP_MTU0           = 0x0;          //消費電力低減機能をOFF
@@ -28,7 +28,7 @@ static void init_mtu0() {
     MTU0.TGRC           = TGR1kHz;      //MTIOC0C 初期Duty 0%
     MTU0.TIER.BIT.TGIEB = 0x1;          //割込み要求（TGIB）を許可
     MTU.TSTR.BIT.CST0   = 0x1;          //MTU0タイマ起動
-};
+}
 
 void drive_pwm(pwm_port_t pwm_port, float duty) {
     unsigned short tgr;
@@ -49,4 +49,4 @@ void drive_pwm(pwm_port_t pwm_port, float duty) {
     default:
         break;
     }
-};
+}

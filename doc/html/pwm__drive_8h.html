@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MiniCarBot: C:/Users/Kobayashi/Dropbox/autorc/RX220/MiniCarBot/src/pwm_drive.h ファイル</title>
+<title>MiniCarBot: C:/Users/Kobayashi/Desktop/MiniCarbot/MiniCarBot/src/pwm_drive.h ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('pwm__drive_8h.html',''); initResizable
 <div class="textblock"><div class="dynheader">
 被依存関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="pwm__drive_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_kobayashi_2_dropbox_2autorc_2_r_x220_2_mini_car_bot_2src_2pwm__drive_8hdep" alt=""/></div>
+<div class="center"><img src="pwm__drive_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_kobayashi_2_desktop_2_mini_carbot_2_mini_car_bot_2src_2pwm__drive_8hdep" alt=""/></div>
 </div>
 </div>
 <p><a href="pwm__drive_8h_source.html">[ソースコード]</a></p>
@@ -120,9 +120,9 @@ $(document).ready(function(){initNavTree('pwm__drive_8h.html',''); initResizable
 <tr class="memitem:a84a7e259e3ab772c51dc5c7411bc9e94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pwm__drive_8h.html#a84a7e259e3ab772c51dc5c7411bc9e94">init_pwm_drive</a> ()</td></tr>
 <tr class="memdesc:a84a7e259e3ab772c51dc5c7411bc9e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM駆動用の初期化処理  <a href="pwm__drive_8h.html#a84a7e259e3ab772c51dc5c7411bc9e94">[詳解]</a><br /></td></tr>
 <tr class="separator:a84a7e259e3ab772c51dc5c7411bc9e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a819463d53a9fc0a7cb3664d5876078ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pwm__drive_8h.html#a819463d53a9fc0a7cb3664d5876078ea">drive_pwm</a> (<a class="el" href="pwm__drive_8h.html#a04bd5c5b5ec202f7d8f644cca1eca9ac">pwm_port_t</a> pwm_port, unsigned int duty)</td></tr>
-<tr class="memdesc:a819463d53a9fc0a7cb3664d5876078ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">選択したPWM駆動用ポートで、Dutyを指定してPWM駆動を実施  <a href="pwm__drive_8h.html#a819463d53a9fc0a7cb3664d5876078ea">[詳解]</a><br /></td></tr>
-<tr class="separator:a819463d53a9fc0a7cb3664d5876078ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c5f9db09542295dcf94e347229b9441"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pwm__drive_8h.html#a1c5f9db09542295dcf94e347229b9441">drive_pwm</a> (<a class="el" href="pwm__drive_8h.html#a04bd5c5b5ec202f7d8f644cca1eca9ac">pwm_port_t</a> pwm_port, float duty)</td></tr>
+<tr class="memdesc:a1c5f9db09542295dcf94e347229b9441"><td class="mdescLeft">&#160;</td><td class="mdescRight">選択したPWM駆動用ポートで、Dutyを指定してPWM駆動を実施  <a href="pwm__drive_8h.html#a1c5f9db09542295dcf94e347229b9441">[詳解]</a><br /></td></tr>
+<tr class="separator:a1c5f9db09542295dcf94e347229b9441"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>左車輪モータと右車輪モータのPWM駆動 </p>
@@ -169,8 +169,8 @@ $(document).ready(function(){initNavTree('pwm__drive_8h.html',''); initResizable
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a819463d53a9fc0a7cb3664d5876078ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a819463d53a9fc0a7cb3664d5876078ea">&#9670;&nbsp;</a></span>drive_pwm()</h2>
+<a id="a1c5f9db09542295dcf94e347229b9441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c5f9db09542295dcf94e347229b9441">&#9670;&nbsp;</a></span>drive_pwm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,7 +184,7 @@ $(document).ready(function(){initNavTree('pwm__drive_8h.html',''); initResizable
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>duty</em>&#160;</td>
         </tr>
         <tr>
@@ -199,14 +199,14 @@ $(document).ready(function(){initNavTree('pwm__drive_8h.html',''); initResizable
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramname">pwm_port</td><td>PWM駆動ポートの選択 </td></tr>
-    <tr><td class="paramname">duty</td><td>unsigned int Duty比（範囲: 0 ~ 100, LSB: 1 ） </td></tr>
+    <tr><td class="paramname">float</td><td>unsigned int Duty比（範囲: 0 ~ 100, LSB: 1 ） </td></tr>
   </table>
   </dd>
 </dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="pwm__drive_8h_a819463d53a9fc0a7cb3664d5876078ea_icgraph.png" border="0" usemap="#apwm__drive_8h_a819463d53a9fc0a7cb3664d5876078ea_icgraph" alt=""/></div>
+<div class="center"><img src="pwm__drive_8h_a1c5f9db09542295dcf94e347229b9441_icgraph.png" border="0" usemap="#apwm__drive_8h_a1c5f9db09542295dcf94e347229b9441_icgraph" alt=""/></div>
 </div>
 
 </div>

@@ -21,7 +21,7 @@ static void init_irq();
 void init_sonar() {
     init_irq();
     init_mtu3();
-};
+}
 
 int get_sonar_distance(sonar_port_t port) {
     int distance;
@@ -40,7 +40,7 @@ int get_sonar_distance(sonar_port_t port) {
         break;
     }
     return distance;
-};
+}
 
 void excep_sonar_echo_left(void) {
     tcnt_echo_on_l = MTU3.TCNT;
@@ -132,4 +132,4 @@ static void init_mtu3() {
     MTU3.TGRA           = 5 - 1;        //10 us のHighトリガ
     // MTU3.TIER.BIT.TGIEB = 0x1;          //割込み要求（TGIB）を許可
     MTU.TSTR.BIT.CST3   = 0x1;          //MTU3タイマ起動
-};
+}

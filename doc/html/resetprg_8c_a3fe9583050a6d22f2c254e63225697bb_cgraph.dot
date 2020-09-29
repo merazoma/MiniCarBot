@@ -10,15 +10,13 @@ digraph "PowerON_Reset_PC"
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="init_rx220",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$init__rx220_8c.html#ad67fc799d22f03b36e464c59af4a92fd",tooltip=" "];
   Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="test_drive_pwm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#a61b27eda1673047f6d9c5c9e226771c7",tooltip=" "];
+  Node4 [label="test_enc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#a110e0ce77b462a854e517e3ba55926f5",tooltip=" "];
   Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="drive_pwm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pwm__drive_8c.html#a819463d53a9fc0a7cb3664d5876078ea",tooltip="選択したPWM駆動用ポートで、Dutyを指定してPWM駆動を実施"];
-  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="test_sonar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#ab2ceb0b6a03114d50eaba2f4a6780191",tooltip=" "];
+  Node5 [label="get_enc_count",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$encoder_8c.html#aa6af9937998f69e8ede6aede38597738",tooltip="エンコーダカウントの取得"];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="sci_printf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sci_8c.html#a3bc09dd94f78f69af9bfdc6f1d63b38e",tooltip="文字列の送信処理"];
   Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="get_sonar_distance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sonar_8c.html#a79d59d143a65fbc3f3a3a1ebf7690919",tooltip="超音波センサを指定して、その超音波センサで測定した距離を取得"];
-  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="sci_printf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sci_8c.html#a3bc09dd94f78f69af9bfdc6f1d63b38e",tooltip="文字列の送信処理"];
-  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="sci_put_1byte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sci_8c.html#afde8ee429bc56d01adf33adaf34d8ec0",tooltip="1byteの送信処理"];
+  Node7 [label="sci_put_1byte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sci_8c.html#afde8ee429bc56d01adf33adaf34d8ec0",tooltip="1byteの送信処理"];
+  Node4 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="set_enc_count",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$encoder_8c.html#adfa6dd2ec7cc95a88a78bb300d2df31b",tooltip="エンコーダカウントの初期値を設定"];
 }

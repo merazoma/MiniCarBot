@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MiniCarBot: C:/Users/Kobayashi/Dropbox/autorc/RX220/MiniCarBot/src/test_function.c ファイル</title>
+<title>MiniCarBot: C:/Users/Kobayashi/Desktop/MiniCarbot/MiniCarBot/src/test_function.c ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -95,10 +95,13 @@ $(document).ready(function(){initNavTree('test__function_8c.html',''); initResiz
 <code>#include &quot;<a class="el" href="sound__buzzer_8h_source.html">sound_buzzer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sonar_8h_source.html">sonar.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="iodefine_8h_source.html">iodefine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="encoder_8h_source.html">encoder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="control__motor_8h_source.html">control_motor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="photo__reflector_8h_source.html">photo_reflector.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 test_function.c の依存先関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="test__function_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_kobayashi_2_dropbox_2autorc_2_r_x220_2_mini_car_bot_2src_2test__function_8c" alt=""/></div>
+<div class="center"><img src="test__function_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_kobayashi_2_desktop_2_mini_carbot_2_mini_car_bot_2src_2test__function_8c" alt=""/></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -120,9 +123,16 @@ test_function.c の依存先関係図:</div>
 <tr class="memitem:ad48ed198b3c55ed6a845c401cdcd3477"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__function_8c.html#ad48ed198b3c55ed6a845c401cdcd3477">test_sound_buzzer_update</a> ()</td></tr>
 <tr class="separator:ad48ed198b3c55ed6a845c401cdcd3477"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92509728359db413b38511d0305a594d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__function_8c.html#a92509728359db413b38511d0305a594d">test_sound_buzzer_note</a> ()</td></tr>
+<tr class="memdesc:a92509728359db413b38511d0305a594d"><td class="mdescLeft">&#160;</td><td class="mdescRight">shooting star song!!!  <a href="test__function_8c.html#a92509728359db413b38511d0305a594d">[詳解]</a><br /></td></tr>
 <tr class="separator:a92509728359db413b38511d0305a594d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2ceb0b6a03114d50eaba2f4a6780191"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__function_8c.html#ab2ceb0b6a03114d50eaba2f4a6780191">test_sonar</a> ()</td></tr>
 <tr class="separator:ab2ceb0b6a03114d50eaba2f4a6780191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f1dc5f44d61c274419ca2b2382950f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__function_8c.html#a32f1dc5f44d61c274419ca2b2382950f">test_drive_motor</a> ()</td></tr>
+<tr class="separator:a32f1dc5f44d61c274419ca2b2382950f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77da2649ba5f4f36ea1ed332d3df7d66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__function_8c.html#a77da2649ba5f4f36ea1ed332d3df7d66">test_motor_sonar_buzzer</a> ()</td></tr>
+<tr class="separator:a77da2649ba5f4f36ea1ed332d3df7d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a110e0ce77b462a854e517e3ba55926f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test__function_8c.html#a110e0ce77b462a854e517e3ba55926f5">test_enc</a> ()</td></tr>
+<tr class="separator:a110e0ce77b462a854e517e3ba55926f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
 <a id="a7fce40f0b0f67043ee962379d5140ee6"></a>
@@ -147,6 +157,28 @@ test_function.c の依存先関係図:</div>
 
 </div>
 </div>
+<a id="a32f1dc5f44d61c274419ca2b2382950f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32f1dc5f44d61c274419ca2b2382950f">&#9670;&nbsp;</a></span>test_drive_motor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_drive_motor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="test__function_8c_a32f1dc5f44d61c274419ca2b2382950f_cgraph.png" border="0" usemap="#atest__function_8c_a32f1dc5f44d61c274419ca2b2382950f_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <a id="a61b27eda1673047f6d9c5c9e226771c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a61b27eda1673047f6d9c5c9e226771c7">&#9670;&nbsp;</a></span>test_drive_pwm()</h2>
 
@@ -165,11 +197,6 @@ test_function.c の依存先関係図:</div>
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="test__function_8c_a61b27eda1673047f6d9c5c9e226771c7_cgraph.png" border="0" usemap="#atest__function_8c_a61b27eda1673047f6d9c5c9e226771c7_cgraph" alt=""/></div>
-</div>
-<div class="dynheader">
-被呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="test__function_8c_a61b27eda1673047f6d9c5c9e226771c7_icgraph.png" border="0" usemap="#atest__function_8c_a61b27eda1673047f6d9c5c9e226771c7_icgraph" alt=""/></div>
 </div>
 
 </div>
@@ -218,6 +245,33 @@ test_function.c の依存先関係図:</div>
 
 </div>
 </div>
+<a id="a110e0ce77b462a854e517e3ba55926f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a110e0ce77b462a854e517e3ba55926f5">&#9670;&nbsp;</a></span>test_enc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_enc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="test__function_8c_a110e0ce77b462a854e517e3ba55926f5_cgraph.png" border="0" usemap="#atest__function_8c_a110e0ce77b462a854e517e3ba55926f5_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="test__function_8c_a110e0ce77b462a854e517e3ba55926f5_icgraph.png" border="0" usemap="#atest__function_8c_a110e0ce77b462a854e517e3ba55926f5_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <a id="a25888b959fa80b3b47a57b48c3797411"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a25888b959fa80b3b47a57b48c3797411">&#9670;&nbsp;</a></span>test_general_io()</h2>
 
@@ -237,6 +291,28 @@ test_function.c の依存先関係図:</div>
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="test__function_8c_a25888b959fa80b3b47a57b48c3797411_cgraph.png" border="0" usemap="#atest__function_8c_a25888b959fa80b3b47a57b48c3797411_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a77da2649ba5f4f36ea1ed332d3df7d66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77da2649ba5f4f36ea1ed332d3df7d66">&#9670;&nbsp;</a></span>test_motor_sonar_buzzer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_motor_sonar_buzzer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="test__function_8c_a77da2649ba5f4f36ea1ed332d3df7d66_cgraph.png" border="0" usemap="#atest__function_8c_a77da2649ba5f4f36ea1ed332d3df7d66_cgraph" alt=""/></div>
 </div>
 
 </div>
@@ -282,11 +358,6 @@ test_function.c の依存先関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="test__function_8c_ab2ceb0b6a03114d50eaba2f4a6780191_cgraph.png" border="0" usemap="#atest__function_8c_ab2ceb0b6a03114d50eaba2f4a6780191_cgraph" alt=""/></div>
 </div>
-<div class="dynheader">
-被呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="test__function_8c_ab2ceb0b6a03114d50eaba2f4a6780191_icgraph.png" border="0" usemap="#atest__function_8c_ab2ceb0b6a03114d50eaba2f4a6780191_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -326,6 +397,8 @@ test_function.c の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>shooting star song!!! </p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">

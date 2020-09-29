@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MiniCarBot: C:/Users/Kobayashi/Dropbox/autorc/RX220/MiniCarBot/src/sonar.h ファイル</title>
+<title>MiniCarBot: C:/Users/Kobayashi/Desktop/MiniCarbot/MiniCarBot/src/sonar.h ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('sonar_8h.html',''); initResizable(); }
 <div class="textblock"><div class="dynheader">
 被依存関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="sonar_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_kobayashi_2_dropbox_2autorc_2_r_x220_2_mini_car_bot_2src_2sonar_8hdep" alt=""/></div>
+<div class="center"><img src="sonar_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_kobayashi_2_desktop_2_mini_carbot_2_mini_car_bot_2src_2sonar_8hdep" alt=""/></div>
 </div>
 </div>
 <p><a href="sonar_8h_source.html">[ソースコード]</a></p>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('sonar_8h.html',''); initResizable(); }
 <div class="textblock"><p>超音波センサ(HC-SR04)による距離計測 </p>
 <p>前側、右側と左側の超音波センサ兼用のトリガパルス（周期: 64ms, パルス幅: 10us）  をMTU3で生成し出力<br  />
  前側、右側と左側の超音波センサのエコーパルス入力は、それぞれ外部割り込み入力  IRQ0、IRQ1とIRQ5に割り当てられており、エコーパルスの立ち下がりエッジで、  MTU3（トリガパルス生成に使用）のタイマカウントを取得<br  />
- トリガ信号の立ち上がりエッジ(MTU3.TCNT: 0)とエコー信号の立ち上がりエッジの  時間間隔が一定なので、立ち下がりエッジでのタイマカウント取得で、エコー信号の  パルス幅を実行的に取得可能<br  />
+ トリガパルスの立ち上がりエッジ(MTU3.TCNT: 0)とエコーパルスの立ち上がりエッジの  時間間隔が一定なので、立ち下がりエッジでのタイマカウント取得で、エコー信号の  パルス幅を実行的に取得可能<br  />
  アプリからの超音波センサの距離取得要求時(get_sonar_distanceコール時)に、  タイマカウントを距離に換算して返却 </p><dl class="section author"><dt>著者</dt><dd>Masaya Kobayashi </dd></dl>
 <dl class="section version"><dt>バージョン</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>日付</dt><dd>2020-09-06</dd></dl>

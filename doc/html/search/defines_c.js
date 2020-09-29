@@ -1,12 +1,19 @@
 var searchData=
 [
-  ['temps_5155',['TEMPS',['../iodefine_8h.html#ad67b7981a5b5c479cd25328af2db4a3a',1,'iodefine.h']]],
-  ['tgr1khz_5156',['TGR1kHz',['../pwm__drive_8c.html#a029405a7d2a1c8d1bcd243723502c67c',1,'pwm_drive.c']]],
-  ['timerclk_5157',['TimerCLK',['../sound__buzzer_8c.html#ae97e06eeb1570564b21481b813a1356c',1,'sound_buzzer.c']]],
-  ['tmr0_5158',['TMR0',['../iodefine_8h.html#ac1044f49d37cbcbae3e519031b026996',1,'iodefine.h']]],
-  ['tmr01_5159',['TMR01',['../iodefine_8h.html#a8194d20246614c73bb87909bf400aa0a',1,'iodefine.h']]],
-  ['tmr1_5160',['TMR1',['../iodefine_8h.html#a4dedcb5ae32698839ce5e62aa2c3cd3b',1,'iodefine.h']]],
-  ['tmr2_5161',['TMR2',['../iodefine_8h.html#ab9ba0f088efcfb18f08b7d2490486b98',1,'iodefine.h']]],
-  ['tmr23_5162',['TMR23',['../iodefine_8h.html#adef4ea055cf45b232b853c2d51dfbc08',1,'iodefine.h']]],
-  ['tmr3_5163',['TMR3',['../iodefine_8h.html#a443f07a9b884886d9b82597d02e594b7',1,'iodefine.h']]]
+  ['s12ad_5164',['S12AD',['../iodefine_8h.html#a3361782539f03b9c2aaf8211485b8a05',1,'iodefine.h']]],
+  ['sci0_5165',['SCI0',['../iodefine_8h.html#ace4d0e3ad518ef6a5657d7c63c907fca',1,'iodefine.h']]],
+  ['sci1_5166',['SCI1',['../iodefine_8h.html#aa97eca5571fe1a418a94018204d2f346',1,'iodefine.h']]],
+  ['sci12_5167',['SCI12',['../iodefine_8h.html#ad3c0a62421223bd16704acd192d6dc31',1,'iodefine.h']]],
+  ['sci5_5168',['SCI5',['../iodefine_8h.html#af5fe30050b1ecfeaa8ffec725736a492',1,'iodefine.h']]],
+  ['sci6_5169',['SCI6',['../iodefine_8h.html#a99a5138a64bfa1cb1c6ccf81bab1b857',1,'iodefine.h']]],
+  ['sci8_5170',['SCI8',['../iodefine_8h.html#a99f10289921c12820820efe7792c7e7b',1,'iodefine.h']]],
+  ['sci9_5171',['SCI9',['../iodefine_8h.html#a370bc66fcfc3de4cd6121d90b7717610',1,'iodefine.h']]],
+  ['smci0_5172',['SMCI0',['../iodefine_8h.html#ae1ce5f389f58c284f65ef0c85b78b49c',1,'iodefine.h']]],
+  ['smci1_5173',['SMCI1',['../iodefine_8h.html#a2d50a23198bb8c189e228efedd7238b6',1,'iodefine.h']]],
+  ['smci12_5174',['SMCI12',['../iodefine_8h.html#a71429c9d14fa6e44a1380f3b56a421f3',1,'iodefine.h']]],
+  ['smci5_5175',['SMCI5',['../iodefine_8h.html#a6e8128255d31b473acd93b20e3b2bff8',1,'iodefine.h']]],
+  ['smci6_5176',['SMCI6',['../iodefine_8h.html#a77e057f62cedf22b4d4c7339ffab2fd9',1,'iodefine.h']]],
+  ['smci8_5177',['SMCI8',['../iodefine_8h.html#a7f5f4990aff113de45aac7671db63f28',1,'iodefine.h']]],
+  ['smci9_5178',['SMCI9',['../iodefine_8h.html#aa0a4fef129ccb9d23e8aea224e7d4984',1,'iodefine.h']]],
+  ['system_5179',['SYSTEM',['../iodefine_8h.html#a21b97df85e65556468b28a576311271c',1,'iodefine.h']]]
 ];

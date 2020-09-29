@@ -138,7 +138,7 @@ var searchData=
   ['driicdeg_522',['DRIICDEG',['../structst__system.html#a79a7f55143e3205cf6b4dec467fa70de',1,'st_system']]],
   ['driicdif_523',['DRIICDIF',['../structst__system.html#ae89eee02327825d62a1ad04d11906f27',1,'st_system']]],
   ['drive_5fmotor_5fduty_524',['drive_motor_duty',['../control__motor_8c.html#a1a88438c88976ade0c8b5de00a96d5ed',1,'drive_motor_duty(motor_id_t motor_id, float duty, motor_direction_t direction):&#160;control_motor.c'],['../control__motor_8h.html#a1a88438c88976ade0c8b5de00a96d5ed',1,'drive_motor_duty(motor_id_t motor_id, float duty, motor_direction_t direction):&#160;control_motor.c']]],
-  ['drive_5fpwm_525',['drive_pwm',['../pwm__drive_8c.html#a819463d53a9fc0a7cb3664d5876078ea',1,'drive_pwm(pwm_port_t pwm_port, unsigned int duty):&#160;pwm_drive.c'],['../pwm__drive_8h.html#a819463d53a9fc0a7cb3664d5876078ea',1,'drive_pwm(pwm_port_t pwm_port, unsigned int duty):&#160;pwm_drive.c']]],
+  ['drive_5fpwm_525',['drive_pwm',['../pwm__drive_8c.html#a1c5f9db09542295dcf94e347229b9441',1,'drive_pwm(pwm_port_t pwm_port, float duty):&#160;pwm_drive.c'],['../pwm__drive_8h.html#a1c5f9db09542295dcf94e347229b9441',1,'drive_pwm(pwm_port_t pwm_port, float duty):&#160;pwm_drive.c']]],
   ['drtcaie_526',['DRTCAIE',['../structst__system.html#ae952ba6b4c36b6a4ee06ee686f2b3960',1,'st_system']]],
   ['drtcaif_527',['DRTCAIF',['../structst__system.html#a377a88f05e008e07f14e9b4b303c3b97',1,'st_system']]],
   ['drtciie_528',['DRTCIIE',['../structst__system.html#a3b5d2f559481b70c3673c7aa6076d3a8',1,'st_system']]],

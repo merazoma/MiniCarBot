@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['motor_5fdirection_5ft_4389',['motor_direction_t',['../control__motor_8h.html#a5dd57096360038f52373607dffaf68b2',1,'control_motor.h']]],
-  ['motor_5fid_5ft_4390',['motor_id_t',['../control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618',1,'control_motor.h']]]
+  ['encoder_5fid_5ft_4409',['encoder_id_t',['../encoder_8h.html#a58303a9534f2a1e68166d22e1113abe7',1,'encoder.h']]]
 ];

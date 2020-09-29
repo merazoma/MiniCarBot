@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['outlevel_5ft_4391',['outlevel_t',['../general__io_8h.html#a25491b05864d11e9ee2d76a95e29d3f7',1,'general_io.h']]]
+  ['motor_5fdirection_5ft_4410',['motor_direction_t',['../control__motor_8h.html#a5dd57096360038f52373607dffaf68b2',1,'control_motor.h']]],
+  ['motor_5fid_5ft_4411',['motor_id_t',['../control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618',1,'control_motor.h']]]
 ];

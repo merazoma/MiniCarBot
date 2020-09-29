@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MiniCarBot: C:/Users/Kobayashi/Dropbox/autorc/RX220/MiniCarBot/src/control_motor.c ファイル</title>
+<title>MiniCarBot: C:/Users/Kobayashi/Desktop/MiniCarbot/MiniCarBot/src/control_motor.c ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('control__motor_8c.html',''); initResiz
 </div><div class="textblock"><div class="dynheader">
 control_motor.c の依存先関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="control__motor_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_kobayashi_2_dropbox_2autorc_2_r_x220_2_mini_car_bot_2src_2control__motor_8c" alt=""/></div>
+<div class="center"><img src="control__motor_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_kobayashi_2_desktop_2_mini_carbot_2_mini_car_bot_2src_2control__motor_8c" alt=""/></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -123,9 +123,6 @@ control_motor.c の依存先関係図:</div>
 <tr class="memitem:a1a88438c88976ade0c8b5de00a96d5ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="control__motor_8c.html#a1a88438c88976ade0c8b5de00a96d5ed">drive_motor_duty</a> (<a class="el" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a> motor_id, float duty, <a class="el" href="control__motor_8h.html#a5dd57096360038f52373607dffaf68b2">motor_direction_t</a> direction)</td></tr>
 <tr class="memdesc:a1a88438c88976ade0c8b5de00a96d5ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">指示されたDutyと回転の向きで、モータを駆動  <a href="control__motor_8c.html#a1a88438c88976ade0c8b5de00a96d5ed">[詳解]</a><br /></td></tr>
 <tr class="separator:a1a88438c88976ade0c8b5de00a96d5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64bf5899e020012c464eda92c3959f8c"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="control__motor_8c.html#a64bf5899e020012c464eda92c3959f8c">get_enc_count</a> (<a class="el" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a> motor_id)</td></tr>
-<tr class="memdesc:a64bf5899e020012c464eda92c3959f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータのエンコーダカウントを取得  <a href="control__motor_8c.html#a64bf5899e020012c464eda92c3959f8c">[詳解]</a><br /></td></tr>
-<tr class="separator:a64bf5899e020012c464eda92c3959f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 変数</h2></td></tr>
@@ -313,34 +310,11 @@ control_motor.c の依存先関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="control__motor_8c_a1a88438c88976ade0c8b5de00a96d5ed_cgraph.png" border="0" usemap="#acontrol__motor_8c_a1a88438c88976ade0c8b5de00a96d5ed_cgraph" alt=""/></div>
 </div>
-
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="control__motor_8c_a1a88438c88976ade0c8b5de00a96d5ed_icgraph.png" border="0" usemap="#acontrol__motor_8c_a1a88438c88976ade0c8b5de00a96d5ed_icgraph" alt=""/></div>
 </div>
-</div>
-<a id="a64bf5899e020012c464eda92c3959f8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64bf5899e020012c464eda92c3959f8c">&#9670;&nbsp;</a></span>get_enc_count()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned short get_enc_count </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a>&#160;</td>
-          <td class="paramname"><em>motor_id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>モータのエンコーダカウントを取得 </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">motor_id</td><td>左右輪の指示（LEFT, RIGHT） </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>戻り値</dt><dd>unsigned short エンコーダカウント </dd></dl>
-<dl class="section warning"><dt>警告</dt><dd>未実装 </dd></dl>
 
 </div>
 </div>

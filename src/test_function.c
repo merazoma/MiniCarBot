@@ -5,6 +5,7 @@
 #include "sound_buzzer.h"
 #include "sonar.h"
 #include "iodefine.h"
+#include "encoder.h"
 #include "control_motor.h"
 #include "photo_reflector.h"
 
@@ -200,12 +201,12 @@ void test_motor_sonar_buzzer(){
 		if (d_r > 1000) {
 			drive_motor_duty(RIGHT, 100, FORWARD);
 		} else {
-			drive_motor_duty(RIGHT, d_r/10, FORWARD);
+			drive_motor_duty(RIGHT, (float)d_r/10, FORWARD);
 		}
 		if (d_l > 1000) {
 			drive_motor_duty(LEFT, 100, FORWARD);
 		} else {
-			drive_motor_duty(LEFT, d_l/10, FORWARD);
+			drive_motor_duty(LEFT, (float)d_l/10, FORWARD);
 		}
 	}
 }
@@ -215,11 +216,16 @@ void test_enc() {
 	int j;
 	while (1)
 	{
-		enc_l = get_enc_count(LEFT);
-		enc_r = get_enc_count(RIGHT);
+		enc_l = get_enc_count(ENCODER_LEFT);
+		enc_r = get_enc_count(ENCODER_RIGHT);
 		sci_printf("Left Enc Count = %u\r\n", enc_l);
 		sci_printf("Right Enc Count = %u\r\n", enc_r);
+		if (enc_l > 10000) {
+			set_enc_count(ENCODER_LEFT, 2000);
+		}
+		if (enc_r > 10000) {
+			set_enc_count(ENCODER_RIGHT, 2000);
+		}
 		for (j=0; j<2000000;j++);
 	}	
-
 }

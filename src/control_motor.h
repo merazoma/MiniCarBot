@@ -73,13 +73,4 @@ void control_motor_Nrpm(motor_id_t motor_id, int Nrpm);
  */
 void drive_motor_duty(motor_id_t motor_id, float duty, motor_direction_t direction);
 
-/**
- * @brief モータのエンコーダカウントを取得
- * 
- * @param motor_id 左右輪の指示（LEFT, RIGHT）
- * @return unsigned short エンコーダカウント
- * @warning 未実装
- */
-unsigned short get_enc_count(motor_id_t motor_id);
-
 #endif

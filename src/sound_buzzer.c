@@ -24,7 +24,7 @@ void init_buzzer() {
 	MPC.PWPR.BIT.PFSWE	= 1;
 	MPC.P32PFS.BYTE		= 0x5; 		//MPC設定 P32 TMO3
     init_8bit_timer();
-};
+}
 
 
 static init_8bit_timer() {
@@ -35,7 +35,7 @@ static init_8bit_timer() {
     TMR3.TCSR.BIT.OSA   = 0x2;     //TCORAとのコンペアマッチでHith出力
     TMR3.TCSR.BIT.OSB   = 0x1;     //TCORBとのコンペアマッチでLow出力
     stop_buzzer();
-};
+}
 
 void sound_buzzer(unsigned short freq) {
     unsigned char tcora;
@@ -48,7 +48,7 @@ void sound_buzzer(unsigned short freq) {
     }
     TMR3.TCORA = tcora;
     TMR3.TCORB = tcora / 2;     //Duty比 50 %
-};
+}
 
 void stop_buzzer() {
     TMR3.TCORA = 100;   //適当な値

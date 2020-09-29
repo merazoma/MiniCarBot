@@ -8,6 +8,7 @@
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\analog_read.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\control_motor.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\dbsct.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\encoder.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\general_io.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\init_rx220.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\intprg.obj"

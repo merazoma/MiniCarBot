@@ -13,6 +13,5 @@ var control__motor_8h =
     [ "control_motor", "control__motor_8h.html#a39a7acf98ec303941d36729a94c44c03", null ],
     [ "control_motor_Nrpm", "control__motor_8h.html#a87245c37f9809b1fe351ec22c8fa01d8", null ],
     [ "drive_motor_duty", "control__motor_8h.html#a1a88438c88976ade0c8b5de00a96d5ed", null ],
-    [ "get_enc_count", "control__motor_8h.html#a64bf5899e020012c464eda92c3959f8c", null ],
     [ "init_motor", "control__motor_8h.html#a505223e724cfa362bf8b323360419d7e", null ]
 ];
