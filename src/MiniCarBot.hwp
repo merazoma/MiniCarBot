@@ -119,9 +119,13 @@
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\MiniCarBot.c" "User" "C source file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\analog_read.c" "User" "C source file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\analog_read.h" "User" "C header file" 2 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\cmtimer.c" "User" "C source file" 2 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\cmtimer.h" "User" "C header file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\control_motor.c" "User" "C source file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\control_motor.h" "User" "C header file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\dbsct.c" "User" "C source file" 2 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\encoder.c" "User" "C source file" 2 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\encoder.h" "User" "C header file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\general_io.c" "User" "C source file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\general_io.h" "User" "C header file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\init_rx220.c" "User" "C source file" 2 
@@ -152,7 +156,7 @@
 "DefaultSession" "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\DefaultSession.hsf" 0 
 [GENERAL_DATA_SESSION_DefaultSession]
 [OPTIONS_Debug_Renesas OptLinker]
-"Single Shot" "096c471f7e376d10" 4 
+"Single Shot" "031ee92cd6796d10" 4 
 [OPTIONS_Debug_Renesas RX Assembler]
 "Assembly source file" "0463768508176d10" 3 
 "Linkage symbol file" "0463768508176d10" 3 
@@ -161,8 +165,10 @@
 "C++ source file" "0463768508176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\MiniCarBot.c" "0463768508176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\analog_read.c" "0645815aa7276d10" 2 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\cmtimer.c" "07b9a92cd6796d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\control_motor.c" "011fb91a93376d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\dbsct.c" "0463768508176d10" 2 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\encoder.c" "0e4dc90deb696d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\general_io.c" "070936433c176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\init_rx220.c" "02bfaa1058176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\intprg.c" "0463768508176d10" 2 
@@ -177,7 +183,7 @@
 [OPTIONS_Debug_Renesas RX C/C++ Library Generator]
 "Single Shot" "0463768508176d10" 1 
 [OPTIONS_Debug_Renesas RX Configurator]
-"Single Shot" "0c60961f7e376d10" 5 
+"Single Shot" "07b9a92cd6796d10" 5 
 [OPTIONS_Debug]
 "" 0 
 "[S|OUTPUTPATH|^"$(CONFIGDIR)\$(PROJECTNAME).lib^"] [V|VERSION|1] [S|CPU|RX200] [S|ENDIAN|LITTLE] [S|ROUND|NEAREST] [S|DBL_SIZE|4] [B|SIGNED_CHAR|0] [B|SIGNED_BITFIELD|0] [S|BIT_ORDER|RIGHT] [S|FINT_REGISTER|0] [S|BRANCH|24] [S|LANG|C] [B|RUNTIME|1] [B|CTYPE|0] [B|MATH|0] [B|MATHF|0] [B|STDARG|0] [B|STDIO|1] [B|STDLIB|1] [B|STRING|1] [B|IOS|0] [B|NEW|1] [B|COMPLEX|0] [B|CPPSTRING|0] [S|MODE|BUILD/CHANGED]" 1 
@@ -189,7 +195,7 @@
 [LINKAGE_ORDER_Debug]
 [GENERAL_DATA_CONFIGURATION_Debug]
 [OPTIONS_Release_Renesas OptLinker]
-"Single Shot" "096c471f7e376d10" 4 
+"Single Shot" "031ee92cd6796d10" 4 
 [OPTIONS_Release_Renesas RX Assembler]
 "Assembly source file" "0463768508176d10" 3 
 "Linkage symbol file" "0463768508176d10" 3 
@@ -198,8 +204,10 @@
 "C++ source file" "0463768508176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\MiniCarBot.c" "0463768508176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\analog_read.c" "0645815aa7276d10" 2 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\cmtimer.c" "07b9a92cd6796d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\control_motor.c" "011fb91a93376d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\dbsct.c" "0463768508176d10" 2 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\encoder.c" "0e4dc90deb696d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\general_io.c" "070936433c176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\init_rx220.c" "02bfaa1058176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\intprg.c" "0463768508176d10" 2 
@@ -214,7 +222,7 @@
 [OPTIONS_Release_Renesas RX C/C++ Library Generator]
 "Single Shot" "0463768508176d10" 1 
 [OPTIONS_Release_Renesas RX Configurator]
-"Single Shot" "0c60961f7e376d10" 5 
+"Single Shot" "07b9a92cd6796d10" 5 
 [OPTIONS_Release]
 "" 0 
 "[S|OUTPUTPATH|^"$(CONFIGDIR)\$(PROJECTNAME).lib^"] [V|VERSION|1] [S|CPU|RX200] [S|ENDIAN|LITTLE] [S|ROUND|NEAREST] [S|DBL_SIZE|4] [B|SIGNED_CHAR|0] [B|SIGNED_BITFIELD|0] [S|BIT_ORDER|RIGHT] [S|FINT_REGISTER|0] [S|BRANCH|24] [S|LANG|C] [B|RUNTIME|1] [B|CTYPE|0] [B|MATH|0] [B|MATHF|0] [B|STDARG|0] [B|STDIO|1] [B|STDLIB|1] [B|STRING|1] [B|IOS|0] [B|NEW|1] [B|COMPLEX|0] [B|CPPSTRING|0] [S|MODE|BUILD/CHANGED]" 1 

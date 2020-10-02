@@ -40,8 +40,8 @@ void test_analog_read() {
 }
 
 void test_drive_pwm() {
-	drive_pwm(M_L_PWM, 50);
-	drive_pwm(M_R_PWM, 10);
+	drive_pwm(M_L_PWM, 10000);
+	drive_pwm(M_R_PWM, 2000);
 }
 
 void test_drive_pwm_0_100() {
@@ -179,11 +179,11 @@ void test_sonar() {
 // }
 
 void test_drive_motor() {
-	drive_motor_duty(LEFT, 40, FORWARD);
-	// drive_motor_duty(LEFT, 40, FORWARD);
-	drive_motor_duty(RIGHT, 40, FORWARD);
-	// drive_motor_duty(LEFT, 40, BACKWARD);
-	// drive_motor_duty(RIGHT, 90, BACKWARD);
+	drive_motor_duty(LEFT, 10000, FORWARD);
+	// drive_motor_duty(LEFT, 400000, FORWARD);
+	drive_motor_duty(RIGHT, 4000, FORWARD);
+	// drive_motor_duty(LEFT, 400000, BACKWARD);
+	// drive_motor_duty(RIGHT, 900000, BACKWARD);
 
 }
 
@@ -199,14 +199,38 @@ void test_motor_sonar_buzzer(){
 			sound_buzzer(d_f);		
 		}
 		if (d_r > 1000) {
-			drive_motor_duty(RIGHT, 100, FORWARD);
+			drive_motor_duty(RIGHT, 1000000, FORWARD);
 		} else {
-			drive_motor_duty(RIGHT, (float)d_r/10, FORWARD);
+			drive_motor_duty(RIGHT, d_r*1000, FORWARD);
 		}
 		if (d_l > 1000) {
 			drive_motor_duty(LEFT, 100, FORWARD);
 		} else {
-			drive_motor_duty(LEFT, (float)d_l/10, FORWARD);
+			drive_motor_duty(LEFT, d_l*1000, FORWARD);
+		}
+	}
+}
+
+void test_control_motor_sonar_buzzer(){
+	int d_f, d_r, d_l;
+	while(1) {
+		d_f = get_sonar_distance(SONAR_FRONT);
+		d_r = get_sonar_distance(SONAR_RIGHT);
+		d_l = get_sonar_distance(SONAR_LEFT);
+		if (d_f > 1000) {
+			sound_buzzer(1000);
+		} else {
+			sound_buzzer(d_f);		
+		}
+		if (d_r > 1500) {
+			set_motor_Nrpm_to_control(RIGHT, 15000);
+		} else {
+			set_motor_Nrpm_to_control(RIGHT, d_r*10);
+		}
+		if (d_l > 1500) {
+			set_motor_Nrpm_to_control(LEFT, 15000);
+		} else {
+			set_motor_Nrpm_to_control(LEFT, d_l*10);
 		}
 	}
 }
@@ -228,4 +252,33 @@ void test_enc() {
 		}
 		for (j=0; j<2000000;j++);
 	}	
+}
+
+void test_cmt() {
+	static int cnt = 0;
+    cnt ++;
+    if (cnt % 2 == 0) {
+        digital_write(DBG_LED0, HIGH);
+    } else {
+        digital_write(DBG_LED0, LOW);
+    }
+}
+
+void test_fb_control_motor_Nrpm() {
+	int i;
+	int j;
+	while (1)
+	{
+		for (i = 0; i < 10; i++)
+		{
+			set_motor_Nrpm_to_control(LEFT, i*1000);
+			set_motor_Nrpm_to_control(RIGHT, i*1000);
+			for (j=0; j<4000000;j++);
+		}		
+	}	
+}
+
+void test_fb_control_motor_Nrpm_const() {
+		set_motor_Nrpm_to_control(LEFT, 9000);
+		set_motor_Nrpm_to_control(RIGHT, 1500);
 }

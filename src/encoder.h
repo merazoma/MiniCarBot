@@ -33,6 +33,15 @@ typedef enum enm_encoder_id{
 unsigned short get_enc_count(encoder_id_t encoder_id);
 
 /**
+ * @brief 前回コール時からのエンコーダカウントの差分を取得
+ * 
+ * @param encoder_id 左右モータのエンコーダ選択
+ * @return short 前回コール時からのエンコーダカウントの差分
+ * @note 1 ms周期の割込みハンドラでの使用を想定
+ */
+short get_enc_count_dif(encoder_id_t encoder_id);
+
+/**
  * @brief エンコーダカウントの初期値を設定
  * 
  * @param encoder_id 左右モータのエンコーダ選択

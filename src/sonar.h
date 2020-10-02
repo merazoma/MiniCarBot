@@ -12,9 +12,6 @@
  * @details アプリからの超音波センサの距離取得要求時(get_sonar_distanceコール時)に、
  * @details タイマカウントを距離に換算して返却
  * @author Masaya Kobayashi
- * @version 0.1
- * @date 2020-09-06
- * 
  * @copyright Copyright (c) 2020
  * 
  */

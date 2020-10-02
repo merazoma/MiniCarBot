@@ -9,6 +9,7 @@
 #include "sonar.h"
 #include "photo_reflector.h"
 #include "encoder.h"
+#include "cmtimer.h"
 #include "iodefine.h"
 
 
@@ -28,6 +29,7 @@ void init_rx220(void) {
 	init_clk();
 	init_sci();
 	init_sonar();
+	init_cmtimer();
 	init_general_io();
 	init_adc();
 	// init_photo_reflector();

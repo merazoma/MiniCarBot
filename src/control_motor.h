@@ -21,6 +21,7 @@ typedef enum enm_motor_id{
     LEFT = 0,
     //! 右モータ
     RIGHT
+	
 } motor_id_t;
 
 /**
@@ -29,6 +30,7 @@ typedef enum enm_motor_id{
  */
 typedef enum enm_motor_direction{
     //! モータ正転
+	
     FORWARD = 0,
     //! モータ逆転
     BACKWARD
@@ -54,23 +56,28 @@ void init_motor();
 void control_motor(float lin_vel, float ang_vel);
 
 /**
- * @brief 与えられた回転数で、左右輪の回転数を制御
+ * @brief 左右輪の回転数を指示
  * 
  * @param motor_id 左右輪の指示（LEFT, RIGHT）
  * @param Nrpm 指示回転数(単位: rpm)
  * @note 内部でdrive_motor_dutyを使用
- * @warinig 未実装
  */
-void control_motor_Nrpm(motor_id_t motor_id, int Nrpm);
+void set_motor_Nrpm_to_control(motor_id_t motor_id, int Nrpm);
+
+/**
+ * @brief 左右モータの回転数フィードバッグ制御
+ * 
+ * @note CMTの1 ms周期割込みに差し込むことを想定
+ */
+void fb_control_motor_Nrpm();
 
 /**
  * @brief 指示されたDutyと回転の向きで、モータを駆動
  * 
  * @param motor_id 左右輪の指示（LEFT, RIGHT）
- * @param duty Duty（0～100）
+ * @param duty unsigned short Duty比（範囲: 0 ~ 1000000, LSB: 1 ppm） 
  * @param direction 回転向き（FORWARD, BACKWARD）
- * @warning テスト未実施
  */
-void drive_motor_duty(motor_id_t motor_id, float duty, motor_direction_t direction);
+void drive_motor_duty(motor_id_t motor_id, unsigned short duty, motor_direction_t direction);
 
 #endif

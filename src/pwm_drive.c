@@ -1,7 +1,9 @@
 #include "pwm_drive.h"
 #include "iodefine.h"
+#include "sci.h"
 
 #define TGR1kHz 320
+#define Maxppm (10000)
 
 static void init_mtu0();
 
@@ -30,10 +32,12 @@ static void init_mtu0() {
     MTU.TSTR.BIT.CST0   = 0x1;          //MTU0タイマ起動
 }
 
-void drive_pwm(pwm_port_t pwm_port, float duty) {
+void drive_pwm(pwm_port_t pwm_port, unsigned short duty) {
     unsigned short tgr;
-    if (duty < 100) {
-        tgr = (unsigned short)((1-duty/100) * TGR1kHz - 1);
+    if (duty < Maxppm) {
+        tgr = (unsigned short)(((Maxppm - duty) * TGR1kHz) / Maxppm - 1);
+        sci_printf("duty: %u\r\n", duty);
+        sci_printf("tgr: %u\r\n", tgr);
     } else {
         tgr = 0;  //duty指示値が 100以上 の場合、319/320=99.7%のDuty
     }

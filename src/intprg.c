@@ -29,6 +29,7 @@
 #include <machine.h>
 #include "vect.h"
 #include "sonar.h"
+#include "control_motor.h"
 #pragma section IntPRG
 
 // Exception(Supervisor Instruction)
@@ -62,7 +63,9 @@ void Excep_FCU_FRDYI(void){ }
 void Excep_ICU_SWINT(void){  }
 
 // CMTU0_CMT0
-void Excep_CMTU0_CMT0(void){  }
+void Excep_CMTU0_CMT0(void){
+    // fb_control_motor_Nrpm();
+}
 
 // CMTU0_CMT1
 void Excep_CMTU0_CMT1(void){  }

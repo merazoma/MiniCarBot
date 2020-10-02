@@ -32,8 +32,8 @@ static init_8bit_timer() {
     TMR3.TCCR.BIT.CSS   = 0x1;     //PCLKをクロックソース
     TMR3.TCCR.BIT.CKS   = 0x5;     //PCLK/1024 = 31.25 kHz
     TMR3.TCR.BIT.CCLR   = 0x1;     //TCORAとのコンペアマッチでTCNTクリア
-    TMR3.TCSR.BIT.OSA   = 0x2;     //TCORAとのコンペアマッチでHith出力
-    TMR3.TCSR.BIT.OSB   = 0x1;     //TCORBとのコンペアマッチでLow出力
+    TMR3.TCSR.BIT.OSA   = 0x1;     //TCORAとのコンペアマッチでLow出力
+    TMR3.TCSR.BIT.OSB   = 0x2;     //TCORBとのコンペアマッチでHigh出力
     stop_buzzer();
 }
 
