@@ -221,13 +221,13 @@ void test_control_motor_sonar_buzzer(){
 		} else {
 			sound_buzzer(d_f);		
 		}
-		if (d_r > 1500) {
-			set_motor_Nrpm_to_control(RIGHT, 15000);
+		if (d_r > 1000) {
+			set_motor_Nrpm_to_control(RIGHT, 10000);
 		} else {
 			set_motor_Nrpm_to_control(RIGHT, d_r*10);
 		}
-		if (d_l > 1500) {
-			set_motor_Nrpm_to_control(LEFT, 15000);
+		if (d_l > 1000) {
+			set_motor_Nrpm_to_control(LEFT, 10000);
 		} else {
 			set_motor_Nrpm_to_control(LEFT, d_l*10);
 		}

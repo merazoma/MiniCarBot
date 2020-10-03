@@ -14,7 +14,6 @@ static short motor_Nrpm_to_control[2] = {0, 0};
 static short u_duty[2] = {0, 0};
 short gain_p[2] = {20, 20};
 short gain_i[2] = {3, 3};
-static short i_term[2] = {0, 0};
 #define lowPassI (1)
 #define MaxIterm (3000)
 #define MinIterm (-MaxIterm)
@@ -38,11 +37,14 @@ void control_motor(float lin_vel, float ang_vel) {
 }
 
 void set_motor_Nrpm_to_control(motor_id_t motor_id, short Nrpm) {
-    i_term[motor_id] = 0;
+    if (Nrpm > MaxMotorNrpm) {
+        Nrpm = MaxMotorNrpm;
+    }
     motor_Nrpm_to_control[motor_id] = Nrpm;
 }
 
 void fb_control_motor_Nrpm() {
+    static short i_term[2] = {0, 0};
     short tcnt_enc[2];
     short tcnt_to_control[2];
     short err_sig[2];
