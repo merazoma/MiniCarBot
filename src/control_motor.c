@@ -13,9 +13,9 @@ const float GearRatio       = 54/8;                         //ピニオンギア
 static short motor_Nrpm_to_control[2] = {0, 0};
 static short u_duty[2] = {0, 0};
 short gain_p[2] = {80, 80};
-short gain_i[2] = {0, 0};
-#define lowPassI (3/4)
-#define MaxIterm (2000)
+short gain_i[2] = {3, 3};
+#define lowPassI (1)
+#define MaxIterm (5000)
 #define MinIterm (-MaxIterm)
 
 void init_motor() {
@@ -78,8 +78,6 @@ void fb_control_motor_Nrpm() {
     } 
     u_duty[LEFT] = gain_p[LEFT] * err_sig[LEFT] + gain_i[LEFT] * i_term[LEFT];
     u_duty[RIGHT] = gain_p[RIGHT] * err_sig[RIGHT] + gain_i[RIGHT] * i_term[RIGHT];
-    // u_duty[LEFT] = gain_p[LEFT] * err_sig[LEFT];
-    // u_duty[RIGHT] = gain_p[RIGHT] * err_sig[RIGHT];
     if (u_duty[LEFT] < 0) {
         // drive_motor_duty(LEFT, -u_duty[LEFT], BACKWARD);
         drive_motor_duty(LEFT, 0, FORWARD);
