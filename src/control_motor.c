@@ -12,10 +12,11 @@ const float GearRatio       = 54/8;                         //ピニオンギア
 #define NtoEncCnt (256*4)
 static short motor_Nrpm_to_control[2] = {0, 0};
 static short u_duty[2] = {0, 0};
-short gain_p[2] = {80, 80};
+short gain_p[2] = {20, 20};
 short gain_i[2] = {3, 3};
+static short i_term[2] = {0, 0};
 #define lowPassI (1)
-#define MaxIterm (5000)
+#define MaxIterm (3000)
 #define MinIterm (-MaxIterm)
 
 void init_motor() {
@@ -37,11 +38,11 @@ void control_motor(float lin_vel, float ang_vel) {
 }
 
 void set_motor_Nrpm_to_control(motor_id_t motor_id, short Nrpm) {
+    i_term[motor_id] = 0;
     motor_Nrpm_to_control[motor_id] = Nrpm;
 }
 
 void fb_control_motor_Nrpm() {
-    static short i_term[2] = {0, 0};
     short tcnt_enc[2];
     short tcnt_to_control[2];
     short err_sig[2];
@@ -79,14 +80,14 @@ void fb_control_motor_Nrpm() {
     u_duty[LEFT] = gain_p[LEFT] * err_sig[LEFT] + gain_i[LEFT] * i_term[LEFT];
     u_duty[RIGHT] = gain_p[RIGHT] * err_sig[RIGHT] + gain_i[RIGHT] * i_term[RIGHT];
     if (u_duty[LEFT] < 0) {
-        // drive_motor_duty(LEFT, -u_duty[LEFT], BACKWARD);
-        drive_motor_duty(LEFT, 0, FORWARD);
+        drive_motor_duty(LEFT, -u_duty[LEFT], BACKWARD);
+        // drive_motor_duty(LEFT, 0, FORWARD);
     } else {
         drive_motor_duty(LEFT, u_duty[LEFT], FORWARD);
     }
     if (u_duty[RIGHT] < 0) {
-        // drive_motor_duty(RIGHT, -u_duty[LEFT], BACKWARD);
-        drive_motor_duty(LEFT, 0, FORWARD);
+        drive_motor_duty(RIGHT, -u_duty[LEFT], BACKWARD);
+        // drive_motor_duty(LEFT, 0, FORWARD);
     } else {
         drive_motor_duty(RIGHT, u_duty[RIGHT], FORWARD);
     }

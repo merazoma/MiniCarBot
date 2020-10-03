@@ -85,9 +85,9 @@ static void init_irq() {
     ICU.IRQFLTC0.BIT.FCLKSEL5 = 0x3;
 
     //割込み優先
-    IPR(ICU, IRQ0) = 0x05;
-    IPR(ICU, IRQ1) = 0x05;
-    IPR(ICU, IRQ5) = 0x05;
+    IPR(ICU, IRQ0) = 0xff;
+    IPR(ICU, IRQ1) = 0xff;
+    IPR(ICU, IRQ5) = 0xff;
 
     //エッジ設定
     ICU.IRQCR[0].BIT.IRQMD = 0x1;   //立ち下がりエッジ

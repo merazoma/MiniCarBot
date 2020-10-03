@@ -279,7 +279,7 @@ void test_fb_control_motor_Nrpm() {
 
 void test_fb_control_motor_Nrpm_const() {
 		set_motor_Nrpm_to_control(LEFT, 5000);
-		set_motor_Nrpm_to_control(RIGHT, 10000);
+		set_motor_Nrpm_to_control(RIGHT, 2000);
 }
 
 void test_enc_dif() {
