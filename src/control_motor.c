@@ -4,10 +4,11 @@
 #include "encoder.h"
 #include "iodefine.h"
 
-#define WheelSperation 90                                   //トレッド幅 unit: mm
+#define WheelSperation 75                                   //トレッド幅 unit: mm
 #define WheelDiameter  48                                   //車輪直径 unit: mm
-const float VelocityConst = 1 / (WheelDiameter * 3.1415);
-const float GearRatio       = 54/8;                         //ピニオンギア: 8 歯, 平ギア: 54 歯
+#define ToNrps (1/(WheelDiameter*314)*100)
+#define GearTier 54
+#define GearMotor 8
 #define MaxMotorNrpm 9920                                   //SCR13-2005 定格回転数: 9920
 #define NtoEncCnt (256*4)
 static short motor_Nrpm_to_control[2] = {0, 0};
@@ -21,18 +22,18 @@ void init_motor() {
     digital_write(M_STBY, HIGH);        //モータ駆動ICのスタンバイを解除
 }
 
-void control_motor(float lin_vel, float ang_vel) {
-    float wheel_vel[2];     //左右車輪での速度 unit: mm/s
-    int motor_Nrpm[2];      //モータの回転速度 unit: rpm
+void control_motor(short lin_vel, short ang_vel) {
+    short wheel_vel[2];     //左右車輪での速度 unit: mm/s
+    short motor_Nrpm[2];    //モータの回転速度 unit: rpm
 
-    wheel_vel[LEFT]   = lin_vel - (ang_vel * WheelSperation / 2);
-    wheel_vel[RIGHT]  = lin_vel + (ang_vel * WheelSperation / 2);
+    wheel_vel[LEFT]   = lin_vel - (ang_vel * WheelSperation * 314/100/180 / 2);
+    wheel_vel[RIGHT]  = lin_vel + (ang_vel * WheelSperation * 314/100/180 / 2);
 
-    motor_Nrpm[LEFT]   = (int) (wheel_vel[LEFT] * VelocityConst * GearRatio);
-    motor_Nrpm[RIGHT]  = (int) (wheel_vel[RIGHT] * VelocityConst * GearRatio);
+    motor_Nrpm[LEFT]   = wheel_vel[LEFT] * GearTier * 60 * 100 / 314 / WheelDiameter / GearMotor;
+    motor_Nrpm[RIGHT]   = wheel_vel[RIGHT] * GearTier * 60 * 100 / 314 / WheelDiameter / GearMotor;
 
     set_motor_Nrpm_to_control(LEFT, motor_Nrpm[LEFT]);
-    set_motor_Nrpm_to_control(LEFT, motor_Nrpm[RIGHT]);
+    set_motor_Nrpm_to_control(RIGHT, motor_Nrpm[RIGHT]);
 }
 
 void set_motor_Nrpm_to_control(motor_id_t motor_id, short Nrpm) {

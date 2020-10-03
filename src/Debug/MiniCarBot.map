@@ -1,4 +1,4 @@
-Optimizing Linkage Editor (V.10.02.00.000)        03-Oct-2020 22:48:32
+Optimizing Linkage Editor (V.10.02.00.000)        04-Oct-2020 00:55:39
 
 *** Options ***
 
@@ -46,13 +46,13 @@ R_1
 B_2
                                   00001000  00001000         0   2
 R_2
-                                  00001000  00001019        1a   2
+                                  00001000  0000101b        1c   2
 B
                                   0000101c  0000141b       400   4
 R
-                                  0000141c  00001423         8   4
+                                  0000141c  0000142b        10   4
 SI
-                                  00001424  00001723       300   4
+                                  0000142c  0000172b       300   4
 PResetPRG
                                   ffff8000  ffff8022        23   1
 C_1
@@ -60,31 +60,31 @@ C_1
 C_2
                                   ffff8100  ffff8111        12   2
 C
-                                  ffff8114  ffff813b        28   4
+                                  ffff8114  ffff8133        20   4
 C$DSEC
-                                  ffff813c  ffff815f        24   4
+                                  ffff8134  ffff8157        24   4
 C$BSEC
-                                  ffff8160  ffff8177        18   4
+                                  ffff8158  ffff816f        18   4
 C$VECT
-                                  ffff8178  ffff8577       400   4
+                                  ffff8170  ffff856f       400   4
 D_1
-                                  ffff8578  ffff8578         0   1
+                                  ffff8570  ffff8570         0   1
 D_2
-                                  ffff8578  ffff8591        1a   2
+                                  ffff8570  ffff858b        1c   2
 D
-                                  ffff8594  ffff859b         8   4
+                                  ffff858c  ffff859b        10   4
 P
-                                  ffff859c  ffff9978      13dd   1
+                                  ffff859c  ffff9575       fda   1
 PIntPRG
-                                  ffff9979  ffff9a9e       126   1
+                                  ffff9576  ffff969b       126   1
 W_1
-                                  ffff9a9f  ffff9aa8         a   1
+                                  ffff969c  ffff96a5         a   1
 W_2
-                                  ffff9aaa  ffff9aaa         0   2
+                                  ffff96a6  ffff96a6         0   2
 W
-                                  ffff9aac  ffff9aac         0   4
+                                  ffff96a8  ffff96a8         0   4
 L
-                                  ffff9aac  ffff9b4a        9f   4
+                                  ffff96a8  ffff9746        9f   4
 $ADDR_C_FFFFFF80
                                   ffffff80  ffffff83         4   1
 FIXEDVECT

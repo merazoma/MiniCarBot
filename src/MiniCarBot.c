@@ -1,8 +1,6 @@
 /**
  * @file MiniCarBot.c
  * @brief メイン処理
- * @version 0.1
- * @date 2020-09-06
  * 
  * @copyright Copyright (c) 2020
  * 
@@ -37,7 +35,7 @@ void main(void)
 	// test_drive_pwm();
  	// test_general_io();
 	// test_motor_sonar_buzzer();
-	test_fb_control_motor_Nrpm();
+	// test_fb_control_motor_Nrpm();
 	// test_fb_control_motor_Nrpm_const();
 	// test_control_motor_sonar_buzzer();
 	// test_sound_buzzer_note();
@@ -49,6 +47,8 @@ void main(void)
 	// test_sound_buzzer_update();
 	// test_sound_buzzer_note();
 	// test_sonar();
+	test_control_motor();
+	// test_main_only_sonar();
 	while(1) {
 		
 	}

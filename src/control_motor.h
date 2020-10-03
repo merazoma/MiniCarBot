@@ -48,11 +48,10 @@ void init_motor();
  * @details 左右輪の回転数を制御。
  * 
  * @param lin_vel 並進速度（単位: mm/s）
- * @param ang_vel 回転速度（単位: rad/s）
+ * @param ang_vel 回転速度（単位: 度）
  * @note 内部でcontrol_motor_Nrpmを使用
- * @warning 未実装
  */
-void control_motor(float lin_vel, float ang_vel);
+void control_motor(short lin_vel, short ang_vel);
 
 /**
  * @brief 左右輪の回転数を指示

@@ -268,22 +268,72 @@ void test_fb_control_motor_Nrpm() {
 	int j;
 	while (1)
 	{
-		for (i = 0; i < 10; i++)
+		for (i = 0; i < 20; i++)
 		{
-			set_motor_Nrpm_to_control(LEFT, i*1000);
-			set_motor_Nrpm_to_control(RIGHT, i*1000);
+			set_motor_Nrpm_to_control(LEFT, i*1000-10000);
+			set_motor_Nrpm_to_control(RIGHT, i*1000-10000);
 			for (j=0; j<4000000;j++);
 		}		
 	}	
 }
 
 void test_fb_control_motor_Nrpm_const() {
-		set_motor_Nrpm_to_control(LEFT, 5000);
-		set_motor_Nrpm_to_control(RIGHT, 2000);
+	set_motor_Nrpm_to_control(LEFT, 5000);
+	set_motor_Nrpm_to_control(RIGHT, 2000);
 }
 
 void test_enc_dif() {
 	short enc_l;
 	enc_l = get_enc_count_dif(ENCODER_LEFT);
 	drive_motor_duty(RIGHT, enc_l*10, FORWARD);
+}
+
+void test_main_only_sonar() {
+	static short gain_p = 1;
+	// static short gain_d = 1;
+	static int d_r_l_to_control = 5000;
+	static int err_d_r_l = 0;
+	// static short d_r_old;
+	// static short d_r_dif;
+	int d_f, d_r, d_l;
+	int d_r_l_dif;
+
+	short lin_vel, ang_vel;
+	while(1) {
+		d_f = get_sonar_distance(SONAR_FRONT);
+		d_r = get_sonar_distance(SONAR_RIGHT);
+		d_l = get_sonar_distance(SONAR_LEFT);
+		d_r_l_dif = d_r - d_l;
+		err_d_r_l = d_r_l_dif - d_r_l_to_control;
+		ang_vel = err_d_r_l * gain_p / 10;
+		if (d_f < 200) {
+			lin_vel = 0;
+			ang_vel = 15;
+			continue;
+		} else if (d_f > 1000) {
+			lin_vel = 10000;
+		} else {
+			lin_vel = d_f * 10;
+		}
+		if (ang_vel > 180) { 
+			ang_vel = 180;
+		}
+		control_motor(lin_vel, ang_vel);
+	}
+}
+
+void test_control_motor(){
+	control_motor(100, 240);
+	// int i;
+	// int j;
+	// short ang_vel;
+	// while (1)
+	// {
+	// 	for (i = 0; i < 20; i++)
+	// 	{
+	// 		ang_vel = (i - 10)*10;
+	// 		control_motor(2000, ang_vel);
+	// 		for (j=0; j<4000000;j++);
+	// 	}		
+	// }	
 }
