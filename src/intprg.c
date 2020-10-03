@@ -65,6 +65,8 @@ void Excep_ICU_SWINT(void){  }
 // CMTU0_CMT0
 void Excep_CMTU0_CMT0(void){
     // fb_control_motor_Nrpm();
+    test_cmt();
+    test_enc_dif();
 }
 
 // CMTU0_CMT1

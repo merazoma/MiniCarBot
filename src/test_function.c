@@ -11,8 +11,11 @@
 
 
 void test_general_io(void) {
-	digital_write(M_R_IN1, HIGH);
-	digital_write(M_R_IN2, HIGH);
+	digital_write(DBG_LED0, HIGH);
+	digital_write(DBG_LED1, LOW);
+	digital_write(DBG_LED2, HIGH);
+	digital_write(M_LED0, HIGH);
+	digital_write(M_LED1, LOW);
 }
 
 void test_sci_printf() {
@@ -179,12 +182,8 @@ void test_sonar() {
 // }
 
 void test_drive_motor() {
-	drive_motor_duty(LEFT, 10000, FORWARD);
-	// drive_motor_duty(LEFT, 400000, FORWARD);
-	drive_motor_duty(RIGHT, 4000, FORWARD);
-	// drive_motor_duty(LEFT, 400000, BACKWARD);
-	// drive_motor_duty(RIGHT, 900000, BACKWARD);
-
+	drive_motor_duty(LEFT, 8000, FORWARD);
+	drive_motor_duty(RIGHT, 0, FORWARD);
 }
 
 void test_motor_sonar_buzzer(){
@@ -279,6 +278,12 @@ void test_fb_control_motor_Nrpm() {
 }
 
 void test_fb_control_motor_Nrpm_const() {
-		set_motor_Nrpm_to_control(LEFT, 9000);
-		set_motor_Nrpm_to_control(RIGHT, 1500);
+		set_motor_Nrpm_to_control(LEFT, 7000);
+		set_motor_Nrpm_to_control(RIGHT, 3000);
+}
+
+void test_enc_dif() {
+	short enc_l;
+	enc_l = get_enc_count_dif(ENCODER_LEFT);
+	drive_motor_duty(RIGHT, enc_l*10, FORWARD);
 }

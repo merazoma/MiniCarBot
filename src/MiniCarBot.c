@@ -27,6 +27,7 @@ void main(void)
 {
 	init_rx220();
 
+	// test_drive_motor();
 	// test_enc();
 	//test_analog_read();
 	// test_drive_pwm();
@@ -34,7 +35,7 @@ void main(void)
 	// test_analog_read();
 	// test_sonar();
 	// test_drive_pwm();
-	test_drive_motor();
+ 	// test_general_io();
 	// test_motor_sonar_buzzer();
 	// test_fb_control_motor_Nrpm();
 	// test_fb_control_motor_Nrpm_const();

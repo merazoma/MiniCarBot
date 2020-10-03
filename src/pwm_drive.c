@@ -28,7 +28,7 @@ static void init_mtu0() {
     MTU0.TGRB           = TGR1kHz - 1;  //PWM周期 1 kHz
     MTU0.TGRA           = TGR1kHz;      //MTIOC0A 初期Duty 0%
     MTU0.TGRC           = TGR1kHz;      //MTIOC0C 初期Duty 0%
-    MTU0.TIER.BIT.TGIEB = 0x1;          //割込み要求（TGIB）を許可
+    // MTU0.TIER.BIT.TGIEB = 0x1;          //割込み要求（TGIB）を許可
     MTU.TSTR.BIT.CST0   = 0x1;          //MTU0タイマ起動
 }
 
@@ -36,8 +36,6 @@ void drive_pwm(pwm_port_t pwm_port, unsigned short duty) {
     unsigned short tgr;
     if (duty < Maxppm) {
         tgr = (unsigned short)(((Maxppm - duty) * TGR1kHz) / Maxppm - 1);
-        sci_printf("duty: %u\r\n", duty);
-        sci_printf("tgr: %u\r\n", tgr);
     } else {
         tgr = 0;  //duty指示値が 100以上 の場合、319/320=99.7%のDuty
     }

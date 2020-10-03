@@ -12,13 +12,11 @@ const float GearRatio       = 54/8;                         //ピニオンギア
 #define NtoEncCnt (256*4)
 static short motor_Nrpm_to_control[2] = {0, 0};
 static short u_duty[2] = {0, 0};
-short gain_p[2] = {30, 30};
-// short gain_i[2] = {80, 80};
-// #define lowPassI (1/4)
-
-// #define MaxIterm (8000/gain_i[0])
-// #define MinIterm (-MaxIterm)
-
+short gain_p[2] = {25, 25};
+short gain_i[2] = {3, 3};
+#define lowPassI (1)
+#define MaxIterm (8000/gain_i[0])
+#define MinIterm (-MaxIterm)
 
 void init_motor() {
     digital_write(M_STBY, HIGH);        //モータ駆動ICのスタンバイを解除
@@ -38,7 +36,7 @@ void control_motor(float lin_vel, float ang_vel) {
     set_motor_Nrpm_to_control(LEFT, motor_Nrpm[RIGHT]);
 }
 
-void set_motor_Nrpm_to_control(motor_id_t motor_id, int Nrpm) {
+void set_motor_Nrpm_to_control(motor_id_t motor_id, short Nrpm) {
     motor_Nrpm_to_control[motor_id] = Nrpm;
 }
 
@@ -53,30 +51,49 @@ void fb_control_motor_Nrpm() {
     tcnt_enc[RIGHT] = get_enc_count_dif(ENCODER_RIGHT);
     err_sig[LEFT] = tcnt_to_control[LEFT] - tcnt_enc[LEFT];
     err_sig[RIGHT] = tcnt_to_control[RIGHT] - tcnt_enc[RIGHT];
-    // i_term[LEFT] += err_sig[LEFT] * lowPassI;
-    // i_term[RIGHT] += err_sig[RIGHT] * lowPassI;
-    // if (i_term[LEFT] > MaxIterm) {
-    //     i_term[LEFT] = MaxIterm;
-    // } else if (MinIterm > i_term[LEFT]) {
-    //     i_term[LEFT] = MinIterm;
-    // }
-    // if (i_term[RIGHT] > MaxIterm) {
-    //     i_term[RIGHT] = MaxIterm;
-    // } else if (MinIterm > i_term[RIGHT]) {
-    //     i_term[RIGHT] = MinIterm;
-    // }
+    if (err_sig[LEFT] < 0) {
+        digital_write(DBG_LED0, HIGH);
+        digital_write(DBG_LED1, LOW);
+    } else {
+        digital_write(DBG_LED0, LOW);
+        digital_write(DBG_LED1, HIGH);
+    }
+    if (err_sig[RIGHT] < 0) {
+        digital_write(M_LED0, HIGH);
+        digital_write(M_LED1, LOW);
+    } else {
+        digital_write(M_LED0, LOW);
+        digital_write(M_LED1, HIGH);
+    }
 
-    // u_duty[LEFT] = gain_p[LEFT] * err_sig[LEFT] + gain_i[LEFT] * i_term[LEFT];
-    // u_duty[RIGHT] = gain_p[RIGHT] * err_sig[RIGHT] + gain_i[RIGHT] * i_term[RIGHT];
-    u_duty[LEFT] = gain_p[LEFT] * err_sig[LEFT];
-    u_duty[RIGHT] = gain_p[RIGHT] * err_sig[RIGHT];
+    i_term[LEFT] += err_sig[LEFT] * lowPassI;
+    i_term[RIGHT] += err_sig[RIGHT] * lowPassI;
+    if (i_term[LEFT] > MaxIterm) {
+        i_term[LEFT] = MaxIterm;
+    } else if (MinIterm > i_term[LEFT]) {
+        i_term[LEFT] = MinIterm;
+    }
+    if (i_term[RIGHT] > MaxIterm) {
+        i_term[RIGHT] = MaxIterm;
+    } else if (MinIterm > i_term[RIGHT]) {
+        i_term[RIGHT] = MinIterm;
+    }
+    i_term[LEFT] = 0;
+    i_term[RIGHT] = 0;
+ 
+    u_duty[LEFT] = gain_p[LEFT] * err_sig[LEFT] + gain_i[LEFT] * i_term[LEFT];
+    u_duty[RIGHT] = gain_p[RIGHT] * err_sig[RIGHT] + gain_i[RIGHT] * i_term[RIGHT];
+    // u_duty[LEFT] = gain_p[LEFT] * err_sig[LEFT];
+    // u_duty[RIGHT] = gain_p[RIGHT] * err_sig[RIGHT];
     if (u_duty[LEFT] < 0) {
-        drive_motor_duty(LEFT, -u_duty[LEFT], BACKWARD);
+        // drive_motor_duty(LEFT, -u_duty[LEFT], BACKWARD);
+        drive_motor_duty(LEFT, 0, FORWARD);
     } else {
         drive_motor_duty(LEFT, u_duty[LEFT], FORWARD);
     }
     if (u_duty[RIGHT] < 0) {
-        drive_motor_duty(RIGHT, -u_duty[LEFT], BACKWARD);
+        // drive_motor_duty(RIGHT, -u_duty[LEFT], BACKWARD);
+        drive_motor_duty(LEFT, 0, FORWARD);
     } else {
         drive_motor_duty(RIGHT, u_duty[RIGHT], FORWARD);
     }

@@ -21,7 +21,6 @@ typedef enum enm_motor_id{
     LEFT = 0,
     //! 右モータ
     RIGHT
-	
 } motor_id_t;
 
 /**
@@ -59,10 +58,10 @@ void control_motor(float lin_vel, float ang_vel);
  * @brief 左右輪の回転数を指示
  * 
  * @param motor_id 左右輪の指示（LEFT, RIGHT）
- * @param Nrpm 指示回転数(単位: rpm)
+ * @param Nrpm short 指示回転数(単位: rpm)
  * @note 内部でdrive_motor_dutyを使用
  */
-void set_motor_Nrpm_to_control(motor_id_t motor_id, int Nrpm);
+void set_motor_Nrpm_to_control(motor_id_t motor_id, short Nrpm);
 
 /**
  * @brief 左右モータの回転数フィードバッグ制御
