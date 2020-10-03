@@ -14,7 +14,6 @@ static short motor_Nrpm_to_control[2] = {0, 0};
 static short u_duty[2] = {0, 0};
 short gain_p[2] = {20, 20};
 short gain_i[2] = {3, 3};
-#define lowPassI (1)
 #define MaxIterm (3000)
 #define MinIterm (-MaxIterm)
 
@@ -67,8 +66,8 @@ void fb_control_motor_Nrpm() {
         digital_write(M_LED1, HIGH);
     }
 
-    i_term[LEFT] += err_sig[LEFT] * lowPassI;
-    i_term[RIGHT] += err_sig[RIGHT] * lowPassI;
+    i_term[LEFT] += err_sig[LEFT];
+    i_term[RIGHT] += err_sig[RIGHT];
     if (i_term[LEFT] > MaxIterm) {
         i_term[LEFT] = MaxIterm;
     } else if (MinIterm > i_term[LEFT]) {
