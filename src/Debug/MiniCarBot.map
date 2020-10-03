@@ -1,4 +1,4 @@
-Optimizing Linkage Editor (V.10.02.00.000)        03-Oct-2020 18:16:08
+Optimizing Linkage Editor (V.10.02.00.000)        03-Oct-2020 18:45:56
 
 *** Options ***
 
@@ -44,9 +44,9 @@ B_1
 R_1
                                   00001000  00001000         0   1
 B_2
-                                  00001000  00001003         4   2
+                                  00001000  00001000         0   2
 R_2
-                                  00001004  00001019        16   2
+                                  00001000  00001019        1a   2
 B
                                   0000101c  0000141b       400   4
 R
@@ -70,21 +70,21 @@ C$VECT
 D_1
                                   ffff8578  ffff8578         0   1
 D_2
-                                  ffff8578  ffff858d        16   2
+                                  ffff8578  ffff8591        1a   2
 D
-                                  ffff8590  ffff8597         8   4
+                                  ffff8594  ffff859b         8   4
 P
-                                  ffff8598  ffff9980      13e9   1
+                                  ffff859c  ffff996a      13cf   1
 PIntPRG
-                                  ffff9981  ffff9aaa       12a   1
+                                  ffff996b  ffff9a94       12a   1
 W_1
-                                  ffff9aab  ffff9ab4         a   1
+                                  ffff9a95  ffff9a9e         a   1
 W_2
-                                  ffff9ab6  ffff9ab6         0   2
+                                  ffff9aa0  ffff9aa0         0   2
 W
-                                  ffff9ab8  ffff9ab8         0   4
+                                  ffff9aa0  ffff9aa0         0   4
 L
-                                  ffff9ab8  ffff9b56        9f   4
+                                  ffff9aa0  ffff9b3e        9f   4
 $ADDR_C_FFFFFF80
                                   ffffff80  ffffff83         4   1
 FIXEDVECT

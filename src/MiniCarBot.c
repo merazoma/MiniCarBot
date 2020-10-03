@@ -38,7 +38,7 @@ void main(void)
  	// test_general_io();
 	// test_motor_sonar_buzzer();
 	// test_fb_control_motor_Nrpm();
-	// test_fb_control_motor_Nrpm_const();
+	test_fb_control_motor_Nrpm_const();
 	// test_control_motor_sonar_buzzer();
 	// test_sound_buzzer_note();
 	// test_photo_reflector();

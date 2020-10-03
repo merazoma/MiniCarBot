@@ -12,10 +12,10 @@ const float GearRatio       = 54/8;                         //ピニオンギア
 #define NtoEncCnt (256*4)
 static short motor_Nrpm_to_control[2] = {0, 0};
 static short u_duty[2] = {0, 0};
-short gain_p[2] = {25, 25};
-short gain_i[2] = {3, 3};
-#define lowPassI (1)
-#define MaxIterm (8000/gain_i[0])
+short gain_p[2] = {80, 80};
+short gain_i[2] = {0, 0};
+#define lowPassI (3/4)
+#define MaxIterm (2000)
 #define MinIterm (-MaxIterm)
 
 void init_motor() {
@@ -41,7 +41,7 @@ void set_motor_Nrpm_to_control(motor_id_t motor_id, short Nrpm) {
 }
 
 void fb_control_motor_Nrpm() {
-    static short i_term[2];
+    static short i_term[2] = {0, 0};
     short tcnt_enc[2];
     short tcnt_to_control[2];
     short err_sig[2];
@@ -53,10 +53,8 @@ void fb_control_motor_Nrpm() {
     err_sig[RIGHT] = tcnt_to_control[RIGHT] - tcnt_enc[RIGHT];
     if (err_sig[LEFT] < 0) {
         digital_write(DBG_LED0, HIGH);
-        digital_write(DBG_LED1, LOW);
     } else {
         digital_write(DBG_LED0, LOW);
-        digital_write(DBG_LED1, HIGH);
     }
     if (err_sig[RIGHT] < 0) {
         digital_write(M_LED0, HIGH);
@@ -77,10 +75,7 @@ void fb_control_motor_Nrpm() {
         i_term[RIGHT] = MaxIterm;
     } else if (MinIterm > i_term[RIGHT]) {
         i_term[RIGHT] = MinIterm;
-    }
-    i_term[LEFT] = 0;
-    i_term[RIGHT] = 0;
- 
+    } 
     u_duty[LEFT] = gain_p[LEFT] * err_sig[LEFT] + gain_i[LEFT] * i_term[LEFT];
     u_duty[RIGHT] = gain_p[RIGHT] * err_sig[RIGHT] + gain_i[RIGHT] * i_term[RIGHT];
     // u_duty[LEFT] = gain_p[LEFT] * err_sig[LEFT];

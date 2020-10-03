@@ -278,7 +278,7 @@ void test_fb_control_motor_Nrpm() {
 }
 
 void test_fb_control_motor_Nrpm_const() {
-		set_motor_Nrpm_to_control(LEFT, 7000);
+		set_motor_Nrpm_to_control(LEFT, 3000);
 		set_motor_Nrpm_to_control(RIGHT, 3000);
 }
 
