@@ -29,7 +29,7 @@ void init_rx220(void) {
 	init_clk();
 	init_sci();
 	init_sonar();
-	// init_photo_reflector();
+	init_photo_reflector();
 	init_pwm_drive();
 	init_motor();
 	init_encoder();

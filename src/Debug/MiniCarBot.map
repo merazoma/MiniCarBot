@@ -1,4 +1,4 @@
-Optimizing Linkage Editor (V.10.02.00.000)        04-Oct-2020 00:55:39
+Optimizing Linkage Editor (V.10.02.00.000)        04-Oct-2020 13:57:03
 
 *** Options ***
 
@@ -19,6 +19,7 @@ Optimizing Linkage Editor (V.10.02.00.000)        04-Oct-2020 00:55:39
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\init_rx220.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\intprg.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\MiniCarBot.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\photo_reflector.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\pwm_drive.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\resetprg.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\sbrk.obj"
@@ -74,17 +75,17 @@ D_2
 D
                                   ffff858c  ffff859b        10   4
 P
-                                  ffff859c  ffff9575       fda   1
+                                  ffff859c  ffff9655      10ba   1
 PIntPRG
-                                  ffff9576  ffff969b       126   1
+                                  ffff9656  ffff977b       126   1
 W_1
-                                  ffff969c  ffff96a5         a   1
+                                  ffff977c  ffff9785         a   1
 W_2
-                                  ffff96a6  ffff96a6         0   2
+                                  ffff9786  ffff9786         0   2
 W
-                                  ffff96a8  ffff96a8         0   4
+                                  ffff9788  ffff9788         0   4
 L
-                                  ffff96a8  ffff9746        9f   4
+                                  ffff9788  ffff9826        9f   4
 $ADDR_C_FFFFFF80
                                   ffffff80  ffffff83         4   1
 FIXEDVECT

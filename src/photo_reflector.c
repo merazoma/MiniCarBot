@@ -4,23 +4,23 @@
 
 //! フォトトランジスタのAD値から距離への変換用定数\n
 //! 超音波センサで取得した距離を使って自動キャリブレーションできるようにしたい
-static unsigned short CntToDistanceLeft 100;
-static unsigned short CntToDistanceLeftFront 100;
-static unsigned short CntToDistanceRight 100;
-static unsigned short CntToDistanceRightFront 100;
+static unsigned short CntToDistanceLeft = 100;
+static unsigned short CntToDistanceLeftFront = 100;
+static unsigned short CntToDistanceRight = 100;
+static unsigned short CntToDistanceRightFront = 100;
 
-//! 500Hzに相当するTGR(2 ms / (1/32MHz) = 640)
-#define TGR500Hz 640
+//! 500Hzに相当するTGR(2 ms / (1/32MHz) = 64000)
+#define TGR500Hz 64000
 
 static void init_mtu4();
 
 void init_photo_reflector() {
     init_mtu4();
-};
+}
 
 int get_photo_reflecor_distance(photo_port_t port) {
 
-};
+}
 
 void init_mtu4() {
     PORTE.PMR.BIT.B1 = 0x1;     //PE1 を周辺機能に設定

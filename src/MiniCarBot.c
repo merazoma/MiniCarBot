@@ -47,7 +47,8 @@ void main(void)
 	// test_sound_buzzer_update();
 	// test_sound_buzzer_note();
 	// test_sonar();
-	test_control_motor();
+	// test_control_motor();
+	// test_control_motor_sonar();
 	// test_main_only_sonar();
 	while(1) {
 		

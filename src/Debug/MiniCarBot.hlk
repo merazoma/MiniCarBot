@@ -14,6 +14,7 @@
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\init_rx220.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\intprg.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\MiniCarBot.obj"
+-input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\photo_reflector.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\pwm_drive.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\resetprg.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\sbrk.obj"

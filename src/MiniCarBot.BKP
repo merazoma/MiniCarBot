@@ -131,6 +131,8 @@
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\init_rx220.c" "User" "C source file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\init_rx220.h" "User" "C header file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\intprg.c" "User" "C source file" 2 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\photo_reflector.c" "User" "C source file" 2 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\photo_reflector.h" "User" "C header file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\pwm_drive.c" "User" "C source file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\pwm_drive.h" "User" "C header file" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\resetprg.c" "User" "C source file" 2 
@@ -156,7 +158,7 @@
 "DefaultSession" "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\DefaultSession.hsf" 0 
 [GENERAL_DATA_SESSION_DefaultSession]
 [OPTIONS_Debug_Renesas OptLinker]
-"Single Shot" "031ee92cd6796d10" 4 
+"Single Shot" "01c68cf255a96d10" 4 
 [OPTIONS_Debug_Renesas RX Assembler]
 "Assembly source file" "0463768508176d10" 3 
 "Linkage symbol file" "0463768508176d10" 3 
@@ -172,6 +174,7 @@
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\general_io.c" "070936433c176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\init_rx220.c" "02bfaa1058176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\intprg.c" "0463768508176d10" 2 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\photo_reflector.c" "0dde2cf255a96d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\pwm_drive.c" "04d98a7069276d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\resetprg.c" "0463768508176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\sbrk.c" "0463768508176d10" 2 
@@ -183,7 +186,7 @@
 [OPTIONS_Debug_Renesas RX C/C++ Library Generator]
 "Single Shot" "0463768508176d10" 1 
 [OPTIONS_Debug_Renesas RX Configurator]
-"Single Shot" "07b9a92cd6796d10" 5 
+"Single Shot" "0dde2cf255a96d10" 5 
 [OPTIONS_Debug]
 "" 0 
 "[S|OUTPUTPATH|^"$(CONFIGDIR)\$(PROJECTNAME).lib^"] [V|VERSION|1] [S|CPU|RX200] [S|ENDIAN|LITTLE] [S|ROUND|NEAREST] [S|DBL_SIZE|4] [B|SIGNED_CHAR|0] [B|SIGNED_BITFIELD|0] [S|BIT_ORDER|RIGHT] [S|FINT_REGISTER|0] [S|BRANCH|24] [S|LANG|C] [B|RUNTIME|1] [B|CTYPE|0] [B|MATH|0] [B|MATHF|0] [B|STDARG|0] [B|STDIO|1] [B|STDLIB|1] [B|STRING|1] [B|IOS|0] [B|NEW|1] [B|COMPLEX|0] [B|CPPSTRING|0] [S|MODE|BUILD/CHANGED]" 1 
@@ -195,7 +198,7 @@
 [LINKAGE_ORDER_Debug]
 [GENERAL_DATA_CONFIGURATION_Debug]
 [OPTIONS_Release_Renesas OptLinker]
-"Single Shot" "031ee92cd6796d10" 4 
+"Single Shot" "01c68cf255a96d10" 4 
 [OPTIONS_Release_Renesas RX Assembler]
 "Assembly source file" "0463768508176d10" 3 
 "Linkage symbol file" "0463768508176d10" 3 
@@ -211,6 +214,7 @@
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\general_io.c" "070936433c176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\init_rx220.c" "02bfaa1058176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\intprg.c" "0463768508176d10" 2 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\photo_reflector.c" "0dde2cf255a96d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\pwm_drive.c" "04d98a7069276d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\resetprg.c" "0463768508176d10" 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\sbrk.c" "0463768508176d10" 2 
@@ -222,7 +226,7 @@
 [OPTIONS_Release_Renesas RX C/C++ Library Generator]
 "Single Shot" "0463768508176d10" 1 
 [OPTIONS_Release_Renesas RX Configurator]
-"Single Shot" "07b9a92cd6796d10" 5 
+"Single Shot" "0dde2cf255a96d10" 5 
 [OPTIONS_Release]
 "" 0 
 "[S|OUTPUTPATH|^"$(CONFIGDIR)\$(PROJECTNAME).lib^"] [V|VERSION|1] [S|CPU|RX200] [S|ENDIAN|LITTLE] [S|ROUND|NEAREST] [S|DBL_SIZE|4] [B|SIGNED_CHAR|0] [B|SIGNED_BITFIELD|0] [S|BIT_ORDER|RIGHT] [S|FINT_REGISTER|0] [S|BRANCH|24] [S|LANG|C] [B|RUNTIME|1] [B|CTYPE|0] [B|MATH|0] [B|MATHF|0] [B|STDARG|0] [B|STDIO|1] [B|STDLIB|1] [B|STRING|1] [B|IOS|0] [B|NEW|1] [B|COMPLEX|0] [B|CPPSTRING|0] [S|MODE|BUILD/CHANGED]" 1 

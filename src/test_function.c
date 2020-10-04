@@ -161,11 +161,11 @@ void test_sonar() {
 	while (1)
 	{
 		d = get_sonar_distance(SONAR_LEFT);
-		sci_printf("Left Sonar distance = %u\r\n", d);
+		sci_printf("Left Sonar distance = %d\r\n", d);
 		d = get_sonar_distance(SONAR_FRONT);
-		sci_printf("Front Sonar distance = %u\r\n", d);
+		sci_printf("Front Sonar distance = %d\r\n", d);
 		d = get_sonar_distance(SONAR_RIGHT);
-		sci_printf("Right Sonar distance = %u\r\n", d);
+		sci_printf("Right Sonar distance = %d\r\n", d);
 		for (i=0; i<2000000;i++);
 	}
 }
@@ -234,6 +234,30 @@ void test_control_motor_sonar_buzzer(){
 	}
 }
 
+void test_control_motor_sonar(){
+	int d_f, d_r, d_l;
+	while(1) {
+		d_f = get_sonar_distance(SONAR_FRONT);
+		d_r = get_sonar_distance(SONAR_RIGHT);
+		d_l = get_sonar_distance(SONAR_LEFT);
+		if (d_f > 2000) {
+			control_motor(2000, 0);
+		} else {
+			control_motor(d_f, 0);
+		}
+		// if (d_r > 1000) {
+		// 	set_motor_Nrpm_to_control(RIGHT, 10000);
+		// } else {
+		// 	set_motor_Nrpm_to_control(RIGHT, d_r*10);
+		// }
+		// if (d_l > 1000) {
+		// 	set_motor_Nrpm_to_control(LEFT, 10000);
+		// } else {
+		// 	set_motor_Nrpm_to_control(LEFT, d_l*10);
+		// }
+	}
+}
+
 void test_enc() {
 	unsigned short enc_l, enc_r;
 	int j;
@@ -288,52 +312,121 @@ void test_enc_dif() {
 	drive_motor_duty(RIGHT, enc_l*10, FORWARD);
 }
 
-void test_main_only_sonar() {
-	static short gain_p = 1;
-	// static short gain_d = 1;
-	static int d_r_l_to_control = 5000;
-	static int err_d_r_l = 0;
-	// static short d_r_old;
-	// static short d_r_dif;
-	int d_f, d_r, d_l;
-	int d_r_l_dif;
+// void test_main_only_sonar() {
+// 	static short gain_p = 1;
+// 	static short gain_curve = 5;
+// 	static int d_r_l_to_control = 0;
+// 	static int err_d_r_l = 0;
+// 	static short VelWhenCurve = 500;
+// 	int d_f, d_r, d_l;
+// 	int d_r_l_dif;
 
-	short lin_vel, ang_vel;
+// 	short lin_vel, lin_vel_from_ang, ang_vel;
+// 	while(1) {
+// 		d_f = get_sonar_distance(SONAR_FRONT);
+// 		d_r = get_sonar_distance(SONAR_RIGHT);
+// 		d_l = get_sonar_distance(SONAR_LEFT);
+// 		d_r_l_dif = d_r - d_l;
+// 		err_d_r_l = d_r_l_dif - d_r_l_to_control;
+// 		ang_vel = - err_d_r_l * gain_p / 8;
+// 		if (d_f < 400) {
+// 			control_motor(0, -180);
+// 			continue;
+// 		} else {
+// 			lin_vel = 500;
+// 		}
+// 		// lin_vel_from_ang = lin_vel + ang_vel * gain_curve;
+// 		// if (lin_vel_from_ang < 0 ) {
+// 		// 	lin_vel = VelWhenCurve;
+// 		// } else if (lin_vel > lin_vel_from_ang){
+// 		// 	lin_vel = lin_vel_from_ang;
+// 		// } 
+// 		control_motor(lin_vel, ang_vel);
+// 	}
+// }
+
+// void test_main_only_sonar() {
+// 	static short gain_p = 1;
+// 	static short gain_d = 1;
+// 	static short gain_curve = 5;
+// 	static int d_r_to_control = 1000;
+// 	static int d_r_old = 0;
+// 	static int err_d_r = 0;
+// 	static short MaxLinVel = 2000;
+// 	static short MinLinVel = 500;
+// 	static short MinAngVel = -360;
+// 	int d_f, d_r;
+// 	int d_r_dif;
+
+// 	short lin_vel;
+// 	short lin_vel_from_ang, ang_vel;
+// 	while(1) {
+// 		d_f = get_sonar_distance(SONAR_FRONT);
+// 		d_r = get_sonar_distance(SONAR_RIGHT);
+// 		if (d_f < 400) {
+// 			lin_vel = 0;
+// 			control_motor(lin_vel, -180);
+// 			continue;
+// 		} else {
+// 			lin_vel  = 2000;
+// 		}
+// 		d_r_dif = d_r - d_r_old;
+// 		d_r_old = d_r;
+// 		ang_vel = d_r_dif * gain_d;		
+// 		err_d_r = d_r - d_r_to_control;
+// 		ang_vel = -(gain_p * err_d_r - gain_d * d_r_dif);
+// 		if (ang_vel < -180) {
+// 			lin_vel -= 1000;
+// 		}
+// 		control_motor(lin_vel, ang_vel);
+// 	}
+// }
+
+void test_main_only_sonar() {
+	static short gain_p = 64;
+	static short gain_curve = 5;
+	static int d_r_l_to_control = 0;
+	static int err_d_r_l = 0;
+	static short MaxLinVel = 2000;
+	static short MinLinVel = 500;
+	static short MinAngVel = -360;
+	int d_f, d_r, d_l, d_r_l_dif;
+
+	short lin_vel;
+	short lin_vel_from_ang, ang_vel;
 	while(1) {
 		d_f = get_sonar_distance(SONAR_FRONT);
 		d_r = get_sonar_distance(SONAR_RIGHT);
 		d_l = get_sonar_distance(SONAR_LEFT);
+		if (d_f < 500) {
+			lin_vel = 0;
+			control_motor(lin_vel, -180);
+			continue;
+		} else {
+			lin_vel  = 1500;
+		}
 		d_r_l_dif = d_r - d_l;
 		err_d_r_l = d_r_l_dif - d_r_l_to_control;
-		ang_vel = err_d_r_l * gain_p / 10;
-		if (d_f < 200) {
-			lin_vel = 0;
-			ang_vel = 15;
-			continue;
-		} else if (d_f > 1000) {
-			lin_vel = 10000;
-		} else {
-			lin_vel = d_f * 10;
-		}
-		if (ang_vel > 180) { 
-			ang_vel = 180;
+		ang_vel = - gain_p * d_r_l_dif / 128;
+		if (ang_vel < -90) {
+			lin_vel = 800;
 		}
 		control_motor(lin_vel, ang_vel);
 	}
 }
 
+
 void test_control_motor(){
-	control_motor(100, 240);
-	// int i;
-	// int j;
-	// short ang_vel;
-	// while (1)
-	// {
-	// 	for (i = 0; i < 20; i++)
-	// 	{
-	// 		ang_vel = (i - 10)*10;
-	// 		control_motor(2000, ang_vel);
-	// 		for (j=0; j<4000000;j++);
-	// 	}		
-	// }	
+	int i;
+	int j;
+	short ang_vel;
+	while (1)
+	{
+		for (i = 0; i < 20; i++)
+		{
+			ang_vel = (i - 10)*200;
+			control_motor(1000, ang_vel);
+			for (j=0; j<4000000;j++);
+		}		
+	}	
 }

@@ -55,16 +55,17 @@ void fb_control_motor_Nrpm() {
     err_sig[LEFT] = tcnt_to_control[LEFT] - tcnt_enc[LEFT];
     err_sig[RIGHT] = tcnt_to_control[RIGHT] - tcnt_enc[RIGHT];
     if (err_sig[LEFT] < 0) {
-        digital_write(DBG_LED0, HIGH);
-    } else {
-        digital_write(DBG_LED0, LOW);
-    }
-    if (err_sig[RIGHT] < 0) {
         digital_write(M_LED0, HIGH);
         digital_write(M_LED1, LOW);
     } else {
         digital_write(M_LED0, LOW);
         digital_write(M_LED1, HIGH);
+
+    }
+    if (err_sig[RIGHT] < 0) {
+        digital_write(DBG_LED0, HIGH);
+    } else {
+        digital_write(DBG_LED0, LOW);
     }
 
     i_term[LEFT] += err_sig[LEFT];
