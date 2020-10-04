@@ -430,3 +430,10 @@ void test_control_motor(){
 		}		
 	}	
 }
+
+void test_GBADI(){
+	while(1) {
+		S12AD.ADCSR.BIT.ADST = 0x1;         //AD変換開始要求
+		while (S12AD.ADCSR.BIT.ADST == 1);  //AD変換完了待ち
+	}
+}

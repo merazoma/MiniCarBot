@@ -24,10 +24,10 @@ void abort(void);
 void main(void)
 {
 	init_rx220();
-
+	// test_GBADI();
 	// test_drive_motor();
 	// test_enc();
-	//test_analog_read();
+	test_analog_read();
 	// test_drive_pwm();
 	// test_sound_buzzer_150();
 	// test_analog_read();

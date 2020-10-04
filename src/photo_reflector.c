@@ -49,6 +49,17 @@ void init_mtu4() {
     MTU4.TGRA           = TGR500Hz/2;   
     MTU4.TGRC           = TGR500Hz/2;   
     MTU4.TADCORA        = TGR500Hz/4;   //AD変換開始要求は、LED点灯~消灯の中間
+    MTU4.TADCOBRA       = TGR500Hz/4;   //AD変換開始要求は、LED点灯~消灯の中間
     MTU4.TADCORB        = 3*TGR500Hz/4; //AD変換開始要求は、LED点灯~消灯の中間
+    MTU4.TADCOBRB       = 3*TGR500Hz/4; //AD変換開始要求は、LED点灯~消灯の中間
+    MTU4.TADCR.BIT.ITB3AE = 0;
+    MTU4.TADCR.BIT.ITB4VE = 0;
+    MTU4.TADCR.BIT.ITA3AE = 0;
+    MTU4.TADCR.BIT.ITA4VE = 0;
+    MTU4.TADCR.BIT.DT4BE = 0;
+    MTU4.TADCR.BIT.DT4AE = 0;
+    MTU4.TADCR.BIT.UT4BE = 1;
+    MTU4.TADCR.BIT.UT4AE = 1;
+    MTU4.TADCR.BIT.BF = 0x0;
     MTU.TSTR.BIT.CST4   = 0x1;          //MTU4タイマ起動
 }
