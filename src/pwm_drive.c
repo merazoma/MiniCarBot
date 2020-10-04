@@ -1,6 +1,5 @@
 #include "pwm_drive.h"
 #include "iodefine.h"
-#include "sci.h"
 
 #define TGR1kHz 320
 #define Maxppm (10000)
@@ -28,7 +27,6 @@ static void init_mtu0() {
     MTU0.TGRB           = TGR1kHz - 1;  //PWM周期 1 kHz
     MTU0.TGRA           = TGR1kHz;      //MTIOC0A 初期Duty 0%
     MTU0.TGRC           = TGR1kHz;      //MTIOC0C 初期Duty 0%
-    // MTU0.TIER.BIT.TGIEB = 0x1;          //割込み要求（TGIB）を許可
     MTU.TSTR.BIT.CST0   = 0x1;          //MTU0タイマ起動
 }
 

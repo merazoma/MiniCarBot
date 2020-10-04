@@ -15,11 +15,11 @@ typedef enum enm_photo_port{
     //! 左前側フォトリフレクタ
     PHOTO_LEFT_FRONT = 0,
     //! 左側フォトリフレクタ
-    PHOTO_LEFT,
+    PHOTO_LEFT_SIDE,
     //! 左前側フォトリフレクタ
     PHOTO_RIGHT_FRONT,
     //! 右側フォトリフレクタ
-    PHOTO_RIGHT,
+    PHOTO_RIGHT_SIDE,
 } photo_port_t;
 
 /**
@@ -35,6 +35,20 @@ void init_photo_reflector();
  * @param port フォトリフレクタ選択指示
  * @return int フォトリフレクタで計測した距離（LSB: 1 mm）
  */
-int get_photo_reflecor_distance(photo_port_t port);
+int get_photo_reflector_distance(photo_port_t port);
 
+/**
+ * @brief  * @brief LED点灯時と消灯時の光強度（AD値）差を取得
+ * 
+ * @param port フォトリフレクタ選択指示
+ * @return short LED点灯時と消灯時の光強度（AD値）差
+ */
+short get_photo_reflector_dif(photo_port_t port);
+
+/**
+ * @brief S12ADI0（ADスキャン終了割込み要求時）の割込みハンドラ
+ * 
+ * @attention Excep_S12AD0_S12ADI0でコールされることを想定
+ */
+void get_ad_photo_transitor();
 #endif

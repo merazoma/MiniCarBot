@@ -312,76 +312,6 @@ void test_enc_dif() {
 	drive_motor_duty(RIGHT, enc_l*10, FORWARD);
 }
 
-// void test_main_only_sonar() {
-// 	static short gain_p = 1;
-// 	static short gain_curve = 5;
-// 	static int d_r_l_to_control = 0;
-// 	static int err_d_r_l = 0;
-// 	static short VelWhenCurve = 500;
-// 	int d_f, d_r, d_l;
-// 	int d_r_l_dif;
-
-// 	short lin_vel, lin_vel_from_ang, ang_vel;
-// 	while(1) {
-// 		d_f = get_sonar_distance(SONAR_FRONT);
-// 		d_r = get_sonar_distance(SONAR_RIGHT);
-// 		d_l = get_sonar_distance(SONAR_LEFT);
-// 		d_r_l_dif = d_r - d_l;
-// 		err_d_r_l = d_r_l_dif - d_r_l_to_control;
-// 		ang_vel = - err_d_r_l * gain_p / 8;
-// 		if (d_f < 400) {
-// 			control_motor(0, -180);
-// 			continue;
-// 		} else {
-// 			lin_vel = 500;
-// 		}
-// 		// lin_vel_from_ang = lin_vel + ang_vel * gain_curve;
-// 		// if (lin_vel_from_ang < 0 ) {
-// 		// 	lin_vel = VelWhenCurve;
-// 		// } else if (lin_vel > lin_vel_from_ang){
-// 		// 	lin_vel = lin_vel_from_ang;
-// 		// } 
-// 		control_motor(lin_vel, ang_vel);
-// 	}
-// }
-
-// void test_main_only_sonar() {
-// 	static short gain_p = 1;
-// 	static short gain_d = 1;
-// 	static short gain_curve = 5;
-// 	static int d_r_to_control = 1000;
-// 	static int d_r_old = 0;
-// 	static int err_d_r = 0;
-// 	static short MaxLinVel = 2000;
-// 	static short MinLinVel = 500;
-// 	static short MinAngVel = -360;
-// 	int d_f, d_r;
-// 	int d_r_dif;
-
-// 	short lin_vel;
-// 	short lin_vel_from_ang, ang_vel;
-// 	while(1) {
-// 		d_f = get_sonar_distance(SONAR_FRONT);
-// 		d_r = get_sonar_distance(SONAR_RIGHT);
-// 		if (d_f < 400) {
-// 			lin_vel = 0;
-// 			control_motor(lin_vel, -180);
-// 			continue;
-// 		} else {
-// 			lin_vel  = 2000;
-// 		}
-// 		d_r_dif = d_r - d_r_old;
-// 		d_r_old = d_r;
-// 		ang_vel = d_r_dif * gain_d;		
-// 		err_d_r = d_r - d_r_to_control;
-// 		ang_vel = -(gain_p * err_d_r - gain_d * d_r_dif);
-// 		if (ang_vel < -180) {
-// 			lin_vel -= 1000;
-// 		}
-// 		control_motor(lin_vel, ang_vel);
-// 	}
-// }
-
 void test_main_only_sonar() {
 	static short gain_p = 64;
 	static short gain_curve = 5;
@@ -407,7 +337,7 @@ void test_main_only_sonar() {
 		}
 		d_r_l_dif = d_r - d_l;
 		err_d_r_l = d_r_l_dif - d_r_l_to_control;
-		ang_vel = - gain_p * d_r_l_dif / 128;
+		ang_vel = - gain_p * err_d_r_l / 128;
 		if (ang_vel < -90) {
 			lin_vel = 800;
 		}
@@ -436,4 +366,21 @@ void test_GBADI(){
 		S12AD.ADCSR.BIT.ADST = 0x1;         //AD変換開始要求
 		while (S12AD.ADCSR.BIT.ADST == 1);  //AD変換完了待ち
 	}
+}
+
+void test_get_photo_reflector_dif() {
+	short d_rs, d_rf, d_ls, d_lf;
+	int j;
+	while (1)
+	{
+		d_rs = get_photo_reflector_dif(PHOTO_RIGHT_SIDE);
+		d_rf = get_photo_reflector_dif(PHOTO_RIGHT_FRONT);
+		d_ls = get_photo_reflector_dif(PHOTO_LEFT_SIDE);
+		d_lf = get_photo_reflector_dif(PHOTO_LEFT_FRONT);
+		sci_printf("Right Side = %d\r\n", d_rs);
+		sci_printf("Right Front = %d\r\n", d_rf);
+		sci_printf("Left Side = %d\r\n", d_ls);
+		sci_printf("Left Front = %d\r\n", d_lf);
+		for (j=0; j<2000000;j++);
+	}	
 }

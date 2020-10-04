@@ -64,7 +64,7 @@ void Excep_ICU_SWINT(void){  }
 
 // CMTU0_CMT0
 void Excep_CMTU0_CMT0(void){
-    // fb_control_motor_Nrpm();
+    fb_control_motor_Nrpm();
     // test_cmt(); //1ms周期で割込みができることのチェック
     // test_enc_dif();
 }
@@ -155,7 +155,7 @@ void Excep_RTC_PRD(void){  }
 
 // S12AD0_S12ADI0
 void Excep_S12AD0_S12ADI0(void){
-    test_cmt();
+    get_ad_photo_transitor();
 }
 
 // S12AD0_GBADI
@@ -229,9 +229,7 @@ void Excep_MTU23_TGIV3(void){  }
 void Excep_MTU24_TGIA4(void){  }
 
 // MTU24_TGIB4
-void Excep_MTU24_TGIB4(void){
-    test_cmt();
-}
+void Excep_MTU24_TGIB4(void){  }
 
 // MTU24_TGIC4
 void Excep_MTU24_TGIC4(void){  }

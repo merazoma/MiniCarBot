@@ -7,9 +7,6 @@
  * @details 1ms周期で「右前+左」と「右+左前」を順に取得する。
  * @author Masaya Kobayashi
  * 
- * @version 0.1
- * @date 2020-09-06
- * 
  * @copyright Copyright (c) 2020
  * 
  */

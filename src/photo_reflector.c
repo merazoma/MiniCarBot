@@ -9,6 +9,11 @@ static unsigned short CntToDistanceLeftFront = 100;
 static unsigned short CntToDistanceRight = 100;
 static unsigned short CntToDistanceRightFront = 100;
 
+static unsigned short ad_rf[2];
+static unsigned short ad_rs[2];
+static unsigned short ad_lf[2];
+static unsigned short ad_ls[2];
+
 //! 500Hzに相当するTGR(2 ms / (1/32MHz) = 64000)
 #define TGR500Hz 64000
 
@@ -16,11 +21,46 @@ static void init_mtu4();
 
 void init_photo_reflector() {
     init_mtu4();
+};
+
+int get_photo_reflector_distance(photo_port_t port) {
 }
 
-int get_photo_reflecor_distance(photo_port_t port) {
-
+short get_photo_reflector_dif(photo_port_t port) {
+    short ad_dif;
+    switch (port)
+    {
+    case PHOTO_LEFT_FRONT:
+        ad_dif = ad_lf[1] - ad_lf[0];
+        break;
+    case PHOTO_LEFT_SIDE:
+        ad_dif = ad_ls[1] - ad_ls[0];
+        break;
+    case PHOTO_RIGHT_FRONT:
+        ad_dif = ad_rf[1] - ad_rf[0];
+        break;
+    case PHOTO_RIGHT_SIDE:
+        ad_dif = ad_rs[1] - ad_rs[0];
+        break;
+    default:
+        break;
+    }
+    if (ad_dif < 0) {
+        ad_dif = -ad_dif;
+    }    
+    return ad_dif;
 }
+
+void get_ad_photo_transitor() {
+    ad_lf[1] = ad_lf[0];
+    ad_ls[1] = ad_ls[0];
+    ad_rf[1] = ad_rf[0];
+    ad_rs[1] = ad_rs[0];
+    ad_lf[0] = analog_read(SENS_LF);
+    ad_ls[0] = analog_read(SENS_LS);
+    ad_rf[0] = analog_read(SENS_RF);
+    ad_rs[0] = analog_read(SENS_RS);
+}    
 
 void init_mtu4() {
     PORTE.PMR.BIT.B1 = 0x1;     //PE1 を周辺機能に設定
