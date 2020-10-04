@@ -437,3 +437,71 @@ void test_GBADI(){
 		while (S12AD.ADCSR.BIT.ADST == 1);  //AD変換完了待ち
 	}
 }
+
+
+void test_main_only_sonar_pd() {
+	static short gain_p = 64;
+	static short gain_d = 64;
+	static short gain_curve = 5;
+	static int d_r_l_to_control = 0;
+	static int err_d_r_l = 0;
+	static short MaxLinVel = 2000;
+	static short MinLinVel = 500;
+	static short MinAngVel = -360;
+	int d_f, d_r, d_l, d_r_l_dif, d_d_r_l_dif;
+	int temp_d_r_l_dif = 0;
+
+	short lin_vel;
+	short lin_vel_from_ang, ang_vel;
+	
+	while(1) {
+		d_f = get_sonar_distance(SONAR_FRONT);
+		d_r = get_sonar_distance(SONAR_RIGHT);
+		d_l = get_sonar_distance(SONAR_LEFT);
+		if (d_f < 500) {
+			lin_vel = 0;
+			control_motor(lin_vel, -180);
+			continue;
+		} else {
+			lin_vel  = 1500;
+		}
+		d_r_l_dif = d_r - d_l;
+		err_d_r_l = d_r_l_dif - d_r_l_to_control;
+		d_d_r_l_dif = d_r_l_dif - temp_d_r_l_dif;
+		temp_d_r_l_dif = d_r_l_dif;
+		ang_vel = - (gain_p * d_r_l_dif + gain_d * d_d_r_l_dif) / 128;
+		if (ang_vel < -90) {
+			lin_vel = 800;
+		}
+		control_motor(lin_vel, ang_vel);
+	}
+}
+
+void test_parallel_photo(){
+	static short gain_p = 64;
+	static int d_rs_rf_to_control = 0;
+	short lin_vel;
+	short lin_vel_from_ang, ang_vel;
+	int d_f, d_rs, d_rf, d_rs_rf_dif, err_d_rs_rf;
+
+	while(1) {
+		d_f = get_sonar_distance(SONAR_FRONT);
+		d_rs = get_photo_reflecor_distance(PHOTO_RIGHT);
+		d_rf = get_photo_reflecor_distance(PHOTO_RIGHT_FRONT) / sqrt(2);
+		lin_vel  = 1500;
+		if (d_f < 500) {
+			lin_vel = 0;
+			control_motor(lin_vel, -180);
+			continue;
+		} else {
+			lin_vel  = 1500;
+		}
+		d_rs_rf_dif = d_rf - d_rs;
+ 		err_d_rs_rf = d_rs_rf_dif - d_rs_rf_to_control;
+		ang_vel = - gain_p * err_d_rs_rf / 128;
+		if (ang_vel < -90) {
+			lin_vel = 800;
+		}
+		control_motor(lin_vel, ang_vel);
+	}
+}
