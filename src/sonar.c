@@ -6,7 +6,9 @@
 //! タイマカウントから距離への変換用定数 340 m/s * 2 us/cnt / 2 = 340 um/cnt
 #define CntToDistance 340
 //! トリガパルスとエコーパルスの立ち上がりエッジ間隔に相当
-#define OffsetPulse 270
+#define OffsetPulseFront 1200
+#define OffsetPulseLeft 270
+#define OffsetPulseRight 270
 
 //! 左側超音波センサのエコーON時間
 static unsigned short tcnt_echo_on_l = 0;
@@ -28,16 +30,19 @@ int get_sonar_distance(sonar_port_t port) {
     switch (port)
     {
     case SONAR_LEFT:
-        distance = (tcnt_echo_on_l - OffsetPulse) * CntToDistance / 1000;
+        distance = (tcnt_echo_on_l - OffsetPulseLeft) * CntToDistance / 1000;
         break;
     case SONAR_FRONT:
-        distance = (tcnt_echo_on_f - OffsetPulse) * CntToDistance / 1000;
+        distance = (tcnt_echo_on_f - OffsetPulseFront) * CntToDistance / 1000;
         break;
     case SONAR_RIGHT:
-        distance = (tcnt_echo_on_r - OffsetPulse) * CntToDistance / 1000 ;
+        distance = (tcnt_echo_on_r - OffsetPulseRight) * CntToDistance / 1000 ;
         break;    
     default:
         break;
+    }
+    if (distance < 0) {
+        distance = 0;
     }
     return distance;
 }
@@ -129,7 +134,7 @@ static void init_mtu3() {
     MTU.TOER.BIT.OE3D   = 0;            //MTIOC3D出力禁止
     MTU3.TIORH.BYTE     = 0x12;         //初期出力Low, コンペアマッチでHigh（ハイサイド駆動で反転するため）
     MTU3.TGRB           = 32000 - 1;    //周期 64 ms
-    MTU3.TGRA           = 5 - 1;        //10 us のHighトリガ
+    MTU3.TGRA           = 100 - 1;       //200 us のHighトリガ
     // MTU3.TIER.BIT.TGIEB = 0x1;          //割込み要求（TGIB）を許可
     MTU.TSTR.BIT.CST3   = 0x1;          //MTU3タイマ起動
 }
