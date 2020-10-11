@@ -16,6 +16,7 @@ var test__function_8c =
     [ "test_fb_control_motor_Nrpm_const", "test__function_8c.html#a4005e0aeba3bb2e24c12b27ddb1daf58", null ],
     [ "test_GBADI", "test__function_8c.html#a0ae1f35f1cf2971ff8c2ae57c8afbc28", null ],
     [ "test_general_io", "test__function_8c.html#a25888b959fa80b3b47a57b48c3797411", null ],
+    [ "test_get_photo_reflector", "test__function_8c.html#ad2335ae2e40529ee5e2be25acf690a46", null ],
     [ "test_get_photo_reflector_dif", "test__function_8c.html#ae2a19340c3131b66fde44ad1afd81eb4", null ],
     [ "test_main_only_sonar", "test__function_8c.html#aaafa7a21d505b79b9127af201d813c2d", null ],
     [ "test_motor_sonar_buzzer", "test__function_8c.html#a77da2649ba5f4f36ea1ed332d3df7d66", null ],

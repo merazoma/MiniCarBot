@@ -69,10 +69,10 @@
 "{WK_TB00000029_SYSTEMTOOL}" "TOOLBAR 0" 59419 2 3 "0.00" 0 0 0 0 0 17 0 "" "0.0" 
 [WINDOW_Z_ORDER]
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\test_function.c" 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\sonar.c" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\control_motor.c" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\control_motor.h" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\cmtimer.h" 
-"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\sonar.c" 
 [TARGET_NAME]
 "" "" 0 
 [STATUSBAR_STATEINFO_VD1]

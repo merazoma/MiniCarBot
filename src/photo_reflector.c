@@ -16,7 +16,7 @@ static unsigned short ad_ls[2];
 
 //! 500Hzに相当するTGR(2 ms / (1/32MHz) = 64000)
 #define TGR500Hz 64000
-#define CntADVal 5000
+#define CntADVal 3900
 
 static void init_mtu4();
 
@@ -26,23 +26,7 @@ void init_photo_reflector() {
 
 int get_photo_reflector_distance(photo_port_t port) {
     int d;
-    switch (port)
-    {
-    case PHOTO_LEFT_FRONT:
-        d = CntADVal - get_photo_reflector_dif(PHOTO_LEFT_FRONT);
-        break;
-    case PHOTO_LEFT_SIDE:
-        d = CntADVal - get_photo_reflector_dif(PHOTO_LEFT_SIDE);
-        break;
-    case PHOTO_RIGHT_FRONT:
-        d = CntADVal - get_photo_reflector_dif(PHOTO_RIGHT_FRONT);
-        break;
-    case PHOTO_RIGHT_SIDE:
-        d = CntADVal - get_photo_reflector_dif(PHOTO_RIGHT_SIDE);
-        break;
-    default:
-        break;
-    }
+    d = CntADVal - get_photo_reflector_dif(port);
     if (d < 0) {
         d = 0;
     }

@@ -385,6 +385,23 @@ void test_get_photo_reflector_dif() {
 	}	
 }
 
+void test_get_photo_reflector() {
+	short d_rs, d_rf, d_ls, d_lf;
+	int j;
+	while (1)
+	{
+		d_rs = get_photo_reflector_distance(PHOTO_RIGHT_SIDE);
+		d_rf = get_photo_reflector_distance(PHOTO_RIGHT_FRONT);
+		d_ls = get_photo_reflector_distance(PHOTO_LEFT_SIDE);
+		d_lf = get_photo_reflector_distance(PHOTO_LEFT_FRONT);
+		sci_printf("Right Side = %d\r\n", d_rs);
+		sci_printf("Right Front = %d\r\n", d_rf);
+		sci_printf("Left Side = %d\r\n", d_ls);
+		sci_printf("Left Front = %d\r\n", d_lf);
+		for (j=0; j<2000000;j++);
+	}	
+}
+
 // void test_main_only_sonar_pd() {
 // 	static short gain_p = 64;
 // 	static short gain_d = 64;
@@ -423,31 +440,25 @@ void test_get_photo_reflector_dif() {
 // 	}
 // }
 
+/**
+ * @brief 壁との並走テスト
+ * @note 低速で平面の壁に並走を確認
+ * @attention 缶の壁や高速でのテストは未実施
+ * 
+ */
 void test_parallel_photo(){
-	static short gain_p = 64;
+	static short gain_p = 4;
 	static int d_rs_rf_to_control = 0;
-	short lin_vel;
-	short lin_vel_from_ang, ang_vel;
-	int d_f, d_rs, d_rf, d_rs_rf_dif, err_d_rs_rf;
+	short ang_vel;
+	int d_rs, d_rf, d_rs_rf_dif, err_d_rs_rf;
 
 	while(1) {
-		d_f = get_sonar_distance(SONAR_FRONT);
 		d_rs = get_photo_reflector_distance(PHOTO_RIGHT_SIDE);
 		d_rf = get_photo_reflector_distance(PHOTO_RIGHT_FRONT);
-		if (d_f < 500) {
-			lin_vel = 0;
-			control_motor(lin_vel, 180);
-			continue;
-		} else {
-			lin_vel  = 1500;
-		}
 		d_rs_rf_dif = d_rf - d_rs;
  		err_d_rs_rf = d_rs_rf_dif - d_rs_rf_to_control;
-		ang_vel = gain_p * err_d_rs_rf / 128;
-		if (ang_vel < -90) {
-			lin_vel = 800;
-		}
-		control_motor(lin_vel, ang_vel);
+		ang_vel = -gain_p * err_d_rs_rf / 128;
+		control_motor(300, ang_vel);
 	}
 }
 

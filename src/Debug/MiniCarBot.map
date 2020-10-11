@@ -1,4 +1,4 @@
-Optimizing Linkage Editor (V.10.02.00.000)        11-Oct-2020 23:04:53
+Optimizing Linkage Editor (V.10.02.00.000)        12-Oct-2020 01:30:02
 
 *** Options ***
 
@@ -75,17 +75,17 @@ D_2
 D
                                   ffff8594  ffff85a7        14   4
 P
-                                  ffff85a8  ffff9964      13bd   1
+                                  ffff85a8  ffff999b      13f4   1
 PIntPRG
-                                  ffff9965  ffff9a9c       138   1
+                                  ffff999c  ffff9ad3       138   1
 W_1
-                                  ffff9a9d  ffff9aa6         a   1
+                                  ffff9ad4  ffff9add         a   1
 W_2
-                                  ffff9aa8  ffff9aa8         0   2
+                                  ffff9ade  ffff9ade         0   2
 W
-                                  ffff9aa8  ffff9aa8         0   4
+                                  ffff9ae0  ffff9ae0         0   4
 L
-                                  ffff9aa8  ffff9bd1       12a   4
+                                  ffff9ae0  ffff9c09       12a   4
 $ADDR_C_FFFFFF80
                                   ffffff80  ffffff83         4   1
 FIXEDVECT
