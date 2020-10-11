@@ -1,21 +1,17 @@
 #include "sonar.h"
-#include "sci.h"
+#include "general_io.h"
 #include "iodefine.h"
 #include <machine.h>
 
 //! タイマカウントから距離への変換用定数 340 m/s * 2 us/cnt / 2 = 340 um/cnt
 #define CntToDistance 340
-//! トリガパルスとエコーパルスの立ち上がりエッジ間隔に相当
-#define OffsetPulseFront 1200
-#define OffsetPulseLeft 270
-#define OffsetPulseRight 270
 
-//! 左側超音波センサのエコーON時間
-static unsigned short tcnt_echo_on_l = 0;
-//! 前側超音波センサのエコーON時間
-static unsigned short tcnt_echo_on_f = 0;
-//! 右側超音波センサのエコーON時間
-static unsigned short tcnt_echo_on_r = 0;
+typedef struct {
+    unsigned short cnt_pos_edge;
+    unsigned short cnt_neg_ege;
+} echo_cnt_t;
+
+static echo_cnt_t echo_cnt[3] = {{0, 0}, {0, 0}, {0, 0}};
 
 static void init_mtu3();
 static void init_irq();
@@ -27,36 +23,32 @@ void init_sonar() {
 
 int get_sonar_distance(sonar_port_t port) {
     int distance;
-    switch (port)
-    {
-    case SONAR_LEFT:
-        distance = (tcnt_echo_on_l - OffsetPulseLeft) * CntToDistance / 1000;
-        break;
-    case SONAR_FRONT:
-        distance = (tcnt_echo_on_f - OffsetPulseFront) * CntToDistance / 1000;
-        break;
-    case SONAR_RIGHT:
-        distance = (tcnt_echo_on_r - OffsetPulseRight) * CntToDistance / 1000 ;
-        break;    
-    default:
-        break;
-    }
-    if (distance < 0) {
-        distance = 0;
-    }
+    distance = (echo_cnt[port].cnt_neg_ege - echo_cnt[port].cnt_pos_edge) * CntToDistance / 1000;
     return distance;
 }
 
-void excep_sonar_echo_left(void) {
-    tcnt_echo_on_l = MTU3.TCNT;
-}
-
-void excep_sonar_echo_front(void) {
-    tcnt_echo_on_f = MTU3.TCNT;
-}
-
-void excep_sonar_echo_right(void) {
-    tcnt_echo_on_r = MTU3.TCNT;
+void excep_sonar_echo(sonar_port_t port) {
+    unsigned short port_level;
+    switch (port)
+    {
+    case SONAR_LEFT:
+        port_level = digital_read(ECHO_LEFT);
+        break;
+    case SONAR_FRONT:
+        port_level = digital_read(ECHO_FRONT);
+        break;
+    case SONAR_RIGHT:
+        port_level = digital_read(ECHO_RIGHT);
+        break;    
+    default:
+        port_level = 0;
+        break;
+    }
+    if (port_level > 0) {
+        echo_cnt[port].cnt_pos_edge = MTU3.TCNT;
+    } else {
+        echo_cnt[port].cnt_neg_ege = MTU3.TCNT;
+    }
 }
 
 
@@ -90,14 +82,14 @@ static void init_irq() {
     ICU.IRQFLTC0.BIT.FCLKSEL5 = 0x3;
 
     //割込み優先
-    IPR(ICU, IRQ0) = 0xff;
-    IPR(ICU, IRQ1) = 0xff;
-    IPR(ICU, IRQ5) = 0xff;
+    IPR(ICU, IRQ0) = 0xf;
+    IPR(ICU, IRQ1) = 0xf;
+    IPR(ICU, IRQ5) = 0xf;
 
     //エッジ設定
-    ICU.IRQCR[0].BIT.IRQMD = 0x1;   //立ち下がりエッジ
-    ICU.IRQCR[1].BIT.IRQMD = 0x1;   //立ち下がりエッジ
-    ICU.IRQCR[5].BIT.IRQMD = 0x1;   //立ち下がりエッジ
+    ICU.IRQCR[0].BIT.IRQMD = 0x3;   //両エッジ
+    ICU.IRQCR[1].BIT.IRQMD = 0x3;   //両エッジ
+    ICU.IRQCR[5].BIT.IRQMD = 0x3;   //両エッジ
 
     //フラグ下げ
     IR(ICU, IRQ0) = 0;
@@ -134,7 +126,7 @@ static void init_mtu3() {
     MTU.TOER.BIT.OE3D   = 0;            //MTIOC3D出力禁止
     MTU3.TIORH.BYTE     = 0x12;         //初期出力Low, コンペアマッチでHigh（ハイサイド駆動で反転するため）
     MTU3.TGRB           = 32000 - 1;    //周期 64 ms
-    MTU3.TGRA           = 100 - 1;       //200 us のHighトリガ
+    MTU3.TGRA           = 10 - 1;       //20 us のHighトリガ
     // MTU3.TIER.BIT.TGIEB = 0x1;          //割込み要求（TGIB）を許可
     MTU.TSTR.BIT.CST3   = 0x1;          //MTU3タイマ起動
 }

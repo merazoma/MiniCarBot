@@ -113,12 +113,12 @@ void Excep_RTC_COUNTUP(void){  }
 
 // IRQ0
 void Excep_IRQ0(void){ 
-    excep_sonar_echo_front();
+    excep_sonar_echo(SONAR_FRONT);
 }
 
 // IRQ1
 void Excep_IRQ1(void){ 
-    excep_sonar_echo_right();
+    excep_sonar_echo(SONAR_RIGHT);
 }
 
 // IRQ2
@@ -132,7 +132,7 @@ void Excep_IRQ4(void){  }
 
 // IRQ5
 void Excep_IRQ5(void){
-    excep_sonar_echo_left();
+    excep_sonar_echo(SONAR_LEFT);
 }
 
 // IRQ6

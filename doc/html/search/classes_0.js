@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['heap_5ftype_2654',['HEAP_TYPE',['../union_h_e_a_p___t_y_p_e.html',1,'']]]
+  ['echo_5fcnt_5ft_2691',['echo_cnt_t',['../structecho__cnt__t.html',1,'']]]
 ];

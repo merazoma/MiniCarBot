@@ -40,42 +40,18 @@ void init_sonar();
  * @brief 超音波センサを指定して、その超音波センサで測定した距離を取得
  * @details エコー割り込み入力の立ち下がりエッジで取得されたタイマカウントから、
  * @details 距離を算出し、返却
- * @param port 超音波センサの選択
+ * @param port sonar_port_t 超音波センサの選択
  * @return int 超音波センサで測定された距離（LSB: 1 mm）
  */
 int get_sonar_distance(sonar_port_t port);
 
 /**
- * @brief 左側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる
- * @brief 割り込みハンドラで、エコーON時間を算出のためにタイマカウントを取得
- * @details 立ち下がりエッジでのMTU3（トリガ信号生成にも使用）のタイマカウントを取得\n
- * @details トリガ信号の立ち上がりエッジ(MTU3.TCNT: 0)とエコー信号の立ち上がりエッジの
- * @details 時間間隔が一定なので、立ち下がりエッジでのタイマカウント取得で、エコー信号の
- * @details パルス幅を実行的に取得できる
- * @attention IRQ5の割り込み処理であるExcep_IRQ5の内部でコールすること
+ * @brief 超音波センサエコーパルスの立ち上がりと立ち下がりエッジでの
+ * @brief タイマカウントを取得する割込みハンドラ\n
+ * @param port sonar_port_t 超音波センサの選択
+ * @attention IRQ0の割り込み処理であるExcep_IRQ0, 1, 5の内部でコールすること
  */
-void excep_sonar_echo_left();
+void excep_sonar_echo(sonar_port_t port);
 
-/**
- * @brief 前側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる
- * @brief 割り込みハンドラで、エコーON時間を算出のためにタイマカウントを取得
- * @details 立ち下がりエッジでのMTU3（トリガ信号生成にも使用）のタイマカウントを取得\n
- * @details トリガ信号の立ち上がりエッジ(MTU3.TCNT: 0)とエコー信号の立ち上がりエッジの
- * @details 時間間隔が一定なので、立ち下がりエッジでのタイマカウント取得で、エコー信号の
- * @details パルス幅を実行的に取得できる
- * @attention IRQ0の割り込み処理であるExcep_IRQ0の内部でコールすること
- */
-void excep_sonar_echo_front();
-
-/**
- * @brief 右側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる
- * @brief 割り込みハンドラで、エコーON時間を算出のためにタイマカウントを取得
- * @details 立ち下がりエッジでのMTU3（トリガ信号生成にも使用）のタイマカウントを取得\n
- * @details トリガ信号の立ち上がりエッジ(MTU3.TCNT: 0)とエコー信号の立ち上がりエッジの
- * @details 時間間隔が一定なので、立ち下がりエッジでのタイマカウント取得で、エコー信号の
- * @details パルス幅を実行的に取得できる
- * @attention IRQ1の割り込み処理であるExcep_IRQ1の内部でコールすること
- */
-void excep_sonar_echo_right();
 
 #endif

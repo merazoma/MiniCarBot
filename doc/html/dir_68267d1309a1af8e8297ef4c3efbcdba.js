@@ -2,6 +2,8 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
 [
     [ "analog_read.c", "analog__read_8c.html", "analog__read_8c" ],
     [ "analog_read.h", "analog__read_8h.html", "analog__read_8h" ],
+    [ "cmtimer.c", "cmtimer_8c.html", "cmtimer_8c" ],
+    [ "cmtimer.h", "cmtimer_8h.html", "cmtimer_8h" ],
     [ "control_motor.c", "control__motor_8c.html", "control__motor_8c" ],
     [ "control_motor.h", "control__motor_8h.html", "control__motor_8h" ],
     [ "dbsct.c", "dbsct_8c.html", "dbsct_8c" ],

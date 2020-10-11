@@ -10,8 +10,9 @@ var control__motor_8h =
       [ "LEFT", "control__motor_8h.html#a5c38c3ab21e6511ac98e192c8980613fadb45120aafd37a973140edee24708065", null ],
       [ "RIGHT", "control__motor_8h.html#a5c38c3ab21e6511ac98e192c8980613faec8379af7490bb9eaaf579cf17876f38", null ]
     ] ],
-    [ "control_motor", "control__motor_8h.html#a39a7acf98ec303941d36729a94c44c03", null ],
-    [ "control_motor_Nrpm", "control__motor_8h.html#a87245c37f9809b1fe351ec22c8fa01d8", null ],
-    [ "drive_motor_duty", "control__motor_8h.html#a1a88438c88976ade0c8b5de00a96d5ed", null ],
-    [ "init_motor", "control__motor_8h.html#a505223e724cfa362bf8b323360419d7e", null ]
+    [ "control_motor", "control__motor_8h.html#ad515942cfb6a95edfffddcb5545fd2d2", null ],
+    [ "drive_motor_duty", "control__motor_8h.html#aa9fd12232e06322cfa6882e213e294b5", null ],
+    [ "fb_control_motor_Nrpm", "control__motor_8h.html#acc73234ef00a93b74549047ba62ba460", null ],
+    [ "init_motor", "control__motor_8h.html#a505223e724cfa362bf8b323360419d7e", null ],
+    [ "set_motor_Nrpm_to_control", "control__motor_8h.html#a4d0af57446acf6b0e23b5ddc01087cef", null ]
 ];

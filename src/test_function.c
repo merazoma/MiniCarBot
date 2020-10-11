@@ -456,5 +456,11 @@ void test_digital_read() {
 	while (1) {
 		level = digital_read(MODE_SW);
 		sci_printf("MODE SW: %u\r\n", level);
+		level = digital_read(ECHO_LEFT);
+		sci_printf("SONAR_LEFT: %u\r\n", level);
+		level = digital_read(ECHO_RIGHT);
+		sci_printf("SONAR_RIGHT: %u\r\n", level);
+		level = digital_read(ECHO_FRONT);
+		sci_printf("SONAR_FRONT: %u\r\n", level);
 	}
 }

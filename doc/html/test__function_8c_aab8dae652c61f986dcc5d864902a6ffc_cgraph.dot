@@ -1,0 +1,14 @@
+digraph "test_digital_read"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="test_digital_read",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="digital_read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$general__io_8c.html#a8a6158497d90adbd086fe047124f4f3f",tooltip="汎用入力ポートの取得"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="sci_printf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sci_8c.html#a3bc09dd94f78f69af9bfdc6f1d63b38e",tooltip="文字列の送信処理"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="sci_put_1byte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sci_8c.html#afde8ee429bc56d01adf33adaf34d8ec0",tooltip="1byteの送信処理"];
+}

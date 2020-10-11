@@ -10,4 +10,6 @@ digraph "C:/Users/Kobayashi/Desktop/MiniCarbot/MiniCarBot/src/intprg.c"
   Node3 [label="vect.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vect_8h.html",tooltip=" "];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="sonar.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sonar_8h.html",tooltip="超音波センサ(HC-SR04)による距離計測"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="control_motor.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$control__motor_8h.html",tooltip="モータ駆動用PWM出力。エンコーダカウント取得。 これらを使用した、モータ回転数制御。"];
 }

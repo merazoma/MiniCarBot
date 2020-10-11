@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "echo_cnt_t", "structecho__cnt__t.html", "structecho__cnt__t" ],
     [ "HEAP_TYPE", "union_h_e_a_p___t_y_p_e.html", "union_h_e_a_p___t_y_p_e" ],
     [ "st_bsc", "structst__bsc.html", "structst__bsc" ],
     [ "st_cac", "structst__cac.html", "structst__cac" ],

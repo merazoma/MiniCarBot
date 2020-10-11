@@ -101,17 +101,33 @@ pwm_drive.c の依存先関係図:</div>
 マクロ定義</h2></td></tr>
 <tr class="memitem:a029405a7d2a1c8d1bcd243723502c67c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pwm__drive_8c.html#a029405a7d2a1c8d1bcd243723502c67c">TGR1kHz</a>&#160;&#160;&#160;320</td></tr>
 <tr class="separator:a029405a7d2a1c8d1bcd243723502c67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae96333166e3d29fd1d5d5096428f56d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pwm__drive_8c.html#ae96333166e3d29fd1d5d5096428f56d3">Maxppm</a>&#160;&#160;&#160;(10000)</td></tr>
+<tr class="separator:ae96333166e3d29fd1d5d5096428f56d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 関数</h2></td></tr>
 <tr class="memitem:a84a7e259e3ab772c51dc5c7411bc9e94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pwm__drive_8c.html#a84a7e259e3ab772c51dc5c7411bc9e94">init_pwm_drive</a> ()</td></tr>
 <tr class="memdesc:a84a7e259e3ab772c51dc5c7411bc9e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM駆動用の初期化処理  <a href="pwm__drive_8c.html#a84a7e259e3ab772c51dc5c7411bc9e94">[詳解]</a><br /></td></tr>
 <tr class="separator:a84a7e259e3ab772c51dc5c7411bc9e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c5f9db09542295dcf94e347229b9441"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pwm__drive_8c.html#a1c5f9db09542295dcf94e347229b9441">drive_pwm</a> (<a class="el" href="pwm__drive_8h.html#a04bd5c5b5ec202f7d8f644cca1eca9ac">pwm_port_t</a> pwm_port, float duty)</td></tr>
-<tr class="memdesc:a1c5f9db09542295dcf94e347229b9441"><td class="mdescLeft">&#160;</td><td class="mdescRight">選択したPWM駆動用ポートで、Dutyを指定してPWM駆動を実施  <a href="pwm__drive_8c.html#a1c5f9db09542295dcf94e347229b9441">[詳解]</a><br /></td></tr>
-<tr class="separator:a1c5f9db09542295dcf94e347229b9441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb600de094cb028b0c7935ca3869911b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pwm__drive_8c.html#adb600de094cb028b0c7935ca3869911b">drive_pwm</a> (<a class="el" href="pwm__drive_8h.html#a04bd5c5b5ec202f7d8f644cca1eca9ac">pwm_port_t</a> pwm_port, unsigned short duty)</td></tr>
+<tr class="memdesc:adb600de094cb028b0c7935ca3869911b"><td class="mdescLeft">&#160;</td><td class="mdescRight">選択したPWM駆動用ポートで、Dutyを指定してPWM駆動を実施  <a href="pwm__drive_8c.html#adb600de094cb028b0c7935ca3869911b">[詳解]</a><br /></td></tr>
+<tr class="separator:adb600de094cb028b0c7935ca3869911b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">マクロ定義詳解</h2>
+<a id="ae96333166e3d29fd1d5d5096428f56d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae96333166e3d29fd1d5d5096428f56d3">&#9670;&nbsp;</a></span>Maxppm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Maxppm&#160;&#160;&#160;(10000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a029405a7d2a1c8d1bcd243723502c67c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a029405a7d2a1c8d1bcd243723502c67c">&#9670;&nbsp;</a></span>TGR1kHz</h2>
 
@@ -127,8 +143,8 @@ pwm_drive.c の依存先関係図:</div>
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a1c5f9db09542295dcf94e347229b9441"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c5f9db09542295dcf94e347229b9441">&#9670;&nbsp;</a></span>drive_pwm()</h2>
+<a id="adb600de094cb028b0c7935ca3869911b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb600de094cb028b0c7935ca3869911b">&#9670;&nbsp;</a></span>drive_pwm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,7 +158,7 @@ pwm_drive.c の依存先関係図:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">unsigned short&#160;</td>
           <td class="paramname"><em>duty</em>&#160;</td>
         </tr>
         <tr>
@@ -157,14 +173,14 @@ pwm_drive.c の依存先関係図:</div>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramname">pwm_port</td><td>PWM駆動ポートの選択 </td></tr>
-    <tr><td class="paramname">float</td><td>unsigned int Duty比（範囲: 0 ~ 100, LSB: 1 ） </td></tr>
+    <tr><td class="paramname">duty</td><td>unsigned short Duty比（範囲: 0 ~ 10000, LSB: 0.01 ） </td></tr>
   </table>
   </dd>
 </dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="pwm__drive_8c_a1c5f9db09542295dcf94e347229b9441_icgraph.png" border="0" usemap="#apwm__drive_8c_a1c5f9db09542295dcf94e347229b9441_icgraph" alt=""/></div>
+<div class="center"><img src="pwm__drive_8c_adb600de094cb028b0c7935ca3869911b_icgraph.png" border="0" usemap="#apwm__drive_8c_adb600de094cb028b0c7935ca3869911b_icgraph" alt=""/></div>
 </div>
 
 </div>

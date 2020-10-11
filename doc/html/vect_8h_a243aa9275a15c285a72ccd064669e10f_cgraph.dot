@@ -6,5 +6,9 @@ digraph "Excep_IRQ5"
   rankdir="LR";
   Node1 [label="Excep_IRQ5",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="excep_sonar_echo_left",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sonar_8c.html#a5eaf374beaf73028c5689eb124766cde",tooltip="左側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる"];
+  Node2 [label="excep_sonar_echo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sonar_8c.html#a42426407aa8c71f35c94b2935678da42",tooltip="超音波センサエコーパルスの立ち上がりと立ち下がりエッジでの"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="digital_read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$general__io_8c.html#a8a6158497d90adbd086fe047124f4f3f",tooltip="汎用入力ポートの取得"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="digital_write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$general__io_8c.html#a3d87fb36438ea282f7efeb1858219f55",tooltip="汎用出力ポートの出力切り替え指示"];
 }

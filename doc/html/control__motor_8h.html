@@ -129,15 +129,18 @@ $(document).ready(function(){initNavTree('control__motor_8h.html',''); initResiz
 <tr class="memitem:a505223e724cfa362bf8b323360419d7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="control__motor_8h.html#a505223e724cfa362bf8b323360419d7e">init_motor</a> ()</td></tr>
 <tr class="memdesc:a505223e724cfa362bf8b323360419d7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータICの初期化処理。メイン側の初期化処理中で一回コールすること。  <a href="control__motor_8h.html#a505223e724cfa362bf8b323360419d7e">[詳解]</a><br /></td></tr>
 <tr class="separator:a505223e724cfa362bf8b323360419d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39a7acf98ec303941d36729a94c44c03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="control__motor_8h.html#a39a7acf98ec303941d36729a94c44c03">control_motor</a> (float lin_vel, float ang_vel)</td></tr>
-<tr class="memdesc:a39a7acf98ec303941d36729a94c44c03"><td class="mdescLeft">&#160;</td><td class="mdescRight">与えられた、並進速度(lin_vel)と回転速度(ang_vel)で、車体を制御  <a href="control__motor_8h.html#a39a7acf98ec303941d36729a94c44c03">[詳解]</a><br /></td></tr>
-<tr class="separator:a39a7acf98ec303941d36729a94c44c03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87245c37f9809b1fe351ec22c8fa01d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="control__motor_8h.html#a87245c37f9809b1fe351ec22c8fa01d8">control_motor_Nrpm</a> (<a class="el" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a> motor_id, int Nrpm)</td></tr>
-<tr class="memdesc:a87245c37f9809b1fe351ec22c8fa01d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">与えられた回転数で、左右輪の回転数を制御  <a href="control__motor_8h.html#a87245c37f9809b1fe351ec22c8fa01d8">[詳解]</a><br /></td></tr>
-<tr class="separator:a87245c37f9809b1fe351ec22c8fa01d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a88438c88976ade0c8b5de00a96d5ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="control__motor_8h.html#a1a88438c88976ade0c8b5de00a96d5ed">drive_motor_duty</a> (<a class="el" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a> motor_id, float duty, <a class="el" href="control__motor_8h.html#a5dd57096360038f52373607dffaf68b2">motor_direction_t</a> direction)</td></tr>
-<tr class="memdesc:a1a88438c88976ade0c8b5de00a96d5ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">指示されたDutyと回転の向きで、モータを駆動  <a href="control__motor_8h.html#a1a88438c88976ade0c8b5de00a96d5ed">[詳解]</a><br /></td></tr>
-<tr class="separator:a1a88438c88976ade0c8b5de00a96d5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad515942cfb6a95edfffddcb5545fd2d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="control__motor_8h.html#ad515942cfb6a95edfffddcb5545fd2d2">control_motor</a> (short lin_vel, short ang_vel)</td></tr>
+<tr class="memdesc:ad515942cfb6a95edfffddcb5545fd2d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">与えられた、並進速度(lin_vel)と回転速度(ang_vel)で、車体を制御  <a href="control__motor_8h.html#ad515942cfb6a95edfffddcb5545fd2d2">[詳解]</a><br /></td></tr>
+<tr class="separator:ad515942cfb6a95edfffddcb5545fd2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d0af57446acf6b0e23b5ddc01087cef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="control__motor_8h.html#a4d0af57446acf6b0e23b5ddc01087cef">set_motor_Nrpm_to_control</a> (<a class="el" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a> motor_id, short Nrpm)</td></tr>
+<tr class="memdesc:a4d0af57446acf6b0e23b5ddc01087cef"><td class="mdescLeft">&#160;</td><td class="mdescRight">左右輪の回転数を指示  <a href="control__motor_8h.html#a4d0af57446acf6b0e23b5ddc01087cef">[詳解]</a><br /></td></tr>
+<tr class="separator:a4d0af57446acf6b0e23b5ddc01087cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc73234ef00a93b74549047ba62ba460"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="control__motor_8h.html#acc73234ef00a93b74549047ba62ba460">fb_control_motor_Nrpm</a> ()</td></tr>
+<tr class="memdesc:acc73234ef00a93b74549047ba62ba460"><td class="mdescLeft">&#160;</td><td class="mdescRight">左右モータの回転数フィードバッグ制御  <a href="control__motor_8h.html#acc73234ef00a93b74549047ba62ba460">[詳解]</a><br /></td></tr>
+<tr class="separator:acc73234ef00a93b74549047ba62ba460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9fd12232e06322cfa6882e213e294b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="control__motor_8h.html#aa9fd12232e06322cfa6882e213e294b5">drive_motor_duty</a> (<a class="el" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a> motor_id, unsigned short duty, <a class="el" href="control__motor_8h.html#a5dd57096360038f52373607dffaf68b2">motor_direction_t</a> direction)</td></tr>
+<tr class="memdesc:aa9fd12232e06322cfa6882e213e294b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">指示されたDutyと回転の向きで、モータを駆動  <a href="control__motor_8h.html#aa9fd12232e06322cfa6882e213e294b5">[詳解]</a><br /></td></tr>
+<tr class="separator:aa9fd12232e06322cfa6882e213e294b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>モータ駆動用PWM出力。エンコーダカウント取得。<br  />
@@ -226,8 +229,8 @@ $(document).ready(function(){initNavTree('control__motor_8h.html',''); initResiz
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a39a7acf98ec303941d36729a94c44c03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39a7acf98ec303941d36729a94c44c03">&#9670;&nbsp;</a></span>control_motor()</h2>
+<a id="ad515942cfb6a95edfffddcb5545fd2d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad515942cfb6a95edfffddcb5545fd2d2">&#9670;&nbsp;</a></span>control_motor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -235,13 +238,13 @@ $(document).ready(function(){initNavTree('control__motor_8h.html',''); initResiz
         <tr>
           <td class="memname">void control_motor </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">short&#160;</td>
           <td class="paramname"><em>lin_vel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">short&#160;</td>
           <td class="paramname"><em>ang_vel</em>&#160;</td>
         </tr>
         <tr>
@@ -257,65 +260,26 @@ $(document).ready(function(){initNavTree('control__motor_8h.html',''); initResiz
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramname">lin_vel</td><td>並進速度（単位: mm/s） </td></tr>
-    <tr><td class="paramname">ang_vel</td><td>回転速度（単位: rad/s） </td></tr>
+    <tr><td class="paramname">ang_vel</td><td>回転速度（単位: 度） </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section note"><dt>覚え書き</dt><dd>内部でcontrol_motor_Nrpmを使用 </dd></dl>
-<dl class="section warning"><dt>警告</dt><dd>未実装 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="control__motor_8h_a39a7acf98ec303941d36729a94c44c03_cgraph.png" border="0" usemap="#acontrol__motor_8h_a39a7acf98ec303941d36729a94c44c03_cgraph" alt=""/></div>
+<div class="center"><img src="control__motor_8h_ad515942cfb6a95edfffddcb5545fd2d2_cgraph.png" border="0" usemap="#acontrol__motor_8h_ad515942cfb6a95edfffddcb5545fd2d2_cgraph" alt=""/></div>
 </div>
-
-</div>
-</div>
-<a id="a87245c37f9809b1fe351ec22c8fa01d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87245c37f9809b1fe351ec22c8fa01d8">&#9670;&nbsp;</a></span>control_motor_Nrpm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void control_motor_Nrpm </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a>&#160;</td>
-          <td class="paramname"><em>motor_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>Nrpm</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>与えられた回転数で、左右輪の回転数を制御 </p>
-<dl class="params"><dt>引数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">motor_id</td><td>左右輪の指示（LEFT, RIGHT） </td></tr>
-    <tr><td class="paramname">Nrpm</td><td>指示回転数(単位: rpm) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>覚え書き</dt><dd>内部でdrive_motor_dutyを使用 @warinig 未実装 </dd></dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="control__motor_8h_a87245c37f9809b1fe351ec22c8fa01d8_icgraph.png" border="0" usemap="#acontrol__motor_8h_a87245c37f9809b1fe351ec22c8fa01d8_icgraph" alt=""/></div>
+<div class="center"><img src="control__motor_8h_ad515942cfb6a95edfffddcb5545fd2d2_icgraph.png" border="0" usemap="#acontrol__motor_8h_ad515942cfb6a95edfffddcb5545fd2d2_icgraph" alt=""/></div>
 </div>
 
 </div>
 </div>
-<a id="a1a88438c88976ade0c8b5de00a96d5ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a88438c88976ade0c8b5de00a96d5ed">&#9670;&nbsp;</a></span>drive_motor_duty()</h2>
+<a id="aa9fd12232e06322cfa6882e213e294b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9fd12232e06322cfa6882e213e294b5">&#9670;&nbsp;</a></span>drive_motor_duty()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -329,7 +293,7 @@ $(document).ready(function(){initNavTree('control__motor_8h.html',''); initResiz
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">unsigned short&#160;</td>
           <td class="paramname"><em>duty</em>, </td>
         </tr>
         <tr>
@@ -350,21 +314,45 @@ $(document).ready(function(){initNavTree('control__motor_8h.html',''); initResiz
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramname">motor_id</td><td>左右輪の指示（LEFT, RIGHT） </td></tr>
-    <tr><td class="paramname">duty</td><td>Duty（0～100） </td></tr>
+    <tr><td class="paramname">duty</td><td>unsigned short Duty比（範囲: 0 ~ 1000000, LSB: 1 ppm） </td></tr>
     <tr><td class="paramname">direction</td><td>回転向き（FORWARD, BACKWARD） </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section warning"><dt>警告</dt><dd>テスト未実施 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="control__motor_8h_a1a88438c88976ade0c8b5de00a96d5ed_cgraph.png" border="0" usemap="#acontrol__motor_8h_a1a88438c88976ade0c8b5de00a96d5ed_cgraph" alt=""/></div>
+<div class="center"><img src="control__motor_8h_aa9fd12232e06322cfa6882e213e294b5_cgraph.png" border="0" usemap="#acontrol__motor_8h_aa9fd12232e06322cfa6882e213e294b5_cgraph" alt=""/></div>
 </div>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="control__motor_8h_a1a88438c88976ade0c8b5de00a96d5ed_icgraph.png" border="0" usemap="#acontrol__motor_8h_a1a88438c88976ade0c8b5de00a96d5ed_icgraph" alt=""/></div>
+<div class="center"><img src="control__motor_8h_aa9fd12232e06322cfa6882e213e294b5_icgraph.png" border="0" usemap="#acontrol__motor_8h_aa9fd12232e06322cfa6882e213e294b5_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="acc73234ef00a93b74549047ba62ba460"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc73234ef00a93b74549047ba62ba460">&#9670;&nbsp;</a></span>fb_control_motor_Nrpm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fb_control_motor_Nrpm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>左右モータの回転数フィードバッグ制御 </p>
+<dl class="section note"><dt>覚え書き</dt><dd>CMTの1 ms周期割込みに差し込むことを想定 </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="control__motor_8h_acc73234ef00a93b74549047ba62ba460_icgraph.png" border="0" usemap="#acontrol__motor_8h_acc73234ef00a93b74549047ba62ba460_icgraph" alt=""/></div>
 </div>
 
 </div>
@@ -390,6 +378,49 @@ $(document).ready(function(){initNavTree('control__motor_8h.html',''); initResiz
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="control__motor_8h_a505223e724cfa362bf8b323360419d7e_cgraph.png" border="0" usemap="#acontrol__motor_8h_a505223e724cfa362bf8b323360419d7e_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a4d0af57446acf6b0e23b5ddc01087cef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d0af57446acf6b0e23b5ddc01087cef">&#9670;&nbsp;</a></span>set_motor_Nrpm_to_control()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_motor_Nrpm_to_control </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="control__motor_8h.html#a9494adebe96093eb020eb276ec6d9618">motor_id_t</a>&#160;</td>
+          <td class="paramname"><em>motor_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short&#160;</td>
+          <td class="paramname"><em>Nrpm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>左右輪の回転数を指示 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">motor_id</td><td>左右輪の指示（LEFT, RIGHT） </td></tr>
+    <tr><td class="paramname">Nrpm</td><td>short 指示回転数(単位: rpm) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>覚え書き</dt><dd>内部でdrive_motor_dutyを使用 </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="control__motor_8h_a4d0af57446acf6b0e23b5ddc01087cef_icgraph.png" border="0" usemap="#acontrol__motor_8h_a4d0af57446acf6b0e23b5ddc01087cef_icgraph" alt=""/></div>
 </div>
 
 </div>

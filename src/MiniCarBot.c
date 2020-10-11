@@ -24,7 +24,7 @@ void abort(void);
 void main(void)
 {
 	init_rx220();
-	// test_GBADI();
+	test_sonar();
 	// test_drive_motor();
 	// test_enc();
 	// test_analog_read();
@@ -32,7 +32,7 @@ void main(void)
 	// test_drive_pwm();
 	// test_sound_buzzer_150();
 	// test_analog_read();
-	test_digital_read();
+	// test_digital_read();
 	// test_sonar();
 	// test_drive_pwm();
  	// test_general_io();

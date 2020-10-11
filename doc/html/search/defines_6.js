@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['heapsize_4954',['HEAPSIZE',['../sbrk_8h.html#a51f6451ae1bc22fdd3c514260bdf2683',1,'sbrk.h']]]
+  ['gearmotor_5017',['GearMotor',['../control__motor_8c.html#a216f1686440761f31d68b51c6cf18080',1,'control_motor.c']]],
+  ['geartier_5018',['GearTier',['../control__motor_8c.html#a609383a1696ec09ff57122d6d37cad94',1,'control_motor.c']]]
 ];

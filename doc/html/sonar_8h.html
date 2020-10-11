@@ -124,15 +124,9 @@ $(document).ready(function(){initNavTree('sonar_8h.html',''); initResizable(); }
 <tr class="memitem:a79d59d143a65fbc3f3a3a1ebf7690919"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sonar_8h.html#a79d59d143a65fbc3f3a3a1ebf7690919">get_sonar_distance</a> (<a class="el" href="sonar_8h.html#a85c0bf1479c2b5f0aa8c77f321896022">sonar_port_t</a> port)</td></tr>
 <tr class="memdesc:a79d59d143a65fbc3f3a3a1ebf7690919"><td class="mdescLeft">&#160;</td><td class="mdescRight">超音波センサを指定して、その超音波センサで測定した距離を取得  <a href="sonar_8h.html#a79d59d143a65fbc3f3a3a1ebf7690919">[詳解]</a><br /></td></tr>
 <tr class="separator:a79d59d143a65fbc3f3a3a1ebf7690919"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43b1fa74babb7d10aabd9af8c3cc74cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sonar_8h.html#a43b1fa74babb7d10aabd9af8c3cc74cb">excep_sonar_echo_left</a> ()</td></tr>
-<tr class="memdesc:a43b1fa74babb7d10aabd9af8c3cc74cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">左側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる  <a href="sonar_8h.html#a43b1fa74babb7d10aabd9af8c3cc74cb">[詳解]</a><br /></td></tr>
-<tr class="separator:a43b1fa74babb7d10aabd9af8c3cc74cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5a971b223b5ecde38b56f58dcd89ae2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sonar_8h.html#ac5a971b223b5ecde38b56f58dcd89ae2">excep_sonar_echo_front</a> ()</td></tr>
-<tr class="memdesc:ac5a971b223b5ecde38b56f58dcd89ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">前側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる  <a href="sonar_8h.html#ac5a971b223b5ecde38b56f58dcd89ae2">[詳解]</a><br /></td></tr>
-<tr class="separator:ac5a971b223b5ecde38b56f58dcd89ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a301ef00f2ede5be85f3ef19065938298"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sonar_8h.html#a301ef00f2ede5be85f3ef19065938298">excep_sonar_echo_right</a> ()</td></tr>
-<tr class="memdesc:a301ef00f2ede5be85f3ef19065938298"><td class="mdescLeft">&#160;</td><td class="mdescRight">右側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる  <a href="sonar_8h.html#a301ef00f2ede5be85f3ef19065938298">[詳解]</a><br /></td></tr>
-<tr class="separator:a301ef00f2ede5be85f3ef19065938298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42426407aa8c71f35c94b2935678da42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sonar_8h.html#a42426407aa8c71f35c94b2935678da42">excep_sonar_echo</a> (<a class="el" href="sonar_8h.html#a85c0bf1479c2b5f0aa8c77f321896022">sonar_port_t</a> port)</td></tr>
+<tr class="memdesc:a42426407aa8c71f35c94b2935678da42"><td class="mdescLeft">&#160;</td><td class="mdescRight">超音波センサエコーパルスの立ち上がりと立ち下がりエッジでの  <a href="sonar_8h.html#a42426407aa8c71f35c94b2935678da42">[詳解]</a><br /></td></tr>
+<tr class="separator:a42426407aa8c71f35c94b2935678da42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>超音波センサ(HC-SR04)による距離計測 </p>
@@ -140,8 +134,6 @@ $(document).ready(function(){initNavTree('sonar_8h.html',''); initResizable(); }
  前側、右側と左側の超音波センサのエコーパルス入力は、それぞれ外部割り込み入力  IRQ0、IRQ1とIRQ5に割り当てられており、エコーパルスの立ち下がりエッジで、  MTU3（トリガパルス生成に使用）のタイマカウントを取得<br  />
  トリガパルスの立ち上がりエッジ(MTU3.TCNT: 0)とエコーパルスの立ち上がりエッジの  時間間隔が一定なので、立ち下がりエッジでのタイマカウント取得で、エコー信号の  パルス幅を実行的に取得可能<br  />
  アプリからの超音波センサの距離取得要求時(get_sonar_distanceコール時)に、  タイマカウントを距離に換算して返却 </p><dl class="section author"><dt>著者</dt><dd>Masaya Kobayashi </dd></dl>
-<dl class="section version"><dt>バージョン</dt><dd>0.1 </dd></dl>
-<dl class="section date"><dt>日付</dt><dd>2020-09-06</dd></dl>
 <dl class="section copyright"><dt>著作権所有</dt><dd>Copyright (c) 2020 </dd></dl>
 </div><h2 class="groupheader">型定義詳解</h2>
 <a id="a85c0bf1479c2b5f0aa8c77f321896022"></a>
@@ -186,80 +178,40 @@ $(document).ready(function(){initNavTree('sonar_8h.html',''); initResizable(); }
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="ac5a971b223b5ecde38b56f58dcd89ae2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5a971b223b5ecde38b56f58dcd89ae2">&#9670;&nbsp;</a></span>excep_sonar_echo_front()</h2>
+<a id="a42426407aa8c71f35c94b2935678da42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42426407aa8c71f35c94b2935678da42">&#9670;&nbsp;</a></span>excep_sonar_echo()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void excep_sonar_echo_front </td>
+          <td class="memname">void excep_sonar_echo </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="sonar_8h.html#a85c0bf1479c2b5f0aa8c77f321896022">sonar_port_t</a>&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>前側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる </p>
-<p>割り込みハンドラで、エコーON時間を算出のためにタイマカウントを取得  立ち下がりエッジでのMTU3（トリガ信号生成にも使用）のタイマカウントを取得<br  />
- トリガ信号の立ち上がりエッジ(MTU3.TCNT: 0)とエコー信号の立ち上がりエッジの  時間間隔が一定なので、立ち下がりエッジでのタイマカウント取得で、エコー信号の  パルス幅を実行的に取得できる </p><dl class="section attention"><dt>注意</dt><dd>IRQ0の割り込み処理であるExcep_IRQ0の内部でコールすること </dd></dl>
+<p>超音波センサエコーパルスの立ち上がりと立ち下がりエッジでの </p>
+<p>タイマカウントを取得する割込みハンドラ<br  />
+</p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>sonar_port_t 超音波センサの選択 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section attention"><dt>注意</dt><dd>IRQ0の割り込み処理であるExcep_IRQ0, 1, 5の内部でコールすること </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="sonar_8h_a42426407aa8c71f35c94b2935678da42_cgraph.png" border="0" usemap="#asonar_8h_a42426407aa8c71f35c94b2935678da42_cgraph" alt=""/></div>
+</div>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="sonar_8h_ac5a971b223b5ecde38b56f58dcd89ae2_icgraph.png" border="0" usemap="#asonar_8h_ac5a971b223b5ecde38b56f58dcd89ae2_icgraph" alt=""/></div>
-</div>
-
-</div>
-</div>
-<a id="a43b1fa74babb7d10aabd9af8c3cc74cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43b1fa74babb7d10aabd9af8c3cc74cb">&#9670;&nbsp;</a></span>excep_sonar_echo_left()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void excep_sonar_echo_left </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>左側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる </p>
-<p>割り込みハンドラで、エコーON時間を算出のためにタイマカウントを取得  立ち下がりエッジでのMTU3（トリガ信号生成にも使用）のタイマカウントを取得<br  />
- トリガ信号の立ち上がりエッジ(MTU3.TCNT: 0)とエコー信号の立ち上がりエッジの  時間間隔が一定なので、立ち下がりエッジでのタイマカウント取得で、エコー信号の  パルス幅を実行的に取得できる </p><dl class="section attention"><dt>注意</dt><dd>IRQ5の割り込み処理であるExcep_IRQ5の内部でコールすること </dd></dl>
-<div class="dynheader">
-被呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="sonar_8h_a43b1fa74babb7d10aabd9af8c3cc74cb_icgraph.png" border="0" usemap="#asonar_8h_a43b1fa74babb7d10aabd9af8c3cc74cb_icgraph" alt=""/></div>
-</div>
-
-</div>
-</div>
-<a id="a301ef00f2ede5be85f3ef19065938298"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a301ef00f2ede5be85f3ef19065938298">&#9670;&nbsp;</a></span>excep_sonar_echo_right()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void excep_sonar_echo_right </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>右側超音波センサエコー割り込み入力端子の立ち下がりエッジで呼ばれる </p>
-<p>割り込みハンドラで、エコーON時間を算出のためにタイマカウントを取得  立ち下がりエッジでのMTU3（トリガ信号生成にも使用）のタイマカウントを取得<br  />
- トリガ信号の立ち上がりエッジ(MTU3.TCNT: 0)とエコー信号の立ち上がりエッジの  時間間隔が一定なので、立ち下がりエッジでのタイマカウント取得で、エコー信号の  パルス幅を実行的に取得できる </p><dl class="section attention"><dt>注意</dt><dd>IRQ1の割り込み処理であるExcep_IRQ1の内部でコールすること </dd></dl>
-<div class="dynheader">
-被呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="sonar_8h_a301ef00f2ede5be85f3ef19065938298_icgraph.png" border="0" usemap="#asonar_8h_a301ef00f2ede5be85f3ef19065938298_icgraph" alt=""/></div>
+<div class="center"><img src="sonar_8h_a42426407aa8c71f35c94b2935678da42_icgraph.png" border="0" usemap="#asonar_8h_a42426407aa8c71f35c94b2935678da42_icgraph" alt=""/></div>
 </div>
 
 </div>
@@ -283,7 +235,7 @@ $(document).ready(function(){initNavTree('sonar_8h.html',''); initResizable(); }
 <p>超音波センサを指定して、その超音波センサで測定した距離を取得 </p>
 <p>エコー割り込み入力の立ち下がりエッジで取得されたタイマカウントから、  距離を算出し、返却 </p><dl class="params"><dt>引数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>超音波センサの選択 </td></tr>
+    <tr><td class="paramname">port</td><td>sonar_port_t 超音波センサの選択 </td></tr>
   </table>
   </dd>
 </dl>

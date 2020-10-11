@@ -1,0 +1,12 @@
+digraph "get_enc_count_dif"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="get_enc_count_dif",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="前回コール時からのエンコーダカウントの差分を取得"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="get_enc_count",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$encoder_8c.html#aa6af9937998f69e8ede6aede38597738",tooltip="エンコーダカウントの取得"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="set_enc_count",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$encoder_8c.html#adfa6dd2ec7cc95a88a78bb300d2df31b",tooltip="エンコーダカウントの初期値を設定"];
+}

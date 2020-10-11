@@ -49,10 +49,13 @@ void init_general_io(void){
 
     //プルアップ設定
     PORT1.PCR.BIT.B4 = 0x1;     //P14
+    PORTH.PCR.BIT.B1 = 0x1;     //PH1
+    PORTH.PCR.BIT.B2 = 0x1;     //PH2
+    PORTE.PCR.BIT.B5 = 0x1;     //PE5
 }
 
 unsigned short digital_read(port_t port) {
-    unsigned short level;
+    unsigned short level = 0;
     switch (port) {
         case ECHO_FRONT:
             level = SONAR_ECHO_FRONT_PORT;

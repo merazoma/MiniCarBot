@@ -123,6 +123,9 @@ $(document).ready(function(){initNavTree('encoder_8h.html',''); initResizable();
 <tr class="memitem:aa6af9937998f69e8ede6aede38597738"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#aa6af9937998f69e8ede6aede38597738">get_enc_count</a> (<a class="el" href="encoder_8h.html#a58303a9534f2a1e68166d22e1113abe7">encoder_id_t</a> encoder_id)</td></tr>
 <tr class="memdesc:aa6af9937998f69e8ede6aede38597738"><td class="mdescLeft">&#160;</td><td class="mdescRight">エンコーダカウントの取得  <a href="encoder_8h.html#aa6af9937998f69e8ede6aede38597738">[詳解]</a><br /></td></tr>
 <tr class="separator:aa6af9937998f69e8ede6aede38597738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc057c8cea9523d1bc5dbd4a3e7dc90"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#a9fc057c8cea9523d1bc5dbd4a3e7dc90">get_enc_count_dif</a> (<a class="el" href="encoder_8h.html#a58303a9534f2a1e68166d22e1113abe7">encoder_id_t</a> encoder_id)</td></tr>
+<tr class="memdesc:a9fc057c8cea9523d1bc5dbd4a3e7dc90"><td class="mdescLeft">&#160;</td><td class="mdescRight">前回コール時からのエンコーダカウントの差分を取得  <a href="encoder_8h.html#a9fc057c8cea9523d1bc5dbd4a3e7dc90">[詳解]</a><br /></td></tr>
+<tr class="separator:a9fc057c8cea9523d1bc5dbd4a3e7dc90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfa6dd2ec7cc95a88a78bb300d2df31b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoder_8h.html#adfa6dd2ec7cc95a88a78bb300d2df31b">set_enc_count</a> (<a class="el" href="encoder_8h.html#a58303a9534f2a1e68166d22e1113abe7">encoder_id_t</a> encoder_id, unsigned short enc_count)</td></tr>
 <tr class="memdesc:adfa6dd2ec7cc95a88a78bb300d2df31b"><td class="mdescLeft">&#160;</td><td class="mdescRight">エンコーダカウントの初期値を設定  <a href="encoder_8h.html#adfa6dd2ec7cc95a88a78bb300d2df31b">[詳解]</a><br /></td></tr>
 <tr class="separator:adfa6dd2ec7cc95a88a78bb300d2df31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,6 +203,44 @@ $(document).ready(function(){initNavTree('encoder_8h.html',''); initResizable();
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="encoder_8h_aa6af9937998f69e8ede6aede38597738_icgraph.png" border="0" usemap="#aencoder_8h_aa6af9937998f69e8ede6aede38597738_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a9fc057c8cea9523d1bc5dbd4a3e7dc90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fc057c8cea9523d1bc5dbd4a3e7dc90">&#9670;&nbsp;</a></span>get_enc_count_dif()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short get_enc_count_dif </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="encoder_8h.html#a58303a9534f2a1e68166d22e1113abe7">encoder_id_t</a>&#160;</td>
+          <td class="paramname"><em>encoder_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>前回コール時からのエンコーダカウントの差分を取得 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">encoder_id</td><td>左右モータのエンコーダ選択 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>short 前回コール時からのエンコーダカウントの差分 </dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd>1 ms周期の割込みハンドラでの使用を想定 </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="encoder_8h_a9fc057c8cea9523d1bc5dbd4a3e7dc90_cgraph.png" border="0" usemap="#aencoder_8h_a9fc057c8cea9523d1bc5dbd4a3e7dc90_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="encoder_8h_a9fc057c8cea9523d1bc5dbd4a3e7dc90_icgraph.png" border="0" usemap="#aencoder_8h_a9fc057c8cea9523d1bc5dbd4a3e7dc90_icgraph" alt=""/></div>
 </div>
 
 </div>

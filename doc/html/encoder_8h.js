@@ -6,6 +6,7 @@ var encoder_8h =
       [ "ENCODER_RIGHT", "encoder_8h.html#af13fb6a9d028e5470ec1c459afbd7adba008ee41ca809953515b310235c4b58ec", null ]
     ] ],
     [ "get_enc_count", "encoder_8h.html#aa6af9937998f69e8ede6aede38597738", null ],
+    [ "get_enc_count_dif", "encoder_8h.html#a9fc057c8cea9523d1bc5dbd4a3e7dc90", null ],
     [ "init_encoder", "encoder_8h.html#a527b1da62a611a01dfa6ddf4edfd0d7e", null ],
     [ "set_enc_count", "encoder_8h.html#adfa6dd2ec7cc95a88a78bb300d2df31b", null ]
 ];

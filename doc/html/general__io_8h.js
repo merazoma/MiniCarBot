@@ -16,8 +16,13 @@ var general__io_8h =
       [ "M_L_IN1", "general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6a33a747d657661d988473c91e71dc5cff", null ],
       [ "M_R_IN2", "general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6abbc1e3782ff80edb2edac4226423abc8", null ],
       [ "M_L_IN2", "general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6a8a93006bf6397f3328937766c4c98948", null ],
-      [ "M_STBY", "general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6a6aa8756943c64075ed45ab7c74ecf8c3", null ]
+      [ "M_STBY", "general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6a6aa8756943c64075ed45ab7c74ecf8c3", null ],
+      [ "ECHO_FRONT", "general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6addeaf8badbad98ad024596da98ce2c1d", null ],
+      [ "ECHO_RIGHT", "general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6ab8d672d1e146a3307e643309d334876f", null ],
+      [ "ECHO_LEFT", "general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6a83ab73705c7161a6f5d6ec8c557834f1", null ],
+      [ "MODE_SW", "general__io_8h.html#ab16e88009b18cf2c58c488ffbfc024c6a6099b2d754281a995d629f016941b031", null ]
     ] ],
+    [ "digital_read", "general__io_8h.html#a8a6158497d90adbd086fe047124f4f3f", null ],
     [ "digital_write", "general__io_8h.html#a3d87fb36438ea282f7efeb1858219f55", null ],
     [ "init_general_io", "general__io_8h.html#a6ad3b0f8ff63320de50c02fc5933c76f", null ]
 ];

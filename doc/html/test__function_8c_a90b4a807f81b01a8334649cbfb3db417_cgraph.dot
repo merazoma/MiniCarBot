@@ -1,0 +1,14 @@
+digraph "test_control_motor_sonar_buzzer"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="test_control_motor\l_sonar_buzzer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="get_sonar_distance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sonar_8c.html#a79d59d143a65fbc3f3a3a1ebf7690919",tooltip="超音波センサを指定して、その超音波センサで測定した距離を取得"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="set_motor_Nrpm_to_control",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$control__motor_8c.html#a4d0af57446acf6b0e23b5ddc01087cef",tooltip="左右輪の回転数を指示"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="sound_buzzer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sound__buzzer_8c.html#ad9d755f2ff8a252d328639d4656ad768",tooltip="ブザー駆動用の周波数可変の矩形波出力指示"];
+}

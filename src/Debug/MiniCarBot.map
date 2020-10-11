@@ -1,4 +1,4 @@
-Optimizing Linkage Editor (V.10.02.00.000)        07-Oct-2020 01:16:01
+Optimizing Linkage Editor (V.10.02.00.000)        11-Oct-2020 23:04:53
 
 *** Options ***
 
@@ -47,13 +47,13 @@ R_1
 B_2
                                   00001000  0000100f        10   2
 R_2
-                                  00001010  0000102d        1e   2
+                                  00001010  00001033        24   2
 B
-                                  00001030  0000142f       400   4
+                                  00001034  00001433       400   4
 R
-                                  00001430  00001443        14   4
+                                  00001434  00001447        14   4
 SI
-                                  00001444  00001743       300   4
+                                  00001448  00001747       300   4
 PResetPRG
                                   ffff8000  ffff8022        23   1
 C_1
@@ -71,21 +71,21 @@ C$VECT
 D_1
                                   ffff8570  ffff8570         0   1
 D_2
-                                  ffff8570  ffff858d        1e   2
+                                  ffff8570  ffff8593        24   2
 D
-                                  ffff8590  ffff85a3        14   4
+                                  ffff8594  ffff85a7        14   4
 P
-                                  ffff85a4  ffff994b      13a8   1
+                                  ffff85a8  ffff9964      13bd   1
 PIntPRG
-                                  ffff994c  ffff9a7d       132   1
+                                  ffff9965  ffff9a9c       138   1
 W_1
-                                  ffff9a7e  ffff9a87         a   1
+                                  ffff9a9d  ffff9aa6         a   1
 W_2
-                                  ffff9a88  ffff9a88         0   2
+                                  ffff9aa8  ffff9aa8         0   2
 W
-                                  ffff9a88  ffff9a88         0   4
+                                  ffff9aa8  ffff9aa8         0   4
 L
-                                  ffff9a88  ffff9b7c        f5   4
+                                  ffff9aa8  ffff9bd1       12a   4
 $ADDR_C_FFFFFF80
                                   ffffff80  ffffff83         4   1
 FIXEDVECT
