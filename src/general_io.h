@@ -35,7 +35,15 @@ typedef enum enm_port{
     //! 左車輪用モータの逆転指示方向(PC2)
     M_L_IN2,
     //! モータ駆動開始指示(PC3)
-    M_STBY
+    M_STBY,
+    //! 前方超音波センサのエコー入力(PH1)
+    ECHO_FRONT,
+    //! 右側超音波センサのエコー入力(PH2)
+    ECHO_RIGHT,
+    //! 左側超音波センサのエコー入力(PE5)
+    ECHO_LEFT,
+    //! モード切り替えスイッチ(PH3)
+    MODE_SW
 } port_t;
 
 /**
@@ -63,4 +71,11 @@ void init_general_io(void);
  */
 void digital_write(port_t port, outlevel_t level);
 
+/**
+ * @brief 汎用入力ポートの取得
+ * 
+ * @param port 取得したい入力ポートの指示
+ * @return unsigned short 入力ポートのHigh/Low
+ */
+unsigned short digital_read(port_t port);
 #endif

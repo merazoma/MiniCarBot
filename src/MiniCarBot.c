@@ -32,7 +32,8 @@ void main(void)
 	// test_drive_pwm();
 	// test_sound_buzzer_150();
 	// test_analog_read();
-	test_sonar();
+	test_digital_read();
+	// test_sonar();
 	// test_drive_pwm();
  	// test_general_io();
 	// test_motor_sonar_buzzer();

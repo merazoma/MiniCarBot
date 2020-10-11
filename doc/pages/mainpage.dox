@@ -52,7 +52,7 @@
 |CN2-15          | PH0 | - | 出力 | デバッグ用LED2の点灯 |general_io.h|
 |CN2-16          | PH1 | IRQ0 | 入力 | 前側超音波センサエコー割込み入力 |sonar.h|
 |CN2-17          | PH2 | IRQ1 | 入力 | 右側超音波センサエコー割込み入力 |sonar.h|
-|CN2-19          | PH3 | IRQ4 | 入力 | モード切り替えスイッチ用割込み入力 |switch.h|
+|CN2-19          | P14 | IRQ4 | 入力 | モード切り替えスイッチ用割込み入力 |switch.h|
 |CN2-20          | P15 | - | 出力 | モード表示用LED0の点灯 |general_io.h|
 |CN2-21          | P16 | - | 出力 | モード表示用LED1の点灯 |general_io.h|
 |CN2-22          | P17 | MTIOC3A | 出力 | 超音波センサトリガ出力（前、左、右同時駆動） |sonar.h|

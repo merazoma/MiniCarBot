@@ -450,3 +450,11 @@ void test_parallel_photo(){
 		control_motor(lin_vel, ang_vel);
 	}
 }
+
+void test_digital_read() {
+	unsigned short level;
+	while (1) {
+		level = digital_read(MODE_SW);
+		sci_printf("MODE SW: %u\r\n", level);
+	}
+}
