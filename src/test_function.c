@@ -447,18 +447,20 @@ void test_get_photo_reflector() {
  * 
  */
 void test_parallel_photo(){
-	static short gain_p = 4;
+	static short gain_p = 8;
 	static int d_rs_rf_to_control = 0;
+	static int d_r_to_control = 100;
 	short ang_vel;
-	int d_rs, d_rf, d_rs_rf_dif, err_d_rs_rf;
+	int d_r_sonar, d_rs, d_rf, d_rs_rf_dif, err_d_rs_rf;
 
 	while(1) {
 		d_rs = get_photo_reflector_distance(PHOTO_RIGHT_SIDE);
 		d_rf = get_photo_reflector_distance(PHOTO_RIGHT_FRONT);
+		d_r_sonar = get_sonar_distance(SONAR_RIGHT);
 		d_rs_rf_dif = d_rf - d_rs;
  		err_d_rs_rf = d_rs_rf_dif - d_rs_rf_to_control;
 		ang_vel = -gain_p * err_d_rs_rf / 128;
-		control_motor(300, ang_vel);
+		control_motor(800, ang_vel);
 	}
 }
 

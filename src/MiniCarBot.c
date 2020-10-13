@@ -7,7 +7,7 @@
  */
                   
 
-
+#include "robot_running.h"
 //#include "typedefine.h"
 #ifdef __cplusplus
 //#include <ios>                        // Remove the comment when you use ios
@@ -24,12 +24,14 @@ void abort(void);
 void main(void)
 {
 	init_rx220();
+	robot_running();
+	// test_get_photo_reflector();
 	// test_sonar();
+
 	// test_drive_motor();
 	// test_enc();
 	// test_analog_read();
 	// test_get_photo_reflector_dif();
-	// test_get_photo_reflector();
 	// test_drive_pwm();
 	// test_sound_buzzer_150();
 	// test_analog_read();
@@ -53,7 +55,7 @@ void main(void)
 	// test_control_motor();
 	// test_control_motor_sonar();
 	// test_main_only_sonar();
-	test_parallel_photo();
+	// test_parallel_photo();
 	while(1) {
 		
 	}

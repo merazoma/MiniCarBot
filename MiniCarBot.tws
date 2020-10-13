@@ -10,12 +10,14 @@
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\cmtimer.h" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\control_motor.c" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\control_motor.h" 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\robot_running.c" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\sonar.c" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\test_function.c" 
 [WORKSPACE_FILE_STATES]
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\cmtimer.h" 78 78 911 389 0 3 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\control_motor.c" 26 26 911 389 0 1 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\control_motor.h" 0 0 1083 533 0 4 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\robot_running.c" -8 -31 1083 444 1 5 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\sonar.c" 52 52 1385 479 0 2 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\test_function.c" 0 0 1083 444 0 0 
 [LOADED_PROJECTS]

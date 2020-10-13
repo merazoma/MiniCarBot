@@ -26,10 +26,7 @@ void init_photo_reflector() {
 
 int get_photo_reflector_distance(photo_port_t port) {
     int d;
-    d = CntADVal - get_photo_reflector_dif(port);
-    if (d < 0) {
-        d = 0;
-    }
+    d = - get_photo_reflector_dif(port);
     return d;
 }
 
