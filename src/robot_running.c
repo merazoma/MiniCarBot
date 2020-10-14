@@ -91,6 +91,10 @@ void robot_running(){
 	}
 }
 
+/**
+ * @brief 前方の超音波センサの値が閾値を下回るまで待機
+ * 
+ */
 static void wait_until_front_clear() {
     int d_sonar_front;
     do {
@@ -99,6 +103,14 @@ static void wait_until_front_clear() {
     } while (d_sonar_front < ControlRangeFrontSonar);
 }
 
+/**
+ * @brief 指定された値(val)を上限値・下限値で制限して返却
+ * 
+ * @param val int 制限したい値
+ * @param u_limit int 上限値
+ * @param l_limit int 下限値
+ * @return int 制限した結果の値
+ */
 static int upper_lower_limit(int val, int u_limit, int l_limit) {
     if (val < l_limit) {
         val = l_limit;
@@ -108,6 +120,12 @@ static int upper_lower_limit(int val, int u_limit, int l_limit) {
     return val;
 }
 
+/**
+ * @brief 絶対値を返却
+ * 
+ * @param j int 対象の数字
+ * @return int 絶対値
+ */
 static int abs(int j) {
   return j < 0 ? -j : j;
 }

@@ -8,6 +8,10 @@
 #ifndef __ROBOT_RUNNING_H__
 #define __ROBOT_RUNNING_H__
 
+/**
+ * @brief コース周回用のメインプログラム
+ * 
+ */
 void robot_running();
 
 

@@ -130,10 +130,7 @@ $(document).ready(function(){initNavTree('sonar_8h.html',''); initResizable(); }
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>超音波センサ(HC-SR04)による距離計測 </p>
-<p>前側、右側と左側の超音波センサ兼用のトリガパルス（周期: 64ms, パルス幅: 10us）  をMTU3で生成し出力<br  />
- 前側、右側と左側の超音波センサのエコーパルス入力は、それぞれ外部割り込み入力  IRQ0、IRQ1とIRQ5に割り当てられており、エコーパルスの立ち下がりエッジで、  MTU3（トリガパルス生成に使用）のタイマカウントを取得<br  />
- トリガパルスの立ち上がりエッジ(MTU3.TCNT: 0)とエコーパルスの立ち上がりエッジの  時間間隔が一定なので、立ち下がりエッジでのタイマカウント取得で、エコー信号の  パルス幅を実行的に取得可能<br  />
- アプリからの超音波センサの距離取得要求時(get_sonar_distanceコール時)に、  タイマカウントを距離に換算して返却 </p><dl class="section author"><dt>著者</dt><dd>Masaya Kobayashi </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>Masaya Kobayashi </dd></dl>
 <dl class="section copyright"><dt>著作権所有</dt><dd>Copyright (c) 2020 </dd></dl>
 </div><h2 class="groupheader">型定義詳解</h2>
 <a id="a85c0bf1479c2b5f0aa8c77f321896022"></a>
@@ -239,7 +236,7 @@ $(document).ready(function(){initNavTree('sonar_8h.html',''); initResizable(); }
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>戻り値</dt><dd>int 超音波センサで測定された距離（LSB: 1 mm） </dd></dl>
+<dl class="section return"><dt>戻り値</dt><dd>int 超音波センサで測定された距離（LSB: 1 um） </dd></dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
