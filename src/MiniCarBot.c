@@ -1,11 +1,10 @@
 /**
  * @file MiniCarBot.c
  * @brief メイン処理
- * 
+ *
  * @copyright Copyright (c) 2020
- * 
+ *
  */
-                  
 
 #include "robot_running.h"
 //#include "typedefine.h"
@@ -16,8 +15,9 @@
 
 void main(void);
 #ifdef __cplusplus
-extern "C" {
-void abort(void);
+extern "C"
+{
+    void abort(void);
 }
 #endif
 
@@ -64,6 +64,5 @@ void main(void)
 #ifdef __cplusplus
 void abort(void)
 {
-
 }
 #endif

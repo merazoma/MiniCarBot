@@ -1,0 +1,5 @@
+-cpu=rx200
+-lang=c
+-output=obj="C:\Users\dmfut\Projects\MiniCarBot\src\Release\sound_buzzer.obj"
+"C:\Users\dmfut\Projects\MiniCarBot\src\sound_buzzer.c"
+-nologo

@@ -1,6 +1,6 @@
 -cpu=rx200
 -lang=c
--output=obj="C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\Debug\vecttbl.obj"
+-output=obj="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\vecttbl.obj"
 -debug
-"C:\Users\Kobayashi\Dropbox\autorc\RX220\MiniCarBot\src\vecttbl.c"
+"C:\Users\dmfut\Projects\MiniCarBot\src\vecttbl.c"
 -nologo

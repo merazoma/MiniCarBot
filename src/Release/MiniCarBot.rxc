@@ -1,0 +1,5 @@
+-cpu=rx200
+-lang=c
+-output=obj="C:\Users\dmfut\Projects\MiniCarBot\src\Release\MiniCarBot.obj"
+"C:\Users\dmfut\Projects\MiniCarBot\src\MiniCarBot.c"
+-nologo

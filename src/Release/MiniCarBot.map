@@ -1,0 +1,92 @@
+Optimizing Linkage Editor (V.10.02.00.000)        07-Oct-2020 00:53:26
+
+*** Options ***
+
+-subcommand=C:\Users\dmfut\Projects\MiniCarBot\src\Release\MiniCarBot.hlk
+-noprelink
+-nodebug
+-rom=D=R,D_1=R_1,D_2=R_2
+-nomessage
+-list="C:\Users\dmfut\Projects\MiniCarBot\src\Release\MiniCarBot.map"
+-nooptimize
+-start=B_1,R_1,B_2,R_2,B,R,SU,SI/01000,PResetPRG/0FFFF8000,C_1,C_2,C,C$*,D_1,D_2,D,P,PIntPRG,W*,L/0FFFF8100,FIXEDVECT/0FFFFFFD0
+-nologo
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\analog_read.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\cmtimer.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\control_motor.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\dbsct.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\encoder.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\general_io.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\init_rx220.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\intprg.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\MiniCarBot.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\pwm_drive.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\resetprg.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\sbrk.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\sci.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\sonar.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\sound_buzzer.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\test_function.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Release\vecttbl.obj"
+-library="C:\Users\dmfut\Projects\MiniCarBot\src\Release\MiniCarBot.lib"
+-output="C:\Users\dmfut\Projects\MiniCarBot\src\Release\MiniCarBot.abs"
+-end
+
+*** Error information ***
+
+** L1100 (W) Cannot find "SU" specified in option "start"
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+
+B_1
+                                  00001000  00001000         0   1
+R_1
+                                  00001000  00001000         0   1
+B_2
+                                  00001000  00001000         0   2
+R_2
+                                  00001000  0000101f        20   2
+B
+                                  00001020  0000141f       400   4
+R
+                                  00001420  00001437        18   4
+SI
+                                  00001438  00001737       300   4
+PResetPRG
+                                  ffff8000  ffff8022        23   1
+C_1
+                                  ffff8100  ffff8100         0   1
+C_2
+                                  ffff8100  ffff8111        12   2
+C
+                                  ffff8114  ffff8133        20   4
+C$DSEC
+                                  ffff8134  ffff8157        24   4
+C$BSEC
+                                  ffff8158  ffff816f        18   4
+C$VECT
+                                  ffff8170  ffff856f       400   4
+D_1
+                                  ffff8570  ffff8570         0   1
+D_2
+                                  ffff8570  ffff858f        20   2
+D
+                                  ffff8590  ffff85a7        18   4
+P
+                                  ffff85a8  ffff96c5      111e   1
+PIntPRG
+                                  ffff96c6  ffff97f7       132   1
+W_1
+                                  ffff97f8  ffff9801         a   1
+W_2
+                                  ffff9802  ffff9802         0   2
+W
+                                  ffff9804  ffff9804         0   4
+L
+                                  ffff9804  ffff98c3        c0   4
+$ADDR_C_FFFFFF80
+                                  ffffff80  ffffff83         4   1
+FIXEDVECT
+                                  ffffffd0  ffffffff        30   4

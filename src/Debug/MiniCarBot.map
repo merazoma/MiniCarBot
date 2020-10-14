@@ -1,15 +1,20 @@
+<<<<<<< Updated upstream
 Optimizing Linkage Editor (V.10.02.00.000)        14-Oct-2020 22:27:32
+=======
+Optimizing Linkage Editor (V.10.02.00.000)        07-Oct-2020 00:33:24
+>>>>>>> Stashed changes
 
 *** Options ***
 
--subcommand=C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\MiniCarBot.hlk
+-subcommand=C:\Users\dmfut\Projects\MiniCarBot\src\Debug\MiniCarBot.hlk
 -noprelink
 -rom=D=R,D_1=R_1,D_2=R_2
 -nomessage
--list="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\MiniCarBot.map"
+-list="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\MiniCarBot.map"
 -nooptimize
 -start=B_1,R_1,B_2,R_2,B,R,SU,SI/01000,PResetPRG/0FFFF8000,C_1,C_2,C,C$*,D_1,D_2,D,P,PIntPRG,W*,L/0FFFF8100,FIXEDVECT/0FFFFFFD0
 -nologo
+<<<<<<< Updated upstream
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\analog_read.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\cmtimer.obj"
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\control_motor.obj"
@@ -31,6 +36,27 @@ Optimizing Linkage Editor (V.10.02.00.000)        14-Oct-2020 22:27:32
 -input="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\vecttbl.obj"
 -library="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\MiniCarBot.lib"
 -output="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\MiniCarBot.abs"
+=======
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\analog_read.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\cmtimer.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\control_motor.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\dbsct.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\encoder.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\general_io.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\init_rx220.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\intprg.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\MiniCarBot.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\pwm_drive.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\resetprg.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\sbrk.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\sci.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\sonar.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\sound_buzzer.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\test_function.obj"
+-input="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\vecttbl.obj"
+-library="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\MiniCarBot.lib"
+-output="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\MiniCarBot.abs"
+>>>>>>> Stashed changes
 -end
 
 *** Error information ***
@@ -48,6 +74,7 @@ R_1
 B_2
                                   00001000  0000100f        10   2
 R_2
+<<<<<<< Updated upstream
                                   00001010  00001033        24   2
 B
                                   00001034  00001433       400   4
@@ -55,6 +82,15 @@ R
                                   00001434  00001453        20   4
 SI
                                   00001454  00001753       300   4
+=======
+                                  00001000  0000101f        20   2
+B
+                                  00001020  0000141f       400   4
+R
+                                  00001420  00001437        18   4
+SI
+                                  00001438  00001737       300   4
+>>>>>>> Stashed changes
 PResetPRG
                                   ffff8000  ffff8022        23   1
 C_1
@@ -72,6 +108,7 @@ C$VECT
 D_1
                                   ffff8584  ffff8584         0   1
 D_2
+<<<<<<< Updated upstream
                                   ffff8584  ffff85a7        24   2
 D
                                   ffff85a8  ffff85c7        20   4
@@ -87,6 +124,23 @@ W
                                   ffff9c34  ffff9c34         0   4
 L
                                   ffff9c34  ffff9d5d       12a   4
+=======
+                                  ffff8570  ffff858f        20   2
+D
+                                  ffff8590  ffff85a7        18   4
+P
+                                  ffff85a8  ffff96b3      110c   1
+PIntPRG
+                                  ffff96b4  ffff97e5       132   1
+W_1
+                                  ffff97e6  ffff97ef         a   1
+W_2
+                                  ffff97f0  ffff97f0         0   2
+W
+                                  ffff97f0  ffff97f0         0   4
+L
+                                  ffff97f0  ffff988e        9f   4
+>>>>>>> Stashed changes
 $ADDR_C_FFFFFF80
                                   ffffff80  ffffff83         4   1
 FIXEDVECT

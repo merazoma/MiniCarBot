@@ -51,7 +51,11 @@
 [WINDOW_POSITION_STATE_DATA_VD2]
 [WINDOW_POSITION_STATE_DATA_VD3]
 [WINDOW_POSITION_STATE_DATA_VD4]
+<<<<<<< Updated upstream
 "{WK_00000001_OUTPUT}" "WINDOW" 59422 0 0 "1.00" 322 456 291 350 200 18 0 "36756|36757|36758|36759|<<separator>>|36746|36747|<<separator>>|39531|<<separator>>|39500|39534|<<separator>>|36687" "0.0" 
+=======
+"{WK_00000001_OUTPUT}" "WINDOW" 59422 0 0 "1.00" 258 456 291 350 200 18 0 "36756|36757|36758|36759|<<separator>>|36746|36747|<<separator>>|39531|<<separator>>|39500|39534|<<separator>>|36687" "0.0" 
+>>>>>>> Stashed changes
 "{WK_00000002_WORKSPACE}" "WINDOW" 59420 0 0 "1.00" 269 456 291 350 200 18 0 "" "0.0" 
 "{WK_TB00000001_STANDARD}" "TOOLBAR 0" 59419 0 2 "0.00" 0 0 0 0 0 18 0 "" "0.0" 
 "{WK_TB00000002_EDITOR}" "TOOLBAR 0" 59419 0 0 "0.00" 0 0 0 0 0 18 0 "" "0.0" 
@@ -68,11 +72,14 @@
 "{WK_TB00000028_RTOSDEBUG}" "TOOLBAR 0" 59419 2 2 "0.00" 0 0 0 0 0 17 0 "" "0.0" 
 "{WK_TB00000029_SYSTEMTOOL}" "TOOLBAR 0" 59419 2 3 "0.00" 0 0 0 0 0 17 0 "" "0.0" 
 [WINDOW_Z_ORDER]
+<<<<<<< Updated upstream
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\test_function.c" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\sonar.c" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\control_motor.c" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\control_motor.h" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\cmtimer.h" 
+=======
+>>>>>>> Stashed changes
 [TARGET_NAME]
 "" "" 0 
 [STATUSBAR_STATEINFO_VD1]

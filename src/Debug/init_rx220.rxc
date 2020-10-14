@@ -1,6 +1,6 @@
 -cpu=rx200
 -lang=c
--output=obj="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\init_rx220.obj"
+-output=obj="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\init_rx220.obj"
 -debug
-"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\init_rx220.c"
+"C:\Users\dmfut\Projects\MiniCarBot\src\init_rx220.c"
 -nologo

@@ -1,0 +1,5 @@
+-cpu=rx200
+-lang=c
+-output=obj="C:\Users\dmfut\Projects\MiniCarBot\src\Release\resetprg.obj"
+"C:\Users\dmfut\Projects\MiniCarBot\src\resetprg.c"
+-nologo
