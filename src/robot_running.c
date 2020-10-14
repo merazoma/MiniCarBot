@@ -22,6 +22,9 @@ static const short FrontWarningBuzzerFreq = 128;
 static const short LeftWarningBuzzerFreq = 512;
 static const short RightWarningBuzzerFreq = 1024;
 
+static const short DifAcuteCurve = 100;
+static const short gain_p_turning_right = 500;
+
 
 void robot_running(){
     int i;
@@ -75,6 +78,12 @@ void robot_running(){
             ang_vel = upper_lower_limit(ang_vel, 180, -180);
             sound_buzzer(LeftWarningBuzzerFreq);
         } 
+        // 右側の鋭角カーブを曲がる制御
+        // 右側超音波センサで前ステップで検知した距離との差が一定値以上のときギュインって曲がる処理
+        else if (d_sonar_dif[i] > DifAcuteCurve){
+            ang_vel = -gain_p_turning_right * (d_sonar[SONAR_RIGHT] - MinDisRightSonar) / 128;
+            ang_vel = upper_lower_limit(ang_vel, 180, -180);
+        }
         // フォトリフレクタによる壁との平行制御
         else {
             stop_buzzer();
