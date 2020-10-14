@@ -7,7 +7,7 @@
 #include "iodefine.h"
 #include "encoder.h"
 #include "control_motor.h"
-// #include "photo_reflector.h"
+ #include "photo_reflector.h"
 
 void test_general_io(void)
 {
