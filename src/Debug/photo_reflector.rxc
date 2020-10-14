@@ -1,6 +1,0 @@
--cpu=rx200
--lang=c
--output=obj="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\photo_reflector.obj"
--debug
-"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\photo_reflector.c"
--nologo

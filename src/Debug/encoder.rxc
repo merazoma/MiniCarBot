@@ -1,6 +1,0 @@
--cpu=rx200
--lang=c
--output=obj="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\encoder.obj"
--debug
-"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\encoder.c"
--nologo

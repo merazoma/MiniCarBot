@@ -8,13 +8,11 @@ digraph "main"
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="init_rx220",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$init__rx220_8c.html#ad67fc799d22f03b36e464c59af4a92fd",tooltip=" "];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="test_parallel_photo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#a4d5084c6064c94b0ee5239792af9bb42",tooltip="壁との並走テスト"];
+  Node3 [label="robot_running",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$robot__running_8c.html#ac16f420a57682b0ced615e5ab7b85536",tooltip="コース周回用のメインプログラム"];
   Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="control_motor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$control__motor_8c.html#ad515942cfb6a95edfffddcb5545fd2d2",tooltip="与えられた、並進速度(lin_vel)と回転速度(ang_vel)で、車体を制御"];
+  Node4 [label="get_photo_reflector\l_distance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$photo__reflector_8c.html#aad9c313aeb5bdb8fa2af97bb34bdb9c6",tooltip="フォトリフレクタで計測した距離を取得"];
   Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="set_motor_Nrpm_to_control",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$control__motor_8c.html#a4d0af57446acf6b0e23b5ddc01087cef",tooltip="左右輪の回転数を指示"];
+  Node5 [label="get_photo_reflector_dif",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$photo__reflector_8c.html#a2fad7caf1bc795389c410e2dde2ca68a",tooltip=" "];
   Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="get_photo_reflector\l_distance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$photo__reflector_8c.html#aad9c313aeb5bdb8fa2af97bb34bdb9c6",tooltip="フォトリフレクタで計測した距離を取得"];
-  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="get_photo_reflector_dif",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$photo__reflector_8c.html#a2fad7caf1bc795389c410e2dde2ca68a",tooltip=" "];
+  Node6 [label="get_sonar_distance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sonar_8c.html#a79d59d143a65fbc3f3a3a1ebf7690919",tooltip="超音波センサを指定して、その超音波センサで測定した距離を取得"];
 }

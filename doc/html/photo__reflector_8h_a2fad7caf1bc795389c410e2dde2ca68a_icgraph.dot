@@ -8,13 +8,15 @@ digraph "get_photo_reflector_dif"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="get_photo_reflector\l_distance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$photo__reflector_8h.html#aad9c313aeb5bdb8fa2af97bb34bdb9c6",tooltip="フォトリフレクタで計測した距離を取得"];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="test_get_photo_reflector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#ad2335ae2e40529ee5e2be25acf690a46",tooltip=" "];
-  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="test_parallel_photo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#a4d5084c6064c94b0ee5239792af9bb42",tooltip="壁との並走テスト"];
+  Node3 [label="robot_running",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$robot__running_8h.html#ac16f420a57682b0ced615e5ab7b85536",tooltip="コース周回用のメインプログラム"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$resetprg_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667",tooltip=" "];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$resetprg_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667",tooltip=" "];
-  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="PowerON_Reset_PC",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vect_8h.html#a3fe9583050a6d22f2c254e63225697bb",tooltip=" "];
-  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="test_get_photo_reflector_dif",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#ae2a19340c3131b66fde44ad1afd81eb4",tooltip=" "];
+  Node5 [label="PowerON_Reset_PC",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vect_8h.html#a3fe9583050a6d22f2c254e63225697bb",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="test_get_photo_reflector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#ad2335ae2e40529ee5e2be25acf690a46",tooltip=" "];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="test_parallel_photo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#a4d5084c6064c94b0ee5239792af9bb42",tooltip="壁との並走テスト"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="test_get_photo_reflector_dif",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#ae2a19340c3131b66fde44ad1afd81eb4",tooltip=" "];
 }

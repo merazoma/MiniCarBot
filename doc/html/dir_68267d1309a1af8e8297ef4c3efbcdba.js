@@ -22,6 +22,8 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "pwm_drive.c", "pwm__drive_8c.html", "pwm__drive_8c" ],
     [ "pwm_drive.h", "pwm__drive_8h.html", "pwm__drive_8h" ],
     [ "resetprg.c", "resetprg_8c.html", "resetprg_8c" ],
+    [ "robot_running.c", "robot__running_8c.html", "robot__running_8c" ],
+    [ "robot_running.h", "robot__running_8h.html", "robot__running_8h" ],
     [ "sbrk.c", "sbrk_8c.html", "sbrk_8c" ],
     [ "sbrk.h", "sbrk_8h.html", "sbrk_8h" ],
     [ "sci.c", "sci_8c.html", "sci_8c" ],

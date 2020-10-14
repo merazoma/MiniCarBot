@@ -10,11 +10,5 @@ digraph "control_motor"
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="test_control_motor\l_sonar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#a3e7cfb8664fa6eed9108f171b2ee7f22",tooltip=" "];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="test_main_only_sonar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#aaafa7a21d505b79b9127af201d813c2d",tooltip=" "];
-  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="test_parallel_photo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#a4d5084c6064c94b0ee5239792af9bb42",tooltip="壁との並走テスト"];
-  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$resetprg_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667",tooltip=" "];
-  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="PowerON_Reset_PC",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vect_8h.html#a3fe9583050a6d22f2c254e63225697bb",tooltip=" "];
+  Node4 [label="test_parallel_photo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__function_8c.html#a4d5084c6064c94b0ee5239792af9bb42",tooltip="壁との並走テスト"];
 }
