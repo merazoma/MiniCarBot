@@ -1,2 +1,9 @@
 *.json
 *.pdf
+*.ARF
+*.BKW
+*.hws
+*.tws
+src/Debug/
+src/Release/
+.vscode/

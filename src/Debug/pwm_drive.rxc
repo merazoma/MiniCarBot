@@ -1,6 +1,0 @@
--cpu=rx200
--lang=c
--output=obj="C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\Debug\pwm_drive.obj"
--debug
-"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\pwm_drive.c"
--nologo

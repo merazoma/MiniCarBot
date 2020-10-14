@@ -200,8 +200,8 @@ var NAVTREEINDEX0 =
 "globals_defs_w.html":[2,1,6,16],
 "globals_e.html":[2,1,0,5],
 "globals_enum.html":[2,1,4],
-"globals_eval.html":[2,1,5,0],
 "globals_eval.html":[2,1,5],
+"globals_eval.html":[2,1,5,0],
 "globals_eval_d.html":[2,1,5,1],
 "globals_eval_e.html":[2,1,5,2],
 "globals_eval_f.html":[2,1,5,3],
@@ -224,8 +224,9 @@ var NAVTREEINDEX0 =
 "globals_func_m.html":[2,1,1,7],
 "globals_func_n.html":[2,1,1,8],
 "globals_func_p.html":[2,1,1,9],
-"globals_func_s.html":[2,1,1,10],
-"globals_func_t.html":[2,1,1,11],
+"globals_func_r.html":[2,1,1,10],
+"globals_func_s.html":[2,1,1,11],
+"globals_func_t.html":[2,1,1,12],
 "globals_g.html":[2,1,0,7],
 "globals_h.html":[2,1,0,8],
 "globals_i.html":[2,1,0,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "init__rx220_8c.html":[2,0,1,11],
 "init__rx220_8c.html#ad67fc799d22f03b36e464c59af4a92fd":[2,0,1,11,0],
 "init__rx220_8h.html":[2,0,1,12],
-"init__rx220_8h.html#ad67fc799d22f03b36e464c59af4a92fd":[2,0,1,12,0],
-"init__rx220_8h_source.html":[2,0,1,12]
+"init__rx220_8h.html#ad67fc799d22f03b36e464c59af4a92fd":[2,0,1,12,0]
 };
