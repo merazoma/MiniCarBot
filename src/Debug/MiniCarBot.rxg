@@ -1,3 +1,0 @@
--cpu=rx200
--output="C:\Users\dmfut\Projects\MiniCarBot\src\Debug\MiniCarBot.lib"
--head=runtime,stdio,stdlib,string,new

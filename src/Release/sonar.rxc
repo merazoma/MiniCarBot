@@ -1,5 +1,0 @@
--cpu=rx200
--lang=c
--output=obj="C:\Users\dmfut\Projects\MiniCarBot\src\Release\sonar.obj"
-"C:\Users\dmfut\Projects\MiniCarBot\src\sonar.c"
--nologo

@@ -4,6 +4,11 @@
 *.BKW
 *.hws
 *.tws
+*.BKS
+*.hsf
+*.nav
+*.BKP
+*.tps
 src/Debug/
 src/Release/
 .vscode/

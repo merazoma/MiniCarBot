@@ -1,5 +1,0 @@
--cpu=rx200
--lang=c
--output=obj="C:\Users\dmfut\Projects\MiniCarBot\src\Release\analog_read.obj"
-"C:\Users\dmfut\Projects\MiniCarBot\src\analog_read.c"
--nologo

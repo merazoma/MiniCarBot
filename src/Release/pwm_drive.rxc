@@ -1,5 +1,0 @@
--cpu=rx200
--lang=c
--output=obj="C:\Users\dmfut\Projects\MiniCarBot\src\Release\pwm_drive.obj"
-"C:\Users\dmfut\Projects\MiniCarBot\src\pwm_drive.c"
--nologo
