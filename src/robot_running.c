@@ -4,36 +4,45 @@
 #include "control_motor.h"
 #include "sound_buzzer.h"
 
-static const short gain_p_photo = 8;
-static const short gain_p_sonar = 64;
-static const short ControlRangeSonar = 300;
-static const short DisSonarToControl = 200;
-static const short ControlRangeFrontSonar = 300;
+static int abs(int j);
+static void wait_until_front_clear();
+
+static const short gain_p_photo = 20;
+static const short gain_p_sonar_right = 50;
+static const short gain_p_sonar_left = 300;
+static const short MinDisRightSonar = 120;
+static const short MinDisLeftSonar = 300;
+static const short ControlRangeFrontSonar = 250;
 static const short MinLinVel = 80;
 
 static const short d_rf_rs_to_control = 0;
 
 static const short FrontWarningBuzzerFreq = 128;
 static const short LeftWarningBuzzerFreq = 512;
+static const short RightWarningBuzzerFreq = 1024;
+
 
 void robot_running(){
     int i;
 	short lin_vel, ang_vel;
-    int d_sonar[3], d_sonar_dif[3];
+    int d_sonar[3], d_sonar_dif[3], d;
     static int d_sonar_old[3] = {0, 0, 0};
     int d_photo[4];
-    int d_rf_rs_dif, err_rf_rs, err_r_sonar;
+    int d_rf_rs_dif, err_rf_rs;
 
 	while(1) {
-        ang_vel = 0;
         lin_vel = 500;
         for (i = 0; i < 3; i++) {
             d_sonar[i] = get_sonar_distance(i);
+            if (d_sonar[i] < 0) {
+                d_sonar[i] = d_sonar_old[i];
+            }
             d_sonar_dif[i] = d_sonar[i] - d_sonar_old[i];
         }
         for (i = 0; i < 4; i++) {
     		d_photo[i] = get_photo_reflector_distance(i);
         }
+        // 前方超音波センサで接近感知時の処理
         if (d_sonar[SONAR_FRONT] < ControlRangeFrontSonar) {
             lin_vel = MinLinVel;
             if (d_sonar[SONAR_RIGHT] < d_sonar[SONAR_LEFT]) {
@@ -43,32 +52,62 @@ void robot_running(){
             }
     		control_motor(lin_vel, ang_vel);
             sound_buzzer(FrontWarningBuzzerFreq);
+            wait_until_front_clear();
+            stop_buzzer();
+            for (i = 0; i < 3; i++) {
+                d = get_sonar_distance(i);
+                if (d > 0) {
+                    d_sonar_old[i] = d;
+                }
+            }
             continue;
         }
-        if (d_sonar[SONAR_LEFT] < ControlRangeSonar) {
-            ang_vel += gain_p_sonar * (d_sonar[SONAR_LEFT] - DisSonarToControl) / 128;
-    		control_motor(lin_vel, ang_vel);
-            sound_buzzer(LeftWarningBuzzerFreq);
-            continue;
+        // 右側超音波センサで接近感知時の処理
+        else if (d_sonar[SONAR_RIGHT] < MinDisRightSonar) {
+            ang_vel = -gain_p_sonar_right * (d_sonar[SONAR_RIGHT] - MinDisRightSonar) / 128;
+            ang_vel = upper_lower_limit(ang_vel, 180, -180);
+            sound_buzzer(RightWarningBuzzerFreq);
         } 
-
-        stop_buzzer();
-        ang_vel += -gain_p_sonar * (d_sonar[SONAR_RIGHT] - DisSonarToControl) / 128;
-		d_rf_rs_dif = d_photo[PHOTO_RIGHT_FRONT] - d_photo[PHOTO_RIGHT_SIDE];
- 		err_rf_rs = d_rf_rs_dif - d_rf_rs_to_control;
-        err_r_sonar = d_sonar[SONAR_RIGHT] - DisSonarToControl; 
-		ang_vel += - (gain_p_photo * err_rf_rs) / 128;
-
-        if (ang_vel < -90) {
-            ang_vel = -90;
-        } else if (ang_vel > 90) {
-            ang_vel = 90;
+        // 左側超音波センサで接近感知時の処理
+        else if (d_sonar[SONAR_LEFT] < MinDisLeftSonar) {
+            ang_vel = gain_p_sonar_left * (d_sonar[SONAR_LEFT] - MinDisLeftSonar) / 128;
+            ang_vel = upper_lower_limit(ang_vel, 180, -180);
+            sound_buzzer(LeftWarningBuzzerFreq);
+        } 
+        // フォトリフレクタによる壁との平行制御
+        else {
+            stop_buzzer();
+            d_rf_rs_dif = d_photo[PHOTO_RIGHT_FRONT] - d_photo[PHOTO_RIGHT_SIDE];
+            err_rf_rs = d_rf_rs_dif - d_rf_rs_to_control;
+            ang_vel = - (gain_p_photo * err_rf_rs) / 128;
+            ang_vel = upper_lower_limit(ang_vel, 90, -90);
         }
-		control_motor(lin_vel, ang_vel);
-
+        control_motor(lin_vel, ang_vel);
+        // control_motor(lin_vel, 0);
         for (i = 0; i < 3; i++) {
             d_sonar_old[i] = d_sonar[i];
         }
 
 	}
+}
+
+static void wait_until_front_clear() {
+    int d_sonar_front;
+    do {
+        d_sonar_front = get_sonar_distance(SONAR_FRONT);
+
+    } while (d_sonar_front < ControlRangeFrontSonar);
+}
+
+static int upper_lower_limit(int val, int u_limit, int l_limit) {
+    if (val < l_limit) {
+        val = l_limit;
+    } else if (val > u_limit) {
+        val = u_limit;
+    }
+    return val;
+}
+
+static int abs(int j) {
+  return j < 0 ? -j : j;
 }
