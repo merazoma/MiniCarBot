@@ -14,6 +14,7 @@ static const short MinDisRightSonar = 120;
 static const short MinDisLeftSonar = 300;
 static const short ControlRangeFrontSonar = 250;
 static const short MinLinVel = 80;
+static const short DefaultLinVel = 600;
 
 static const short d_rf_rs_to_control = 0;
 
@@ -31,7 +32,7 @@ void robot_running(){
     int d_rf_rs_dif, err_rf_rs;
 
 	while(1) {
-        lin_vel = 500;
+        lin_vel = DefaultLinVel;
         for (i = 0; i < 3; i++) {
             d_sonar[i] = get_sonar_distance(i);
             if (d_sonar[i] < 0) {
@@ -44,7 +45,7 @@ void robot_running(){
         }
         // 前方超音波センサで接近感知時の処理
         if (d_sonar[SONAR_FRONT] < ControlRangeFrontSonar) {
-            lin_vel = MinLinVel;
+            lin_vel = (d_sonar[SONAR_FRONT] - ControlRangeFrontSonar/2) / 2;
             if (d_sonar[SONAR_RIGHT] < d_sonar[SONAR_LEFT]) {
                 ang_vel = 180;
             } else {
