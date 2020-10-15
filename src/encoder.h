@@ -9,15 +9,16 @@
 
 /**
  * @brief エンコーダカウント用タイマの初期化処理
- * 
+ *
  */
 void init_encoder();
 
 /**
  * @brief 左右モータのエンコーダ選択用の型。
- * 
+ *
  */
-typedef enum enm_encoder_id{
+typedef enum enm_encoder_id
+{
     //! 左モータのエンコーダ
     ENCODER_LEFT = 0,
     //! 右モータのエンコーダ
@@ -26,7 +27,7 @@ typedef enum enm_encoder_id{
 
 /**
  * @brief エンコーダカウントの取得
- * 
+ *
  * @param encoder_id 左右モータのエンコーダ選択
  * @return unsigned short エンコーダカウント
  */
@@ -34,7 +35,7 @@ unsigned short get_enc_count(encoder_id_t encoder_id);
 
 /**
  * @brief 前回コール時からのエンコーダカウントの差分を取得
- * 
+ *
  * @param encoder_id 左右モータのエンコーダ選択
  * @return short 前回コール時からのエンコーダカウントの差分
  * @note 1 ms周期の割込みハンドラでの使用を想定
@@ -42,11 +43,19 @@ unsigned short get_enc_count(encoder_id_t encoder_id);
 short get_enc_count_dif(encoder_id_t encoder_id);
 
 /**
+ * @brief 積算したエンコーダカウントを取得
+ *
+ * @param encoder_id 左右モータのエンコーダ選択
+ * @return int 積算したエンコーダカウント
+ */
+int get_accum_enc_count_dif(encoder_id_t encoder_id);
+
+/**
  * @brief エンコーダカウントの初期値を設定
- * 
+ *
  * @param encoder_id 左右モータのエンコーダ選択
  * @param enc_count 設定したいエンコーダカウント
  */
 void set_enc_count(encoder_id_t encoder_id, unsigned short enc_count);
 
-#endif 
+#endif
