@@ -3,6 +3,7 @@
 #include "photo_reflector.h"
 #include "control_motor.h"
 #include "sound_buzzer.h"
+#include "sci.h"
 
 static int abs(int j);
 static void wait_until_front_clear();
@@ -11,6 +12,8 @@ static const short gain_p_photo = 20;
 static const short gain_p_sonar_right = 50;
 static const short gain_p_sonar_left = 300;
 static const short MinDisRightSonar = 120;
+static const short MaxDisRightSonar = 300;
+
 static const short MinDisLeftSonar = 300;
 static const short ControlRangeFrontSonar = 250;
 static const short MinLinVel = 80;
@@ -57,6 +60,7 @@ void robot_running(){
     		control_motor(lin_vel, ang_vel);
             sound_buzzer(FrontWarningBuzzerFreq);
             wait_until_front_clear();
+    		control_motor(lin_vel, 0);
             stop_buzzer();
             for (i = 0; i < 3; i++) {
                 d = get_sonar_distance(i);
@@ -72,6 +76,13 @@ void robot_running(){
             ang_vel = upper_lower_limit(ang_vel, 180, -180);
             sound_buzzer(RightWarningBuzzerFreq);
         } 
+        // 右側超音波センサで壁を見失った場合の処理
+        else if (d_sonar[SONAR_RIGHT > MaxDisRightSonar]) {
+            ang_vel = -gain_p_sonar_right * (d_sonar[SONAR_RIGHT] - MinDisRightSonar) / 128;
+            ang_vel = upper_lower_limit(ang_vel, 180, -180);
+            lin_vel = lin_vel * ang_vel / 180;
+            sound_buzzer(RightWarningBuzzerFreq);
+        } 
         // 左側超音波センサで接近感知時の処理
         else if (d_sonar[SONAR_LEFT] < MinDisLeftSonar) {
             ang_vel = gain_p_sonar_left * (d_sonar[SONAR_LEFT] - MinDisLeftSonar) / 128;
@@ -80,10 +91,12 @@ void robot_running(){
         } 
         // 右側の鋭角カーブを曲がる制御
         // 右側超音波センサで前ステップで検知した距離との差が一定値以上のときギュインって曲がる処理
-        else if (d_sonar_dif[i] > DifAcuteCurve){
-            ang_vel = -gain_p_turning_right * (d_sonar[SONAR_RIGHT] - MinDisRightSonar) / 128;
-            ang_vel = upper_lower_limit(ang_vel, 180, -180);
-        }
+        // else if (d_sonar_dif[SONAR_RIGHT] > DifAcuteCurve){
+        //     ang_vel = -gain_p_turning_right * (d_sonar[SONAR_RIGHT] - MinDisRightSonar) / 128;
+        //     ang_vel = upper_lower_limit(ang_vel, 180, -180);
+        //     ang_vel = -360;
+        //     sci_printf("Diff !!\r\n");
+        // }
         // フォトリフレクタによる壁との平行制御
         else {
             stop_buzzer();
