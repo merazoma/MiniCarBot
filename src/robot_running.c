@@ -28,6 +28,8 @@ static const short RightWarningBuzzerFreq = 1024;
 static const short DifAcuteCurve = 100;
 static const short gain_p_turning_right = 500;
 
+static const short TrgtDisRightSonar = 200;
+
 
 void robot_running(){
     int i;
@@ -90,8 +92,8 @@ void robot_running(){
             sound_buzzer(LeftWarningBuzzerFreq);
         } 
         // 右壁との距離を`MinDisRightSonar`に維持する制御
-        else if (d_sonar[SONAR_RIGHT] > MinDisRightSonar) {
-            ang_vel = -gain_p_sonar_right * (d_sonar[SONAR_RIGHT] - MinDisRightSonar) / 128;
+        else if (d_sonar[SONAR_RIGHT] > TrgtDisRightSonar) {
+            ang_vel = -gain_p_sonar_right * (d_sonar[SONAR_RIGHT] - TrgtDisRightSonar) / 128;
             ang_vel = upper_lower_limit(ang_vel, 180, -180);
         }
         // 右側の鋭角カーブを曲がる制御
