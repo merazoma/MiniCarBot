@@ -7,10 +7,10 @@
 #define WheelSperation 75                                   //トレッド幅 unit: mm
 #define WheelDiameter  48                                   //車輪直径 unit: mm
 #define ToNrps (1/(WheelDiameter*314)*100)
-#define GearTier 54
+#define GearTire 54
 #define GearMotor 8
 #define MaxMotorNrpm 9920                                   //SCR13-2005 定格回転数: 9920
-#define NtoEncCnt (256*4)
+#define NtoEncCnt (256*4)                                   //256カウント, 2相, 立ち上がり/下がり
 static short motor_Nrpm_to_control[2] = {0, 0};
 static short u_duty[2] = {0, 0};
 short gain_p[2] = {20, 20};
@@ -29,8 +29,8 @@ void control_motor(short lin_vel, short ang_vel) {
     wheel_vel[LEFT]   = lin_vel - (ang_vel * WheelSperation * 314/100/180 / 2);
     wheel_vel[RIGHT]  = lin_vel + (ang_vel * WheelSperation * 314/100/180 / 2);
 
-    motor_Nrpm[LEFT]   = wheel_vel[LEFT] * GearTier * 60 * 100 / 314 / WheelDiameter / GearMotor;
-    motor_Nrpm[RIGHT]   = wheel_vel[RIGHT] * GearTier * 60 * 100 / 314 / WheelDiameter / GearMotor;
+    motor_Nrpm[LEFT]   = wheel_vel[LEFT] * GearTire * 60 * 100 / 314 / WheelDiameter / GearMotor;
+    motor_Nrpm[RIGHT]   = wheel_vel[RIGHT] * GearTire * 60 * 100 / 314 / WheelDiameter / GearMotor;
 
     set_motor_Nrpm_to_control(LEFT, motor_Nrpm[LEFT]);
     set_motor_Nrpm_to_control(RIGHT, motor_Nrpm[RIGHT]);
