@@ -7,7 +7,7 @@
 #include "iodefine.h"
 #include "encoder.h"
 #include "control_motor.h"
- #include "photo_reflector.h"
+#include "photo_reflector.h"
 
 void test_general_io(void)
 {
@@ -210,16 +210,22 @@ void test_sonar()
     }
 }
 
-// void test_photo_reflector() {
-// 	int photo_ad;
-// 	int i;
-// 	while (1)
-// 	{
-// 		photo_ad = get_photo_reflecor_distance(PHOTO_SENS_LF);
-// 		sci_printf("Left Front Photo AD value = %d\r\n", photo_ad);
-// 		for (i=0; i<2000000;i++);
-// 	}
-// }
+void test_photo_reflector()
+{
+    int photo_ad;
+    int i, j;
+    int d_photo[4];
+    while (1)
+    {
+        for (j = 0; j < 4; j++)
+        {
+            d_photo[j] = get_photo_reflector_distance(j);
+        }
+        sci_printf("LF = %d, LS = %d, RF = %d, RS = %d\r\n", d_photo[0], d_photo[1], d_photo[2], d_photo[3]);
+        for (i = 0; i < 2000000; i++)
+            ;
+    }
+}
 
 void test_drive_motor()
 {
@@ -392,37 +398,43 @@ void test_enc_dif()
     drive_motor_duty(RIGHT, enc_l * 10, FORWARD);
 }
 
-void test_main_only_sonar() {
-	static short gain_p = 64;
-	static short gain_curve = 5;
-	static int d_r_l_to_control = 0;
-	static int err_d_r_l = 0;
-	static short MaxLinVel = 2000;
-	static short MinLinVel = 500;
-	static short MinAngVel = -360;
-	int d_f, d_r, d_l, d_r_l_dif;
+void test_main_only_sonar()
+{
+    static short gain_p = 64;
+    static short gain_curve = 5;
+    static int d_r_l_to_control = 0;
+    static int err_d_r_l = 0;
+    static short MaxLinVel = 2000;
+    static short MinLinVel = 500;
+    static short MinAngVel = -360;
+    int d_f, d_r, d_l, d_r_l_dif;
 
-	short lin_vel;
-	short lin_vel_from_ang, ang_vel;
-	while(1) {
-		d_f = get_sonar_distance(SONAR_FRONT);
-		d_r = get_sonar_distance(SONAR_RIGHT);
-		d_l = get_sonar_distance(SONAR_LEFT);
-		if (d_f < 500) {
-			lin_vel = 0;
-			control_motor(lin_vel, -180);
-			continue;
-		} else {
-			lin_vel  = 1500;
-		}
-		d_r_l_dif = d_r - d_l;
-		err_d_r_l = d_r_l_dif - d_r_l_to_control;
-		ang_vel = - gain_p * err_d_r_l / 128;
-		if (ang_vel < -90) {
-			lin_vel = 800;
-		}
-		control_motor(lin_vel, ang_vel);
-	}
+    short lin_vel;
+    short lin_vel_from_ang, ang_vel;
+    while (1)
+    {
+        d_f = get_sonar_distance(SONAR_FRONT);
+        d_r = get_sonar_distance(SONAR_RIGHT);
+        d_l = get_sonar_distance(SONAR_LEFT);
+        if (d_f < 500)
+        {
+            lin_vel = 0;
+            control_motor(lin_vel, -180);
+            continue;
+        }
+        else
+        {
+            lin_vel = 1500;
+        }
+        d_r_l_dif = d_r - d_l;
+        err_d_r_l = d_r_l_dif - d_r_l_to_control;
+        ang_vel = -gain_p * err_d_r_l / 128;
+        if (ang_vel < -90)
+        {
+            lin_vel = 800;
+        }
+        control_motor(lin_vel, ang_vel);
+    }
 }
 
 void test_control_motor()
@@ -452,38 +464,42 @@ void test_GBADI()
     }
 }
 
-void test_get_photo_reflector_dif() {
-	short d_rs, d_rf, d_ls, d_lf;
-	int j;
-	while (1)
-	{
-		d_rs = get_photo_reflector_dif(PHOTO_RIGHT_SIDE);
-		d_rf = get_photo_reflector_dif(PHOTO_RIGHT_FRONT);
-		d_ls = get_photo_reflector_dif(PHOTO_LEFT_SIDE);
-		d_lf = get_photo_reflector_dif(PHOTO_LEFT_FRONT);
-		sci_printf("Right Side = %d\r\n", d_rs);
-		sci_printf("Right Front = %d\r\n", d_rf);
-		sci_printf("Left Side = %d\r\n", d_ls);
-		sci_printf("Left Front = %d\r\n", d_lf);
-		for (j=0; j<2000000;j++);
-	}	
+void test_get_photo_reflector_dif()
+{
+    short d_rs, d_rf, d_ls, d_lf;
+    int j;
+    while (1)
+    {
+        d_rs = get_photo_reflector_dif(PHOTO_RIGHT_SIDE);
+        d_rf = get_photo_reflector_dif(PHOTO_RIGHT_FRONT);
+        d_ls = get_photo_reflector_dif(PHOTO_LEFT_SIDE);
+        d_lf = get_photo_reflector_dif(PHOTO_LEFT_FRONT);
+        sci_printf("Right Side = %d\r\n", d_rs);
+        sci_printf("Right Front = %d\r\n", d_rf);
+        sci_printf("Left Side = %d\r\n", d_ls);
+        sci_printf("Left Front = %d\r\n", d_lf);
+        for (j = 0; j < 2000000; j++)
+            ;
+    }
 }
 
-void test_get_photo_reflector() {
-	short d_rs, d_rf, d_ls, d_lf;
-	int j;
-	while (1)
-	{
-		d_rs = get_photo_reflector_distance(PHOTO_RIGHT_SIDE);
-		d_rf = get_photo_reflector_distance(PHOTO_RIGHT_FRONT);
-		d_ls = get_photo_reflector_distance(PHOTO_LEFT_SIDE);
-		d_lf = get_photo_reflector_distance(PHOTO_LEFT_FRONT);
-		sci_printf("Right Side = %d\r\n", d_rs);
-		sci_printf("Right Front = %d\r\n", d_rf);
-		sci_printf("Left Side = %d\r\n", d_ls);
-		sci_printf("Left Front = %d\r\n", d_lf);
-		for (j=0; j<2000000;j++);
-	}	
+void test_get_photo_reflector()
+{
+    short d_rs, d_rf, d_ls, d_lf;
+    int j;
+    while (1)
+    {
+        d_rs = get_photo_reflector_distance(PHOTO_RIGHT_SIDE);
+        d_rf = get_photo_reflector_distance(PHOTO_RIGHT_FRONT);
+        d_ls = get_photo_reflector_distance(PHOTO_LEFT_SIDE);
+        d_lf = get_photo_reflector_distance(PHOTO_LEFT_FRONT);
+        sci_printf("Right Side = %d\r\n", d_rs);
+        sci_printf("Right Front = %d\r\n", d_rf);
+        sci_printf("Left Side = %d\r\n", d_ls);
+        sci_printf("Left Front = %d\r\n", d_lf);
+        for (j = 0; j < 2000000; j++)
+            ;
+    }
 }
 
 // void test_main_only_sonar_pd() {
@@ -500,7 +516,7 @@ void test_get_photo_reflector() {
 
 // 	short lin_vel;
 // 	short lin_vel_from_ang, ang_vel;
-	
+
 // 	while(1) {
 // 		d_f = get_sonar_distance(SONAR_FRONT);
 // 		d_r = get_sonar_distance(SONAR_RIGHT);
@@ -528,36 +544,40 @@ void test_get_photo_reflector() {
  * @brief 壁との並走テスト
  * @note 低速で平面の壁に並走を確認
  * @attention 缶の壁や高速でのテストは未実施
- * 
+ *
  */
-void test_parallel_photo(){
-	static short gain_p = 8;
-	static int d_rs_rf_to_control = 0;
-	static int d_r_to_control = 100;
-	short ang_vel;
-	int d_r_sonar, d_rs, d_rf, d_rs_rf_dif, err_d_rs_rf;
+void test_parallel_photo()
+{
+    static short gain_p = 8;
+    static int d_rs_rf_to_control = 0;
+    static int d_r_to_control = 100;
+    short ang_vel;
+    int d_r_sonar, d_rs, d_rf, d_rs_rf_dif, err_d_rs_rf;
 
-	while(1) {
-		d_rs = get_photo_reflector_distance(PHOTO_RIGHT_SIDE);
-		d_rf = get_photo_reflector_distance(PHOTO_RIGHT_FRONT);
-		d_r_sonar = get_sonar_distance(SONAR_RIGHT);
-		d_rs_rf_dif = d_rf - d_rs;
- 		err_d_rs_rf = d_rs_rf_dif - d_rs_rf_to_control;
-		ang_vel = -gain_p * err_d_rs_rf / 128;
-		control_motor(800, ang_vel);
-	}
+    while (1)
+    {
+        d_rs = get_photo_reflector_distance(PHOTO_RIGHT_SIDE);
+        d_rf = get_photo_reflector_distance(PHOTO_RIGHT_FRONT);
+        d_r_sonar = get_sonar_distance(SONAR_RIGHT);
+        d_rs_rf_dif = d_rf - d_rs;
+        err_d_rs_rf = d_rs_rf_dif - d_rs_rf_to_control;
+        ang_vel = -gain_p * err_d_rs_rf / 128;
+        control_motor(800, ang_vel);
+    }
 }
 
-void test_digital_read() {
-	unsigned short level;
-	while (1) {
-		level = digital_read(MODE_SW);
-		sci_printf("MODE SW: %u\r\n", level);
-		level = digital_read(ECHO_LEFT);
-		sci_printf("SONAR_LEFT: %u\r\n", level);
-		level = digital_read(ECHO_RIGHT);
-		sci_printf("SONAR_RIGHT: %u\r\n", level);
-		level = digital_read(ECHO_FRONT);
-		sci_printf("SONAR_FRONT: %u\r\n", level);
-	}
+void test_digital_read()
+{
+    unsigned short level;
+    while (1)
+    {
+        level = digital_read(MODE_SW);
+        sci_printf("MODE SW: %u\r\n", level);
+        level = digital_read(ECHO_LEFT);
+        sci_printf("SONAR_LEFT: %u\r\n", level);
+        level = digital_read(ECHO_RIGHT);
+        sci_printf("SONAR_RIGHT: %u\r\n", level);
+        level = digital_read(ECHO_FRONT);
+        sci_printf("SONAR_FRONT: %u\r\n", level);
+    }
 }

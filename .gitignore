@@ -1,17 +1,5 @@
 *.json
 *.pdf
-*.BKW
-*.BKS
-*.hws
-*.hsf
-*.nav
-*.BKP
-*.tps
-*.ARF
 src/Debug/
 src/Release/
-src/*
-!src/*.c
-!src/*.h
-!src/*.txt
 .vscode/
