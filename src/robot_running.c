@@ -77,7 +77,7 @@ void robot_running(){
             sound_buzzer(RightWarningBuzzerFreq);
         } 
         // 右側超音波センサで壁を見失った場合の処理
-        else if (d_sonar[SONAR_RIGHT > MaxDisRightSonar]) {
+        else if (d_sonar[SONAR_RIGHT] > MaxDisRightSonar) {
             ang_vel = -gain_p_sonar_right * (d_sonar[SONAR_RIGHT] - MinDisRightSonar) / 128;
             ang_vel = upper_lower_limit(ang_vel, 180, -180);
             lin_vel = lin_vel * ang_vel / 180;
@@ -89,6 +89,11 @@ void robot_running(){
             ang_vel = upper_lower_limit(ang_vel, 180, -180);
             sound_buzzer(LeftWarningBuzzerFreq);
         } 
+        // 右壁との距離を`MinDisRightSonar`に維持する制御
+        else if (d_sonar[SONAR_RIGHT] > MinDisRightSonar) {
+            ang_vel = -gain_p_sonar_right * (d_sonar[SONAR_RIGHT] - MinDisRightSonar) / 128;
+            ang_vel = upper_lower_limit(ang_vel, 180, -180);
+        }
         // 右側の鋭角カーブを曲がる制御
         // 右側超音波センサで前ステップで検知した距離との差が一定値以上のときギュインって曲がる処理
         // else if (d_sonar_dif[SONAR_RIGHT] > DifAcuteCurve){
