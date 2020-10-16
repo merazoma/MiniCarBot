@@ -14,7 +14,7 @@
 #endif
 
 void main(void);
-#ifdef __cplusplus
+#ifdef __cplusplus7
 extern "C"
 {
     void abort(void);
@@ -24,15 +24,15 @@ extern "C"
 void main(void)
 {
     init_rx220();
-    // robot_running();
+    // robot_running(); 
     // test_get_photo_reflector();
-    // test_sonar();
+    test_sonar();
 
     // test_drive_motor();
     // test_enc();
     // test_analog_read();
     // test_get_photo_reflector_dif();
-    test_photo_reflector();
+    // test_photo_reflector();
     // test_drive_pwm();
     // test_sound_buzzer_150();
     // test_analog_read();
