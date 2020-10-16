@@ -12,12 +12,12 @@
  * @brief 超音波センサ選択用の型。get_sonar_distanceの引数として使用。
  */
 typedef enum enm_sonar_port{
-    //! 左側超音波センサ
-    SONAR_LEFT = 0,
+    //! 右前側超音波センサ
+    SONAR_RIGHT_FRONT = 0,
     //! 前側超音波センサ
     SONAR_FRONT,
     //! 右側超音波センサ
-    SONAR_RIGHT
+    SONAR_RIGHT_SIDE
 } sonar_port_t;
 
 /**

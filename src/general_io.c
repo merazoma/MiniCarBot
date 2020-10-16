@@ -1,9 +1,9 @@
 #include "general_io.h"
 #include "iodefine.h"
 
-#define SONAR_ECHO_LEFT_PORT PORTE.PIDR.BIT.B5 //PE5
+#define SONAR_ECHO_RIGHT_FRONT_PORT PORTE.PIDR.BIT.B5 //PE5
 #define SONAR_ECHO_FRONT_PORT PORTH.PIDR.BIT.B1  //PH1
-#define SONAR_ECHO_RIGHT_PORT PORTH.PIDR.BIT.B2  //PH2
+#define SONAR_ECHO_RIGHT_SIDE_PORT PORTH.PIDR.BIT.B2  //PH2
 #define MODE_SW_PORT PORT1.PIDR.BIT.B4     //P14
 
 #define DBG_LED0_PORT	PORT5.PODR.BIT.B4	//P54
@@ -60,11 +60,11 @@ unsigned short digital_read(port_t port) {
         case ECHO_FRONT:
             level = SONAR_ECHO_FRONT_PORT;
             break;
-        case ECHO_RIGHT:
-            level = SONAR_ECHO_RIGHT_PORT;
+        case ECHO_RIGHT_SIDE:
+            level = SONAR_ECHO_RIGHT_SIDE_PORT;
             break;
-        case ECHO_LEFT:
-            level = SONAR_ECHO_LEFT_PORT;
+        case ECHO_RIGHT_FRONT:
+            level = SONAR_ECHO_RIGHT_FRONT_PORT;
             break;
         case MODE_SW:
             level = MODE_SW_PORT;

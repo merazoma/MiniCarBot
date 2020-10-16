@@ -118,7 +118,7 @@ void Excep_IRQ0(void){
 
 // IRQ1
 void Excep_IRQ1(void){ 
-    excep_sonar_echo(SONAR_RIGHT);
+    excep_sonar_echo(SONAR_RIGHT_SIDE);
 }
 
 // IRQ2
@@ -132,7 +132,7 @@ void Excep_IRQ4(void){  }
 
 // IRQ5
 void Excep_IRQ5(void){
-    excep_sonar_echo(SONAR_LEFT);
+    excep_sonar_echo(SONAR_RIGHT_FRONT);
 }
 
 // IRQ6

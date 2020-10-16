@@ -39,9 +39,9 @@ typedef enum enm_port{
     //! 前方超音波センサのエコー入力(PH1)
     ECHO_FRONT,
     //! 右側超音波センサのエコー入力(PH2)
-    ECHO_RIGHT,
+    ECHO_RIGHT_SIDE,
     //! 左側超音波センサのエコー入力(PE5)
-    ECHO_LEFT,
+    ECHO_RIGHT_FRONT,
     //! モード切り替えスイッチ(PH3)
     MODE_SW
 } port_t;

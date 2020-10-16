@@ -31,14 +31,14 @@ void excep_sonar_echo(sonar_port_t port) {
     unsigned short port_level;
     switch (port)
     {
-    case SONAR_LEFT:
-        port_level = digital_read(ECHO_LEFT);
+    case SONAR_RIGHT_FRONT:
+        port_level = digital_read(ECHO_RIGHT_FRONT);
         break;
     case SONAR_FRONT:
         port_level = digital_read(ECHO_FRONT);
         break;
-    case SONAR_RIGHT:
-        port_level = digital_read(ECHO_RIGHT);
+    case SONAR_RIGHT_SIDE:
+        port_level = digital_read(ECHO_RIGHT_SIDE);
         break;    
     default:
         port_level = 0;

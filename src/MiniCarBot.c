@@ -24,7 +24,7 @@ extern "C"
 void main(void)
 {
     init_rx220();
-    // robot_running(); 
+    robot_running(); 
     // test_get_photo_reflector();
     test_sonar();
 
