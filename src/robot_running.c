@@ -35,6 +35,8 @@ static const short RightTooFarWarningFreq = 1024;
 static const short DifAcuteCurve = 100;
 static const short gain_p_turning_right = 500;
 
+static const short TrgtDisRightSonar = 200;
+
 
 void robot_running(){
     int i;
@@ -73,6 +75,13 @@ void robot_running(){
             ang_vel = -gain_p_sonar_right * (d_sonar[SONAR_RIGHT] - MinDisRightSonar) / 128;
             ang_vel = upper_lower_limit(ang_vel, 180, -180);
             sound_buzzer(RightTooNearWarningFreq);
+        } 
+        // 右側超音波センサで壁を見失った場合の処理
+        else if (d_sonar[SONAR_RIGHT] > MaxDisRightSonar) {
+            ang_vel = -gain_p_sonar_right * (d_sonar[SONAR_RIGHT] - MinDisRightSonar) / 128;
+            ang_vel = upper_lower_limit(ang_vel, 180, -180);
+            lin_vel = lin_vel * ang_vel / 180;
+            sound_buzzer(RightWarningBuzzerFreq);
         } 
         // 左側超音波センサで接近感知時の処理
         else if (d_sonar[SONAR_LEFT] < MinDisLeftSonar) {
