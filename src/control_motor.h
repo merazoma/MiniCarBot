@@ -38,7 +38,6 @@ typedef enum enm_motor_direction{
 /**
  * @brief モータICの初期化処理。メイン側の初期化処理中で一回コールすること。
  * @note モータ駆動用のポート初期化処理である、init_pwm_driveもコールすること。
- * 
  */
 void init_motor();
 
@@ -48,19 +47,21 @@ void init_motor();
  * @details 左右輪の回転数を制御。
  * 
  * @param lin_vel 並進速度（単位: mm/s）
- * @param ang_vel 回転速度（単位: 度）
+ * @param ang_vel 回転速度（単位: 度/s）
+ * @param lin_accel 直進方向の加速度（単位: mm/s^2）
+ * @param ang_accel 回転方向の加速度（単位: 度/s^2）
  * @note 内部でcontrol_motor_Nrpmを使用
  */
-void control_motor(short lin_vel, short ang_vel);
+void control_motor(short lin_vel, short ang_vel, short lin_accel, short ang_accel);
 
 /**
  * @brief 左右輪の回転数を指示
  * 
  * @param motor_id 左右輪の指示（LEFT, RIGHT）
  * @param Nrpm short 指示回転数(単位: rpm)
- * @note 内部でdrive_motor_dutyを使用
+ * @param Nrpm_per_sec short 指示回転加速度(単位: rpm/s, レンジ: 100rpm/s以上)
  */
-void set_motor_Nrpm_to_control(motor_id_t motor_id, short Nrpm);
+void set_motor_Nrpm_to_control(motor_id_t motor_id, short Nrpm, short Nrpm_per_sec);
 
 /**
  * @brief 左右モータの回転数フィードバッグ制御

@@ -3,6 +3,9 @@
 #include "pwm_drive.h"
 #include "encoder.h"
 #include "iodefine.h"
+#include "math_lib.h"
+
+static void update_Nrpm_to_control_now();
 
 #define WheelSperation 75                                   //トレッド幅 unit: mm
 #define WheelDiameter  48                                   //車輪直径 unit: mm
@@ -11,36 +14,52 @@
 #define GearMotor 8
 #define MaxMotorNrpm 9920                                   //SCR13-2005 定格回転数: 9920
 #define NtoEncCnt (256*4)
-static short motor_Nrpm_to_control[2] = {0, 0};
-static short u_duty[2] = {0, 0};
-short gain_p[2] = {20, 20};
-short gain_i[2] = {3, 3};
 #define MaxIterm (3000)
 #define MinIterm (-MaxIterm)
+#define MinMotorNrpmPerSec (100)
+
+//! 左右輪回転数のアプリ指示値（単位: rpm）
+static short motor_Nrpm_to_control[2] = {0, 0};
+//! 左右輪回転数の現在の指示値（単位: rpm）
+static short motor_Nrpm_to_control_now[2] = {0, 0};
+//! 左右輪の指示加速度（単位: rpm/s）
+static int motor_Nrpm_per_sec[2] = {0, 0};
+
+const short gain_p[2] = {20, 20};
+const short gain_i[2] = {3, 3};
 
 void init_motor() {
     digital_write(M_STBY, HIGH);        //モータ駆動ICのスタンバイを解除
 }
 
-void control_motor(short lin_vel, short ang_vel) {
+void control_motor(short lin_vel, short ang_vel, short lin_accel, short ang_accel) {
+    short i;
     short wheel_vel[2];     //左右車輪での速度 unit: mm/s
     short motor_Nrpm[2];    //モータの回転速度 unit: rpm
+    short wheel_accel[2];     //左右車輪での加速度 unit: mm/s^2
+    short Nrpm_per_sec[2];    //モータの回転加速度 unit: rpm/s
 
     wheel_vel[LEFT]   = lin_vel - (ang_vel * WheelSperation * 314/100/180 / 2);
     wheel_vel[RIGHT]  = lin_vel + (ang_vel * WheelSperation * 314/100/180 / 2);
+    wheel_accel[LEFT]   = lin_accel - (ang_accel * WheelSperation * 314/100/180 / 2);
+    wheel_accel[RIGHT]  = lin_accel + (ang_accel * WheelSperation * 314/100/180 / 2);
 
-    motor_Nrpm[LEFT]   = wheel_vel[LEFT] * GearTier * 60 * 100 / 314 / WheelDiameter / GearMotor;
-    motor_Nrpm[RIGHT]   = wheel_vel[RIGHT] * GearTier * 60 * 100 / 314 / WheelDiameter / GearMotor;
-
-    set_motor_Nrpm_to_control(LEFT, motor_Nrpm[LEFT]);
-    set_motor_Nrpm_to_control(RIGHT, motor_Nrpm[RIGHT]);
+    for (i = 0; i < 2; i++) {
+        motor_Nrpm[i] = wheel_vel[i] * GearTier * 60 * 100 / 314 / WheelDiameter / GearMotor;
+        Nrpm_per_sec[i] = wheel_accel[i] * GearTier * 60 * 100 / 314 / WheelDiameter / GearMotor;
+        set_motor_Nrpm_to_control(i, motor_Nrpm[i], abs(Nrpm_per_sec[i]));
+    }
 }
 
-void set_motor_Nrpm_to_control(motor_id_t motor_id, short Nrpm) {
+void set_motor_Nrpm_to_control(motor_id_t motor_id, short Nrpm, int Nrpm_per_sec) {
     if (Nrpm > MaxMotorNrpm) {
         Nrpm = MaxMotorNrpm;
     }
+    if (Nrpm_per_sec < MinMotorNrpmPerSec) {
+        Nrpm_per_sec = MinMotorNrpmPerSec;
+    }
     motor_Nrpm_to_control[motor_id] = Nrpm;
+    motor_Nrpm_per_sec[motor_id] = Nrpm_per_sec;
 }
 
 void fb_control_motor_Nrpm() {
@@ -48,26 +67,15 @@ void fb_control_motor_Nrpm() {
     short tcnt_enc[2];
     short tcnt_to_control[2];
     short err_sig[2];
-    tcnt_to_control[LEFT] = motor_Nrpm_to_control[LEFT] * NtoEncCnt / (1000 * 60);
-    tcnt_to_control[RIGHT] = motor_Nrpm_to_control[RIGHT] * NtoEncCnt / (1000 * 60);
+    short u_duty[2] = {0, 0};
+
+    update_Nrpm_to_control_now();
+    tcnt_to_control[LEFT] = motor_Nrpm_to_control_now[LEFT] * NtoEncCnt / (1000 * 60);
+    tcnt_to_control[RIGHT] = motor_Nrpm_to_control_now[RIGHT] * NtoEncCnt / (1000 * 60);
     tcnt_enc[LEFT] = get_enc_count_dif(ENCODER_LEFT);
     tcnt_enc[RIGHT] = get_enc_count_dif(ENCODER_RIGHT);
     err_sig[LEFT] = tcnt_to_control[LEFT] - tcnt_enc[LEFT];
     err_sig[RIGHT] = tcnt_to_control[RIGHT] - tcnt_enc[RIGHT];
-    if (err_sig[LEFT] < 0) {
-        digital_write(M_LED0, HIGH);
-        digital_write(M_LED1, LOW);
-    } else {
-        digital_write(M_LED0, LOW);
-        digital_write(M_LED1, HIGH);
-
-    }
-    if (err_sig[RIGHT] < 0) {
-        digital_write(DBG_LED0, HIGH);
-    } else {
-        digital_write(DBG_LED0, LOW);
-    }
-
     i_term[LEFT] += err_sig[LEFT];
     i_term[RIGHT] += err_sig[RIGHT];
     if (i_term[LEFT] > MaxIterm) {
@@ -132,5 +140,31 @@ void drive_motor_duty(motor_id_t motor_id, unsigned short duty, motor_direction_
     default:
         break;
     }
+}
+
+static void update_Nrpm_to_control_now() {
+    short i;
+    static short call_cnt = 0;
+    
+    call_cnt ++;
+    // 10回コールされた場合に、左右輪回転数の現在の指示値を更新
+    // 1ms割込みハンドラ中でコールされるため、10ms毎に左右輪回転数の現在の指示値を更新
+    if (call_cnt > 9) {
+        call_cnt = 0;
+        for (i = 0; i < 2; i++) {
+            if (motor_Nrpm_to_control_now[i] < motor_Nrpm_to_control[i]) { //加速
+                motor_Nrpm_to_control_now[i] += motor_Nrpm_per_sec[i] / 100;            
+                if (motor_Nrpm_to_control_now[i] > motor_Nrpm_to_control[i]) {
+                    motor_Nrpm_to_control_now[i] = motor_Nrpm_to_control[i];
+                }
+            } else { //減速
+                motor_Nrpm_to_control_now[i] -= motor_Nrpm_per_sec[i] / 100;            
+                if (motor_Nrpm_to_control_now[i] < motor_Nrpm_to_control[i]) {
+                    motor_Nrpm_to_control_now[i] = motor_Nrpm_to_control[i];
+                }
+            }
+        }
+    }
+
 }
 

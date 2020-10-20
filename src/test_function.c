@@ -278,18 +278,34 @@ void test_fb_control_motor_Nrpm()
     {
         for (i = 0; i < 20; i++)
         {
-            set_motor_Nrpm_to_control(LEFT, i * 1000 - 10000);
-            set_motor_Nrpm_to_control(RIGHT, i * 1000 - 10000);
-            for (j = 0; j < 4000000; j++)
+            set_motor_Nrpm_to_control(LEFT, i * 1000 - 10000, 1000);
+            set_motor_Nrpm_to_control(RIGHT, i * 1000 - 10000, 1000);
+            for (j = 0; j < 12000000; j++)
                 ;
         }
     }
 }
 
+void test_fb_control_motor_Nrpm2()
+{
+    int i;
+    int j;
+    while (1)
+    {
+        set_motor_Nrpm_to_control(LEFT, 5000, 1000);
+        set_motor_Nrpm_to_control(RIGHT, 5000, 3000);
+        for (j = 0; j < 60000000; j++);
+        set_motor_Nrpm_to_control(LEFT, -5000, 1000);
+        set_motor_Nrpm_to_control(RIGHT, -5000, 3000);
+        for (j = 0; j < 60000000; j++);
+    }
+}
+
+
 void test_fb_control_motor_Nrpm_const()
 {
-    set_motor_Nrpm_to_control(LEFT, 5000);
-    set_motor_Nrpm_to_control(RIGHT, 2000);
+    set_motor_Nrpm_to_control(LEFT, 5000, 500);
+    set_motor_Nrpm_to_control(RIGHT, 2000, 200);
 }
 
 void test_enc_dif()
@@ -301,18 +317,13 @@ void test_enc_dif()
 
 void test_control_motor()
 {
-    int i;
     int j;
-    short ang_vel;
     while (1)
     {
-        for (i = 0; i < 20; i++)
-        {
-            ang_vel = (i - 10) * 200;
-            control_motor(1000, ang_vel);
-            for (j = 0; j < 4000000; j++)
-                ;
-        }
+        control_motor(0, 720, 0, 360);
+        for (j = 0; j < 48000000; j++);
+        control_motor(0, -720, 0, -360);
+        for (j = 0; j < 48000000; j++);
     }
 }
 

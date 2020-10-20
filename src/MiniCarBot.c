@@ -24,10 +24,10 @@ extern "C"
 void main(void)
 {
     init_rx220();
-    robot_running(); 
+    // robot_running(); 
     //test_get_photo_reflector();
-    test_sonar();
-
+    // test_sonar();
+    // test_fb_control_motor_Nrpm2();
     // test_drive_motor();
     // test_enc();
     // test_analog_read();
@@ -53,7 +53,7 @@ void main(void)
     // test_sound_buzzer_update();
     // test_sound_buzzer_note();
     // test_sonar();
-    // test_control_motor();
+    test_control_motor();
     // test_control_motor_sonar();
     // test_main_only_sonar();
     // test_parallel_photo();

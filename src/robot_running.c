@@ -3,6 +3,7 @@
 #include "photo_reflector.h"
 #include "control_motor.h"
 #include "sound_buzzer.h"
+#include "math_lib.h"
 #include "sci.h"
 
 static int control_using_photo(int d_rf_rs_to_control);
@@ -69,7 +70,7 @@ void robot_running(){
             } else {
                 ang_vel = -180;
             }
-    		control_motor(lin_vel, ang_vel);
+    		control_motor(lin_vel, ang_vel, 100000, 100000);
             continue;
         }
         else if (d_photo[PHOTO_RIGHT_FRONT] < EmergencyDisPhoto) {
@@ -112,7 +113,7 @@ void robot_running(){
             stop_buzzer();
         }
 
-        control_motor(lin_vel, ang_vel);
+        control_motor(lin_vel, ang_vel, 100000, 1000);
         for (i = 0; i < 3; i++) {
             d_sonar_old[i] = d_sonar[i];
         }
@@ -132,31 +133,4 @@ static int control_using_photo(int d_rf_rs_dif) {
     ang_vel = - (gain_p_photo * err_rf_rs) / 128;
     ang_vel = upper_lower_limit(ang_vel, 90, -90);
     return ang_vel;
-}
-
-/**
- * @brief 指定された値(val)を上限値・下限値で制限して返却
- * 
- * @param val int 制限したい値
- * @param u_limit int 上限値
- * @param l_limit int 下限値
- * @return int 制限した結果の値
- */
-static int upper_lower_limit(int val, int u_limit, int l_limit) {
-    if (val < l_limit) {
-        val = l_limit;
-    } else if (val > u_limit) {
-        val = u_limit;
-    }
-    return val;
-}
-
-/**
- * @brief 絶対値を返却
- * 
- * @param j int 対象の数字
- * @return int 絶対値
- */
-static int abs(int j) {
-  return j < 0 ? -j : j;
 }
