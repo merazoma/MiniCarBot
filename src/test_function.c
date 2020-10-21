@@ -276,13 +276,18 @@ void test_fb_control_motor_Nrpm()
     int j;
     while (1)
     {
-        for (i = 0; i < 20; i++)
-        {
-            set_motor_Nrpm_to_control(LEFT, i * 1000 - 10000, 1000);
-            set_motor_Nrpm_to_control(RIGHT, i * 1000 - 10000, 1000);
-            for (j = 0; j < 12000000; j++)
-                ;
-        }
+        set_motor_Nrpm_to_control(LEFT, 8000, 1000);
+        set_motor_Nrpm_to_control(RIGHT, -8000, 1000);
+        for (j = 0; j < 60000000; j++);
+        set_motor_Nrpm_to_control(LEFT, 4000, 1000);
+        set_motor_Nrpm_to_control(RIGHT, -4000, 1000);
+        for (j = 0; j < 60000000; j++);
+        set_motor_Nrpm_to_control(LEFT, -8000, 1000);
+        set_motor_Nrpm_to_control(RIGHT, 8000, 1000);
+        for (j = 0; j < 60000000; j++);
+        set_motor_Nrpm_to_control(LEFT, -4000, 1000);
+        set_motor_Nrpm_to_control(RIGHT, 4000, 1000);
+        for (j = 0; j < 60000000; j++);
     }
 }
 
@@ -295,8 +300,14 @@ void test_fb_control_motor_Nrpm2()
         set_motor_Nrpm_to_control(LEFT, 5000, 1000);
         set_motor_Nrpm_to_control(RIGHT, 5000, 3000);
         for (j = 0; j < 60000000; j++);
+        set_motor_Nrpm_to_control(LEFT, 2500, 1000);
+        set_motor_Nrpm_to_control(RIGHT, 2500, 3000);
+        for (j = 0; j < 60000000; j++);
         set_motor_Nrpm_to_control(LEFT, -5000, 1000);
         set_motor_Nrpm_to_control(RIGHT, -5000, 3000);
+        for (j = 0; j < 60000000; j++);
+        set_motor_Nrpm_to_control(LEFT, -2500, 1000);
+        set_motor_Nrpm_to_control(RIGHT, -2500, 3000);
         for (j = 0; j < 60000000; j++);
     }
 }
@@ -320,10 +331,14 @@ void test_control_motor()
     int j;
     while (1)
     {
+        control_motor(0, -720, 0, 360);
+        for (j = 0; j < 24000000; j++);
+        control_motor(0, -360, 0, 360);
+        for (j = 0; j < 24000000; j++);
         control_motor(0, 720, 0, 360);
-        for (j = 0; j < 48000000; j++);
-        control_motor(0, -720, 0, -360);
-        for (j = 0; j < 48000000; j++);
+        for (j = 0; j < 24000000; j++);
+        control_motor(0, 360, 0, 360);
+        for (j = 0; j < 24000000; j++);
     }
 }
 

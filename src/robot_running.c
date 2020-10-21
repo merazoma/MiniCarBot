@@ -7,8 +7,6 @@
 #include "sci.h"
 
 static int control_using_photo(int d_rf_rs_to_control);
-static int abs(int j);
-static void wait_until_front_clear();
 
 static const short gain_p_photo = 20;
 static const short gain_p_sonar_clock = 300;

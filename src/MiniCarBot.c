@@ -27,6 +27,7 @@ void main(void)
     // robot_running(); 
     //test_get_photo_reflector();
     // test_sonar();
+    // test_fb_control_motor_Nrpm();
     // test_fb_control_motor_Nrpm2();
     // test_drive_motor();
     // test_enc();

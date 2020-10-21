@@ -46,13 +46,14 @@ void init_motor();
  * @details 並進速度(lin_vel)と回転速度(ang_vel)を、左右輪の回転速度に変換し、
  * @details 左右輪の回転数を制御。
  * 
- * @param lin_vel 並進速度（単位: mm/s）
- * @param ang_vel 回転速度（単位: 度/s）
- * @param lin_accel 直進方向の加速度（単位: mm/s^2）
- * @param ang_accel 回転方向の加速度（単位: 度/s^2）
- * @note 内部でcontrol_motor_Nrpmを使用
+ * @param short lin_vel 並進速度（単位: mm/s）
+ * @param short ang_vel 回転速度（単位: 度/s）
+ * @param unsigned short lin_accel 直進方向の加速度（単位: mm/s^2）
+ * @param unsigned short ang_accel 回転方向の加速度（単位: 度/s^2）
+ * @note 現在の並進速度・回転速度と指示した並進速度(lin_vel)・回転速度(ang_vel)を比較して、\n
+ * @note 加速度の正負を内部で決定
  */
-void control_motor(short lin_vel, short ang_vel, short lin_accel, short ang_accel);
+void control_motor(short lin_vel, short ang_vel, unsigned short lin_accel, unsigned short ang_accel);
 
 /**
  * @brief 左右輪の回転数を指示

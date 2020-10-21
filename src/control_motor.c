@@ -5,6 +5,9 @@
 #include "iodefine.h"
 #include "math_lib.h"
 
+static short get_lin_vel_from_enc();
+static short get_ang_vel_from_enc();
+static short get_wheel_vel(motor_id_t motor_id);
 static void update_Nrpm_to_control_now();
 
 #define WheelSperation 75                                   //トレッド幅 unit: mm
@@ -24,6 +27,9 @@ static short motor_Nrpm_to_control[2] = {0, 0};
 static short motor_Nrpm_to_control_now[2] = {0, 0};
 //! 左右輪の指示加速度（単位: rpm/s）
 static int motor_Nrpm_per_sec[2] = {0, 0};
+//! 左右輪の最新のエンコーダカウント
+static short tcnt_enc[2] = {0, 0};
+
 
 const short gain_p[2] = {20, 20};
 const short gain_i[2] = {3, 3};
@@ -32,17 +38,26 @@ void init_motor() {
     digital_write(M_STBY, HIGH);        //モータ駆動ICのスタンバイを解除
 }
 
-void control_motor(short lin_vel, short ang_vel, short lin_accel, short ang_accel) {
+void control_motor(short lin_vel, short ang_vel, unsigned short lin_accel, unsigned short ang_accel) {
     short i;
     short wheel_vel[2];     //左右車輪での速度 unit: mm/s
     short motor_Nrpm[2];    //モータの回転速度 unit: rpm
     short wheel_accel[2];     //左右車輪での加速度 unit: mm/s^2
     short Nrpm_per_sec[2];    //モータの回転加速度 unit: rpm/s
+    short lin_vel_now;      //現在の直進速度
+    short ang_vel_now;      //現在の回転速度
+    short s_lin_accel, s_ang_accel;
 
     wheel_vel[LEFT]   = lin_vel - (ang_vel * WheelSperation * 314/100/180 / 2);
     wheel_vel[RIGHT]  = lin_vel + (ang_vel * WheelSperation * 314/100/180 / 2);
-    wheel_accel[LEFT]   = lin_accel - (ang_accel * WheelSperation * 314/100/180 / 2);
-    wheel_accel[RIGHT]  = lin_accel + (ang_accel * WheelSperation * 314/100/180 / 2);
+    
+    lin_vel_now = get_lin_vel_from_enc();
+    ang_vel_now = get_ang_vel_from_enc();
+
+    s_lin_accel = lin_vel > lin_vel_now ? lin_accel : -lin_accel;
+    s_ang_accel = ang_vel > ang_vel_now ? ang_accel : -ang_accel;
+    wheel_accel[LEFT]   = s_lin_accel - (s_ang_accel * WheelSperation * 314/100/180 / 2);
+    wheel_accel[RIGHT]  = s_lin_accel + (s_ang_accel * WheelSperation * 314/100/180 / 2);
 
     for (i = 0; i < 2; i++) {
         motor_Nrpm[i] = wheel_vel[i] * GearTier * 60 * 100 / 314 / WheelDiameter / GearMotor;
@@ -64,7 +79,6 @@ void set_motor_Nrpm_to_control(motor_id_t motor_id, short Nrpm, int Nrpm_per_sec
 
 void fb_control_motor_Nrpm() {
     static short i_term[2] = {0, 0};
-    short tcnt_enc[2];
     short tcnt_to_control[2];
     short err_sig[2];
     short u_duty[2] = {0, 0};
@@ -142,6 +156,60 @@ void drive_motor_duty(motor_id_t motor_id, unsigned short duty, motor_direction_
     }
 }
 
+/**
+ * @brief 現在の直進速度をエンコーダカウントから取得
+ * 
+ * @return short 現在の直進速度（単位: mm/s）
+ */
+static short get_lin_vel_from_enc() {
+    short i;
+    short wheel_vel[2];
+    short lin_vel;
+
+    for (i = 0; i < 2; i++) {
+        wheel_vel[i] = get_wheel_vel(i);
+    }
+    lin_vel = (wheel_vel[LEFT] + wheel_vel[RIGHT]) / 2;
+    return lin_vel;
+}
+
+/**
+ * @brief 現在の回転速度をエンコーダカウントから取得
+ * 
+ * @return short 現在の回転速度（単位: 度/s）
+ */
+static short get_ang_vel_from_enc() {
+    short i;
+    short wheel_vel[2];
+    short ang_vel;
+
+    for (i = 0; i < 2; i++) {
+        wheel_vel[i] = get_wheel_vel(i);
+    }
+    ang_vel = (wheel_vel[RIGHT] - wheel_vel[LEFT]) * (100 * 180) / (314 * WheelSperation);
+    return ang_vel;
+
+}
+
+/**
+ * @brief 左右輪の現在の直進速度をエンコーダカウントから取得
+ * 
+ * @param motor_id 左右輪の指示（LEFT, RIGHT）
+ * @return short 左右輪の現在の直進速度
+ */
+static short get_wheel_vel(motor_id_t motor_id) {
+    short Nrps;
+    short wheel_vel;
+    Nrps = tcnt_enc[motor_id] * 1000 / NtoEncCnt;
+    wheel_vel = Nrps * 314 * WheelDiameter * GearMotor / (GearTier * 100);
+    return wheel_vel;
+}
+
+/**
+ * @brief 左右輪回転数の現在の指示値を加速度をもとに更新
+ * @note 10回に1回処理が実施される。\n
+ * @note 1ms周期の割込みハンドラ内でコールすることで、10ms周期で左右輪回転数の現在の指示値を更新
+ */
 static void update_Nrpm_to_control_now() {
     short i;
     static short call_cnt = 0;
