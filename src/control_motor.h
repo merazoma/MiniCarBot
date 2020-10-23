@@ -29,7 +29,6 @@ typedef enum enm_motor_id{
  */
 typedef enum enm_motor_direction{
     //! モータ正転
-	
     FORWARD = 0,
     //! モータ逆転
     BACKWARD

@@ -25,11 +25,12 @@ static const short EmergencyDisPhoto = -3200;
 
 static const short EmergencyLinVel = 90;
 
-static const short ControlRangeFrontSonar = 120;
-static const short OutliersFrontSonar = 20;
+static const short ControlRangeFrontSonar = 160;
+static const short OutliersFrontSonar = 10;
 static const short RightDisWhenClockWise = 500;
 
-static const short DefaultLinVel = 600;
+static const short DefaultLinVel = 800;
+static const short MaxLinVel = 800;
 static short LinVelWhenCurving = 500;
 static short RadiusOfRotation = 180;
 #define AngVelWhenCurving (-180 * 100 / 314 * LinVelWhenCurving / RadiusOfRotation)
@@ -48,6 +49,8 @@ void robot_running(){
     static int d_sonar_old[3] = {0, 0, 0};
     int d_photo[4];
     int d_rf_rs_dif, d_sonar_rf_rs_dif;
+    short lin_vel_now;
+
 
 	while(1) {
         lin_vel = DefaultLinVel;
@@ -74,18 +77,20 @@ void robot_running(){
             } else {
                 ang_vel = -180;
             }
-    		control_motor(lin_vel, ang_vel, 800, 360);
+    		control_motor(lin_vel, ang_vel, 2000, 360);
             continue;
         }
-        // // 右前側超音波センサで接近感知時の処理
-        // else if (d_sonar[SONAR_RIGHT_FRONT] < MinDisRightFrontSonar) {
-        //     // lin_vel = (d_sonar[SONAR_RIGHT_FRONT] - ControlRangeFrontSonar/2) * 3;
-        //     ang_vel = -gain_p_sonar_right_too_near * (d_sonar[SONAR_RIGHT_FRONT] + d_sonar[SONAR_RIGHT_SIDE] - 2*MinDisRightSonar) / 128;
-        //     ang_vel = upper_lower_limit(ang_vel, 180, -180);
-    	// 	control_motor(lin_vel, ang_vel, 500, 720);
-        //     continue;
-        //     // sound_buzzer(RightTooNearWarningFreq);
-        // }
+        // 右前側超音波センサで接近感知時の処理
+        else if (d_sonar[SONAR_RIGHT_FRONT] < MinDisRightFrontSonar) {
+            // lin_vel = (d_sonar[SONAR_RIGHT_FRONT] - ControlRangeFrontSonar/2) * 3;
+            // ang_vel = -gain_p_sonar_right_too_near * (d_sonar[SONAR_RIGHT_FRONT] - MinDisRightSonar) / 128;
+            // ang_vel = upper_lower_limit(ang_vel, 180, -180);
+            ang_vel = -AngVelWhenCurving;
+            lin_vel = LinVelWhenCurving;
+    		control_motor(lin_vel, ang_vel, 500, 720);
+            continue;
+            // sound_buzzer(RightTooNearWarningFreq);
+        }
         // 右側超音波センサで壁切れを検出し、急カーブを曲がる処理
         else if (d_sonar[SONAR_RIGHT_FRONT] > DisRightSonarWhenCurving) {
             // ang_vel = -gain_p_sonar_right_curving * (d_sonar[SONAR_RIGHT_FRONT] - DisRightSonarWhenCurving) / 128;
@@ -127,7 +132,12 @@ void robot_running(){
             if (d_sonar_rf_rs_dif < 0) {
                 ang_vel = -gain_p_sonar_clock * d_sonar_rf_rs_dif / 128;
                 ang_vel = upper_lower_limit(ang_vel, 480, -480);
-                control_motor(lin_vel, ang_vel, 300, 1080);
+                lin_vel_now = get_lin_vel_from_enc();
+                if (lin_vel_now > DefaultLinVel*0.9 && ang_vel > 40) {
+                    control_motor(MaxLinVel, ang_vel, 100, 1080);
+                } else {
+                    control_motor(lin_vel, ang_vel, 300, 1080);                    
+                }
             } else {
                 ang_vel = -gain_p_sonar_anticlock * d_sonar_rf_rs_dif / 128;
                 ang_vel = upper_lower_limit(ang_vel, 480, -480);
