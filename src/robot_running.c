@@ -9,16 +9,19 @@
 static int control_using_photo(int d_rf_rs_to_control);
 
 static const short gain_p_photo = 20;
-static const short gain_p_sonar_clock = 300;
-static const short gain_p_sonar_anticlock = 300;
-static const short gain_p_sonar_right_curving = 120;
+static const short gain_p_sonar_clock = 250;
+static const short gain_p_sonar_anticlock = 100;
+static const short gain_p_sonar_right_curving = 240;
 static const short gain_p_sonar_right_too_near = 100;
-static const short AngVelOfst = 90;
-static const short DisRightSonarWhenCurving = 320;
+static const short gain_p_sonar_right_too_far = 80;
+
+static const short DisRightSonarWhenCurving = 360;
 static const short MinDisRightSonar = 160;
-static const short MinDisRightFrontSonar = 200;
+static const short MinDisRightFrontSonar = 220;
+static const short MaxDisRightSonar = 240;
+static const short MaxDisRightFrontSonar = 300;
 static const short EmergencyDisSonar = 120;
-static const short EmergencyDisPhoto = -2000;
+static const short EmergencyDisPhoto = -3200;
 
 static const short EmergencyLinVel = 90;
 
@@ -26,8 +29,10 @@ static const short ControlRangeFrontSonar = 120;
 static const short OutliersFrontSonar = 20;
 static const short RightDisWhenClockWise = 500;
 
-static const short DefaultLinVel = 900;
-static const short LinVelWhenCurving = 500;
+static const short DefaultLinVel = 600;
+static short LinVelWhenCurving = 500;
+static short RadiusOfRotation = 180;
+#define AngVelWhenCurving (-180 * 100 / 314 * LinVelWhenCurving / RadiusOfRotation)
 
 static const short d_rf_rs_to_control = 0;
 static const short ThshDisPhotoControl = -50;
@@ -59,59 +64,77 @@ void robot_running(){
         // sci_printf("Front Sonar distance = %d\r\n", d_sonar[SONAR_FRONT]);
         // sci_printf("Right Front Sonar distance = %d\r\n", d_sonar[SONAR_RIGHT_FRONT]);
         // sci_printf("Right Side Sonar distance = %d\r\n", d_sonar[SONAR_RIGHT_SIDE]);
-
+        
         // 前方超音波センサで接近感知時の処理
         if (d_sonar[SONAR_FRONT] < ControlRangeFrontSonar && d_sonar[SONAR_FRONT] > OutliersFrontSonar) {
-            lin_vel = (d_sonar[SONAR_FRONT] - ControlRangeFrontSonar) / 2;
+            lin_vel = (d_sonar[SONAR_FRONT] - ControlRangeFrontSonar/2);
             if (d_sonar[SONAR_RIGHT_SIDE] < RightDisWhenClockWise || d_sonar[SONAR_RIGHT_FRONT] < RightDisWhenClockWise) {
                 ang_vel = 180;
             } else {
                 ang_vel = -180;
             }
-    		control_motor(lin_vel, ang_vel, 100000, 100000);
+    		control_motor(lin_vel, ang_vel, 800, 360);
             continue;
         }
-        else if (d_photo[PHOTO_RIGHT_FRONT] < EmergencyDisPhoto) {
-            lin_vel = EmergencyLinVel;
-        }
-        // 右側超音波センサで壁を見失った場合の処理
-        else if (d_sonar[SONAR_RIGHT_SIDE] > DisRightSonarWhenCurving || d_sonar[SONAR_RIGHT_FRONT] > DisRightSonarWhenCurving) {
-            ang_vel = -gain_p_sonar_right_curving * (d_sonar[SONAR_RIGHT_SIDE] - MinDisRightSonar) / 128;
-            ang_vel = upper_lower_limit(ang_vel, 180, -180);
+        // // 右前側超音波センサで接近感知時の処理
+        // else if (d_sonar[SONAR_RIGHT_FRONT] < MinDisRightFrontSonar) {
+        //     // lin_vel = (d_sonar[SONAR_RIGHT_FRONT] - ControlRangeFrontSonar/2) * 3;
+        //     ang_vel = -gain_p_sonar_right_too_near * (d_sonar[SONAR_RIGHT_FRONT] + d_sonar[SONAR_RIGHT_SIDE] - 2*MinDisRightSonar) / 128;
+        //     ang_vel = upper_lower_limit(ang_vel, 180, -180);
+    	// 	control_motor(lin_vel, ang_vel, 500, 720);
+        //     continue;
+        //     // sound_buzzer(RightTooNearWarningFreq);
+        // }
+        // 右側超音波センサで壁切れを検出し、急カーブを曲がる処理
+        if (d_sonar[SONAR_RIGHT_FRONT] > DisRightSonarWhenCurving) {
+            // ang_vel = -gain_p_sonar_right_curving * (d_sonar[SONAR_RIGHT_FRONT] - DisRightSonarWhenCurving) / 128;
+            // ang_vel = upper_lower_limit(ang_vel, 180, -180);
+            ang_vel = AngVelWhenCurving;
             lin_vel = LinVelWhenCurving;
-            sound_buzzer(RightTooFarWarningFreq);
+            control_motor(lin_vel, ang_vel, 300, 2040);
+            continue;
+            // sound_buzzer(RightTooFarWarningFreq);
+        } 
+        // 右側超音波センサで壁を見失った場合の処理
+        else if (d_sonar[SONAR_RIGHT_FRONT] > MaxDisRightFrontSonar) {
+            ang_vel = -gain_p_sonar_right_too_far * (d_sonar[SONAR_RIGHT_FRONT] - MaxDisRightFrontSonar) / 128;
+            ang_vel = upper_lower_limit(ang_vel, 180, -180);
+            control_motor(lin_vel, ang_vel, 300, 2040);
+            continue;
+            // sound_buzzer(RightTooFarWarningFreq);
         } 
         // 右側超音波センサで接近感知時の処理
         else if (d_sonar[SONAR_RIGHT_SIDE] < MinDisRightSonar) {
             ang_vel = -gain_p_sonar_right_too_near * (d_sonar[SONAR_RIGHT_SIDE] + d_sonar[SONAR_RIGHT_FRONT] - 2*MinDisRightSonar) / 128;
-            ang_vel = upper_lower_limit(ang_vel, 120, -120);
+            ang_vel = upper_lower_limit(ang_vel, 180, -180);
+            control_motor(lin_vel, ang_vel, 300, 720);
             sound_buzzer(RightTooNearWarningFreq);
-        }         
-        // 右前側超音波センサで接近感知時の処理
-        else if (d_sonar[SONAR_RIGHT_FRONT] < MinDisRightFrontSonar) {
-            ang_vel = -gain_p_sonar_right_too_near * (d_sonar[SONAR_RIGHT_FRONT] + d_sonar[SONAR_RIGHT_SIDE] - 2*MinDisRightSonar) / 128;
-            ang_vel = upper_lower_limit(ang_vel, 120, -120);
-            sound_buzzer(RightTooNearWarningFreq);
+            continue;
         }         
         // フォトリフレクタによる壁との平行制御
         else if ((d_photo[PHOTO_RIGHT_FRONT] < ThshDisPhotoControl) && (d_photo[PHOTO_RIGHT_SIDE] < ThshDisPhotoControl)) {
+            if (d_photo[PHOTO_RIGHT_FRONT] < EmergencyDisPhoto) {
+                lin_vel = EmergencyLinVel;
+            }
             d_rf_rs_dif = d_photo[PHOTO_RIGHT_FRONT] - d_photo[PHOTO_RIGHT_SIDE];
             ang_vel = control_using_photo(d_rf_rs_dif);
+            control_motor(lin_vel, ang_vel, 300, 2040);
+            continue;
         }
         else {   
-            d_sonar_rf_rs_dif = d_sonar[SONAR_RIGHT_FRONT] - d_sonar[SONAR_RIGHT_SIDE];
+            d_sonar_rf_rs_dif = d_sonar[SONAR_RIGHT_FRONT] - d_sonar[SONAR_RIGHT_SIDE] * 14 / 10;
             if (d_sonar_rf_rs_dif < 0) {
                 ang_vel = -gain_p_sonar_clock * d_sonar_rf_rs_dif / 128;
+                ang_vel = upper_lower_limit(ang_vel, 480, -480);
+                control_motor(lin_vel, ang_vel, 300, 1080);
             } else {
                 ang_vel = -gain_p_sonar_anticlock * d_sonar_rf_rs_dif / 128;
+                ang_vel = upper_lower_limit(ang_vel, 480, -480);
+                control_motor(lin_vel, ang_vel, 300, 1080);
             }
-			ang_vel += AngVelOfst;
-            ang_vel = upper_lower_limit(ang_vel, 180, -180);
-            // sci_printf("ang_vel: %d\r\n", (short)ang_vel);
             stop_buzzer();
+            continue;
         }
-
-        control_motor(lin_vel, ang_vel, 100000, 1000);
         for (i = 0; i < 3; i++) {
             d_sonar_old[i] = d_sonar[i];
         }

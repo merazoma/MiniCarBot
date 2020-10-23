@@ -30,7 +30,7 @@
 [CONFIG_INFO_VD3]
 0 
 [CONFIG_INFO_VD4]
-1 
+0 
 [WINDOW_POSITION_STATE_DATA_VD1]
 [WINDOW_POSITION_STATE_DATA_VD2]
 [WINDOW_POSITION_STATE_DATA_VD3]
@@ -53,9 +53,9 @@
 "{WK_TB00000029_SYSTEMTOOL}" "TOOLBAR 0" 59419 2 3 "0.00" 0 0 0 0 0 17 0 "" "0.0" 
 [WINDOW_Z_ORDER]
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\MiniCarBot.c" 
+"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\test_function.c" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\robot_running.c" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\sonar.c" 
-"C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\test_function.c" 
 "C:\Users\Kobayashi\Desktop\MiniCarbot\MiniCarBot\src\photo_reflector.c" 
 [TARGET_NAME]
 "" "" 0 
