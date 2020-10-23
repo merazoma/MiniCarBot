@@ -32,7 +32,8 @@ void main(void)
     // test_enc();
     // test_analog_read();
     // test_get_photo_reflector_dif();
-    test_photo_reflector();
+    // test_photo_reflector();
+    test_distance();
     // test_drive_pwm();
     // test_sound_buzzer_150();
     // test_analog_read();

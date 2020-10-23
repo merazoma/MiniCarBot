@@ -54,13 +54,13 @@ short get_enc_count_dif(encoder_id_t encoder_id)
         tcnt_enc = get_enc_count(ENCODER_LEFT);
         set_enc_count(ENCODER_LEFT, InitialEncCnt);
         tcnt_enc_dif = (short)tcnt_enc - InitialEncCnt;
-        accum_tcnt_enc_dif[ENCODER_LEFT] += tcnt_enc_dif;
+        accum_tcnt_enc_dif[ENCODER_LEFT] += (int)tcnt_enc_dif;
         break;
     case ENCODER_RIGHT:
         tcnt_enc = get_enc_count(ENCODER_RIGHT);
         set_enc_count(ENCODER_RIGHT, InitialEncCnt);
         tcnt_enc_dif = -((short)tcnt_enc - InitialEncCnt);
-        accum_tcnt_enc_dif[ENCODER_RIGHT] += tcnt_enc_dif;
+        accum_tcnt_enc_dif[ENCODER_RIGHT] += (int)tcnt_enc_dif;
         break;
     default:
         break;

@@ -45,6 +45,23 @@ void test_analog_read()
     }
 }
 
+void test_distance()
+{
+
+    int distance = 0;
+    int j;
+
+    while (1)
+    {
+        control_motor(100, 20);
+        distance = get_move_distance();
+        // distance = get_accum_enc_count_dif(ENCODER_LEFT);
+        sci_printf("moved %d %dmm\r\n", distance >> 16, distance);
+        for (j = 0; j < 2000000; j++)
+            ;
+    }
+}
+
 void test_drive_pwm()
 {
     drive_pwm(M_L_PWM, 10000);

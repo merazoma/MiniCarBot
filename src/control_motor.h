@@ -78,4 +78,9 @@ void fb_control_motor_Nrpm();
  */
 void drive_motor_duty(motor_id_t motor_id, unsigned short duty, motor_direction_t direction);
 
+/**
+ * @brief プログラム開始時からの移動距離を出力　(単位: mm)
+ */
+int get_move_distance();
+
 #endif
