@@ -5,8 +5,6 @@
 #include "iodefine.h"
 #include "math_lib.h"
 
-static short get_lin_vel_from_enc();
-static short get_ang_vel_from_enc();
 static short get_wheel_vel(motor_id_t motor_id);
 static void update_Nrpm_to_control_now();
 
@@ -156,12 +154,7 @@ void drive_motor_duty(motor_id_t motor_id, unsigned short duty, motor_direction_
     }
 }
 
-/**
- * @brief 現在の直進速度をエンコーダカウントから取得
- * 
- * @return short 現在の直進速度（単位: mm/s）
- */
-static short get_lin_vel_from_enc() {
+short get_lin_vel_from_enc() {
     short i;
     short wheel_vel[2];
     short lin_vel;
@@ -173,12 +166,7 @@ static short get_lin_vel_from_enc() {
     return lin_vel;
 }
 
-/**
- * @brief 現在の回転速度をエンコーダカウントから取得
- * 
- * @return short 現在の回転速度（単位: 度/s）
- */
-static short get_ang_vel_from_enc() {
+short get_ang_vel_from_enc() {
     short i;
     short wheel_vel[2];
     short ang_vel;

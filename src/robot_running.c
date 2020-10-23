@@ -57,6 +57,7 @@ void robot_running(){
                 d_sonar[i] = d_sonar_old[i];
             }
             d_sonar_dif[i] = d_sonar[i] - d_sonar_old[i];
+            d_sonar_old[i] = d_sonar[i];
         }
         for (i = 0; i < 4; i++) {
     		d_photo[i] = get_photo_reflector_distance(i);
@@ -86,7 +87,7 @@ void robot_running(){
         //     // sound_buzzer(RightTooNearWarningFreq);
         // }
         // 右側超音波センサで壁切れを検出し、急カーブを曲がる処理
-        if (d_sonar[SONAR_RIGHT_FRONT] > DisRightSonarWhenCurving) {
+        else if (d_sonar[SONAR_RIGHT_FRONT] > DisRightSonarWhenCurving) {
             // ang_vel = -gain_p_sonar_right_curving * (d_sonar[SONAR_RIGHT_FRONT] - DisRightSonarWhenCurving) / 128;
             // ang_vel = upper_lower_limit(ang_vel, 180, -180);
             ang_vel = AngVelWhenCurving;
@@ -135,10 +136,6 @@ void robot_running(){
             stop_buzzer();
             continue;
         }
-        for (i = 0; i < 3; i++) {
-            d_sonar_old[i] = d_sonar[i];
-        }
-
 	}
 }
 

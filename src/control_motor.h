@@ -80,4 +80,19 @@ void fb_control_motor_Nrpm();
  */
 void drive_motor_duty(motor_id_t motor_id, unsigned short duty, motor_direction_t direction);
 
+
+/**
+ * @brief 現在の直進速度をエンコーダカウントから取得
+ * 
+ * @return short 現在の直進速度（単位: mm/s）
+ */
+short get_lin_vel_from_enc();
+
+/**
+ * @brief 現在の回転速度をエンコーダカウントから取得
+ * 
+ * @return short 現在の回転速度（単位: 度/s）
+ */
+short get_ang_vel_from_enc();
+
 #endif
