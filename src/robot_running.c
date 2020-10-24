@@ -142,17 +142,3 @@ void robot_running(){
         }
 	}
 }
-
-/**
- * @brief フォトリフレクタによる制御
- * @param d_rf_rs_dif int 右前光センサと右サイド光センサによる距離の差
- * @return ang_vel
- */
-static int control_using_photo(int d_rf_rs_dif) {
-    int err_rf_rs, ang_vel;
-    sound_buzzer(PhotoControlBuzzerFreq);
-    err_rf_rs = d_rf_rs_dif - d_rf_rs_to_control;
-    ang_vel = - (gain_p_photo * err_rf_rs) / 128;
-    ang_vel = upper_lower_limit(ang_vel, 90, -90);
-    return ang_vel;
-}
